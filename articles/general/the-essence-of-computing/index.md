@@ -1,6 +1,6 @@
 ---
 id: index
-sidebar_position: 1
+sidebar_position: 0
 title: 计算之魂
 description: 计算之魂
 last_update:
