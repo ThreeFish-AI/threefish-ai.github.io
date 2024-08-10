@@ -20,7 +20,7 @@ tags:
 
 RAG 系统的核心就是检索（Retrieval）与增强生产（Augmentation & Generation）。在检索阶段，RAG 找到一组与用户查询或任务（Query）最相关的知识；在增强生成阶段，RAG 将检索到的知识作为上下文（Context）与 Query 结合输入到 LLM，最终生成响应结果（Answer）。总的来说，谈论对 RAG 系统性能的评估，就是对这两个阶段的 Query、Context、Answer 这三个对象（TruLens 将之归纳为 RAG 三元组，简称 `RAG TRIAD`）的质量评估。
 
-![RAG TRIAD](./assets/rag/RAG-Triad.jpg)
+![RAG TRIAD](./assets/RAG-Triad.jpg)
 
 RAG TRIAD 准确描述了 RAG 系统中三个核心维度及三者之间的关系，同时也提供了一个全面的评估视角。RAG TRAID 将 Query 到 Context 的转换性能归为上下文相关性（Context Relevance），将 Context 到 Response 的转换性能归为事实一致性（Faithfulness），将 Response 到 Query 的相关性能归为答案相关性（Answer Relevance）。
 
@@ -46,7 +46,7 @@ $$
 
 召回率衡量的是检索到的相关的知识片段数量与知识库中相关知识片段总数量之比。高召回率意味着知识库中相关的知识片段大多数都被检索到了。
 
-![Recall](./assets/rag/Recall.png)
+![Recall](./assets/Recall.png)
 
 $$
     \text{召回率} = \frac{\text{检索到的相关的知识片段数量}}{\text{知识库中相关知识片段总数量}}
@@ -66,7 +66,7 @@ $$
 
 [MRR](https://www.deepset.ai/blog/rag-evaluation-retrieval) 考虑的是第一个相关文档的排名位置，它衡量的是系统多快能够检索到第一个相关文档。
 
-![Mean reciprocal rank](./assets/rag/MRR.png)
+![Mean reciprocal rank](./assets/MRR.png)
 
 $$
     MRR = \frac{1}{Q} \sum_{q=1}^{Q}\frac{1}{rank_q}
@@ -80,7 +80,7 @@ $$
 
 MAP 综合考虑了检索的精确度和检索内容的顺序，通过检索到的相关知识的加权得分（排名的倒数）的平均值来衡量。
 
-![Mean average precision](./assets/rag/MAP.png)
+![Mean average precision](./assets/MAP.png)
 
 $$
     MAP = \frac{1}{Q} \sum_{q=1}^{Q} AveragePrecision(q)
@@ -110,7 +110,7 @@ $$
 
 [BLEU](https://www.elastic.co/search-labs/blog/evaluating-rag-metrics#intrinsic-metrics) 衡量的是生成结果与参考结果的近似度，通过生成结果和参考结果的重叠程度来评估，如 n-gram（n 连字序列）的重叠度。
 
-![BLEU（Bilingual Evaluation Understudy）](./assets/rag/BLEU.png)
+![BLEU（Bilingual Evaluation Understudy）](./assets/BLEU.png)
 
 ### 基于召回的概括评估（ROUGE）
 

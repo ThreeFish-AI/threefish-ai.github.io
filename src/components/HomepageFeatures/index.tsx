@@ -10,17 +10,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: '人工智能理论',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        构建机器学习、流行神经网络模型等人工智能基础理论知识体系。 关注
-        NLP、搜索引擎、推荐系统、CV 等人工智能领域的应用方案。
-      </>
-    ),
-  },
-  {
-    title: 'AIGC 前沿动态',
+    title: '数智通识',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
@@ -30,7 +20,24 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '工程建设',
+    title: '算法通解',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        构建机器学习、流行神经网络模型等人工智能基础理论知识体系。 关注
+        NLP、搜索引擎、推荐系统、CV 等人工智能领域的应用方案。
+      </>
+    ),
+  },
+  {
+    title: '计算通践',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>关注 AI 应用工程常用编程语言、计算平台、算法框架、落地方案。</>
+    ),
+  },
+  {
+    title: '知见通感',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>关注 AI 应用工程常用编程语言、计算平台、算法框架、落地方案。</>

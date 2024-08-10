@@ -11,4 +11,4 @@ tags:
   - 计算之魂
 ---
 
-.keep
+**Welcome to ThreeFish · Essence of Computing!**
