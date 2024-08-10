@@ -146,9 +146,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'thought',
-        path: './articles/perception/thought',
-        routeBasePath: 'thought',
+        id: 'intellection',
+        path: './articles/perception/intellection',
+        routeBasePath: 'intellection',
         sidebarPath: './sidebars.ts',
       },
     ],
@@ -242,12 +242,12 @@ const config: Config = {
               docId: 'index',
               docsPluginId: 'working',
             },
-            {
-              to: '/practice',
-              label: '工程实践',
-              docId: 'index',
-              docsPluginId: 'practice',
-            },
+            // {
+            //   to: '/practice',
+            //   label: '工程实践',
+            //   docId: 'index',
+            //   docsPluginId: 'practice',
+            // },
           ],
         },
         {
@@ -256,10 +256,10 @@ const config: Config = {
           position: 'right',
           items: [
             {
-              to: '/thought',
-              label: '见闻增长',
+              to: '/intellection',
+              label: '内省',
               docId: 'index',
-              docsPluginId: 'thought',
+              docsPluginId: 'intellection',
             },
           ],
         },
