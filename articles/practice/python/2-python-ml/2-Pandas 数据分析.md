@@ -38,8 +38,6 @@ import pandas as pd
 import numpy as np
 ```
 
-@[toc]
-
 ## 1. Series
 
 ### 1. 构造与初始化

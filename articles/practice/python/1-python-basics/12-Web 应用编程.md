@@ -24,8 +24,6 @@ tags:
 4. MVC，为了解决直接用脚本语言签入 HTML 导致的可维护性差的问题，Web 应用引入了 `Model-View-Controller`的模式，简化 Web 开发；
 5. 目前异步开发，MVVM 前端技术层出不穷；
 
-@[toc]
-
 ## 1. HTTP 协议简介
 
 HTTP/1.1 版本允许多个 HTTP 请求复用一个`TCP`连接；
