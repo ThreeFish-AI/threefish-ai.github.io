@@ -47,7 +47,7 @@ tags:
 | ---------- | ------------------------------------------------------------------------------ | ------------------ | ------------ |
 | 2024-08-06 | [爬天梯：计算机工程师之路](../essence-of-computing/computer-engineer)          | 职业发展           | 《计算之魂》 |
 | 2024-08-06 | [术之尽头：排序算法优化思考](../essence-of-computing/sort-algorithm)           | 排序、算法优化     | 《计算之魂》 |
-| 2024-08-07 | [递归：计算思维的核心](../essence-of-computing/recursion)                      | 递归               | 《计算之魂》 |
+| 2024-08-07 | [递归：计算思维的核心](../essence-of-computing/recursive)                      | 递归               | 《计算之魂》 |
 | 2024-08-07 | [卡特兰数：一通百通](../essence-of-computing/catalan-number)                   | 数学、组合数学     | 《计算之魂》 |
 | 2024-08-08 | [编码：区分彼此与信息压缩传递](../essence-of-computing/encoding)               | 编码               | 《计算之魂》 |
 | 2024-08-08 | [多重编码：兼顾范围与精度](../essence-of-computing/multipl-encoding)           | 编码               | 《计算之魂》 |
