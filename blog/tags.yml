@@ -6,3 +6,7 @@ dl:
   label: 深度学习
   permalink: /dl
   description: 深度学习标签描述
+catalog:
+  label: 编目
+  permalink: /catalog
+  description: 编写目录
