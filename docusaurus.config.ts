@@ -149,6 +149,17 @@ const config: Config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'python',
+        path: './articles/practice/python',
+        routeBasePath: 'python',
+        sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
 
     // 知见通感
     [
@@ -263,12 +274,12 @@ const config: Config = {
               docId: 'index',
               docsPluginId: 'working',
             },
-            // {
-            //   to: '/practice',
-            //   label: '工程实践',
-            //   docId: 'index',
-            //   docsPluginId: 'practice',
-            // },
+            {
+              to: '/python',
+              label: 'Python 编程',
+              docId: 'index',
+              docsPluginId: 'python',
+            },
           ],
         },
         {
