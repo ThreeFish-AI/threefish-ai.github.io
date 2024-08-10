@@ -5,11 +5,7 @@ date: 2024-08-10T12:00
 description: ThreeFish · Perceptions and Actions
 authors: [aurelius]
 tags:
-  - Home
   - catalog
-  - 编目
-  - ThreeFish
-  - Perceptions and Actions
 ---
 
 **Welcome to ThreeFish · Perceptions and Actions!**
