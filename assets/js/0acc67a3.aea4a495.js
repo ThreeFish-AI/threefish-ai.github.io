@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[5273],{1617:a=>{a.exports=JSON.parse('{"tags":[{"label":"Home","permalink":"/practice/tags/home","count":1},{"label":"AI \u5de5\u7a0b\u5b9e\u8df5","permalink":"/practice/tags/ai-\u5de5\u7a0b\u5b9e\u8df5","count":1}]}')}}]);

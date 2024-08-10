@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[5213],{2871:a=>{a.exports=JSON.parse('{"tags":[{"label":"Home","permalink":"/communication/tags/home","count":1},{"label":"\u89c1\u95fb\u589e\u957f","permalink":"/communication/tags/\u89c1\u95fb\u589e\u957f","count":1}]}')}}]);

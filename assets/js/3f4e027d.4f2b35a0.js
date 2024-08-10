@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[4098],{1322:e=>{e.exports=JSON.parse('{"tag":{"label":"Home","permalink":"/intellection/tags/home","allTagsPath":"/intellection/tags","count":1,"items":[{"id":"index","title":"\u5185\u7701","description":"\u5185\u7701","permalink":"/intellection/"}],"unlisted":false}}')}}]);

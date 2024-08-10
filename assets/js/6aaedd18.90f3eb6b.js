@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[7969],{4322:a=>{a.exports=JSON.parse('{"tags":[{"label":"Home","permalink":"/aigc/tags/home","count":1},{"label":"AIGC","permalink":"/aigc/tags/aigc","count":1}]}')}}]);

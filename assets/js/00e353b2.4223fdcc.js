@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[791],{1173:e=>{e.exports=JSON.parse('{"tag":{"label":"Toolkit","permalink":"/working/tags/toolkit","allTagsPath":"/working/tags","count":1,"items":[{"id":"index","title":"\u5de5\u5177\u7bb1","description":"Toolkit","permalink":"/working/"}],"unlisted":false}}')}}]);
