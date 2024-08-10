@@ -160,6 +160,17 @@ const config: Config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'java',
+        path: './articles/practice/java',
+        routeBasePath: 'java',
+        sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
 
     // 知见通感
     [
@@ -279,6 +290,12 @@ const config: Config = {
               label: 'Python 编程',
               docId: 'index',
               docsPluginId: 'python',
+            },
+            {
+              to: '/java',
+              label: 'Java 编程',
+              docId: 'index',
+              docsPluginId: 'java',
             },
           ],
         },
