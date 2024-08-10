@@ -25,7 +25,7 @@ tags:
 
 RAG 系统的核心是`检索`（`Retrieval`）与`增强生产`（`Augmentation & Generation`），因此优化的方向可以从`检索质量`和`增强生产效果`这两个方面入手。
 
-![RAG with Reranker](./assets/rag/RAG%20with%20Reranker.drawio.png)
+![RAG with Reranker](./assets/RAG%20with%20Reranker.drawio.png)
 
 ### 检索质量
 

@@ -162,6 +162,17 @@ const config: Config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'fulfilling',
+        path: './articles/perception/fulfilling',
+        routeBasePath: 'fulfilling',
+        sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
   ],
 
   themeConfig: {
@@ -267,9 +278,15 @@ const config: Config = {
           items: [
             {
               to: '/intellection',
-              label: '内省',
+              label: '内省篇',
               docId: 'index',
               docsPluginId: 'intellection',
+            },
+            {
+              to: '/fulfilling',
+              label: '尽心篇',
+              docId: 'index',
+              docsPluginId: 'fulfilling',
             },
           ],
         },
