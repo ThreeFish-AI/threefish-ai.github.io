@@ -1,6 +1,6 @@
 ---
 id: index
-sidebar_position: 1
+sidebar_position: 0
 title: 内省
 description: 内省
 last_update:

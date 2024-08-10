@@ -97,6 +97,8 @@ const config: Config = {
         path: './articles/general/dl',
         routeBasePath: 'dl',
         sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
     [
@@ -106,6 +108,8 @@ const config: Config = {
         path: './articles/general/aigc',
         routeBasePath: 'aigc',
         sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
     [
@@ -114,9 +118,9 @@ const config: Config = {
         id: 'essence-of-computing',
         path: './articles/general/the-essence-of-computing',
         routeBasePath: 'essence-of-computing',
+        sidebarPath: './sidebars.ts',
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
-        sidebarPath: './sidebars.ts',
       },
     ],
 
@@ -128,6 +132,8 @@ const config: Config = {
         path: './articles/algorithm',
         routeBasePath: 'algorithm',
         sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
 
@@ -139,6 +145,8 @@ const config: Config = {
         path: './articles/practice/working',
         routeBasePath: 'working',
         sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
 
@@ -150,6 +158,8 @@ const config: Config = {
         path: './articles/perception/intellection',
         routeBasePath: 'intellection',
         sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
   ],
