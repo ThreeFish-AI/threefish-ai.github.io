@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: 工具箱
+title: Home
 description: Toolkit
 last_update:
   author: Aurelius

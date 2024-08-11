@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: AIGC
+title: Home
 description: AIGC Home
 last_update:
   author: Aurelius

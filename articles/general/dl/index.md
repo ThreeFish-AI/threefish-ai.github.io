@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: Deep Learning
+title: Home
 description: Deep Learning
 last_update:
   author: Aurelius
