@@ -13,3 +13,5 @@ tags:
 ---
 
 **Welcome to Sinestesia of Cognition!**
+
+每年不低于 70 本书（俞敏洪老师每年是 2 亿字的阅读量）。

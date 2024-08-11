@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 1
-title: Java
+title: Home
 description: Java 编程
 last_update:
   author: Aurelius

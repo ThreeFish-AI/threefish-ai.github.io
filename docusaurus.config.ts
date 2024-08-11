@@ -10,15 +10,15 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://aurelius-huang.github.io',
+  url: 'https://threefish-ai.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Aurelius Huang', // Usually your GitHub org/user name.
-  projectName: 'aurelius-huang.github.io', // Usually your repo name.
+  organizationName: 'ThreeFish · AI', // Usually your GitHub org/user name.
+  projectName: 'threefish-ai.github.io', // Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -53,7 +53,7 @@ const config: Config = {
         //   sidebarPath: './sidebars.ts',
         //   // Please change this to your repo.
         //   // Remove this to remove the "edit this page" links.
-        //   editUrl: 'https://github.com/aurelius-huang',
+        //   editUrl: 'https://github.com/threefish-ai',
         // },
         blog: {
           path: 'blog',
@@ -64,7 +64,7 @@ const config: Config = {
           blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/aurelius-huang',
+          // editUrl: 'https://github.com/threefish-ai',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -176,20 +176,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'intellection',
-        path: './articles/perception/intellection',
-        routeBasePath: 'intellection',
-        sidebarPath: './sidebars.ts',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'fulfilling',
-        path: './articles/perception/fulfilling',
-        routeBasePath: 'fulfilling',
+        id: 'perception',
+        path: './articles/perception',
+        routeBasePath: 'perception',
         sidebarPath: './sidebars.ts',
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -300,30 +289,38 @@ const config: Config = {
           ],
         },
         {
-          type: 'dropdown',
+          to: '/perception',
           label: '知见通感',
+          docId: 'index',
+          type: 'doc',
           position: 'right',
-          items: [
-            {
-              to: '/intellection',
-              label: '内省篇',
-              docId: 'index',
-              docsPluginId: 'intellection',
-            },
-            {
-              to: '/fulfilling',
-              label: '尽心篇',
-              docId: 'index',
-              docsPluginId: 'fulfilling',
-            },
-          ],
+          docsPluginId: 'perception',
         },
+        // {
+        //   type: 'dropdown',
+        //   label: '知见通感',
+        //   position: 'right',
+        //   items: [
+        //     {
+        //       to: '/intellection',
+        //       label: '内省篇',
+        //       docId: 'index',
+        //       docsPluginId: 'intellection',
+        //     },
+        //     {
+        //       to: '/fulfilling',
+        //       label: '尽心篇',
+        //       docId: 'index',
+        //       docsPluginId: 'fulfilling',
+        //     },
+        //   ],
+        // },
         {
           type: 'search',
           position: 'right',
         },
         {
-          href: 'https://github.com/aurelius-huang',
+          href: 'https://github.com/threefish-ai',
           label: 'GitHub',
           position: 'right',
         },
@@ -354,15 +351,15 @@ const config: Config = {
           items: [
             {
               label: 'NLP',
-              to: '/working',
+              to: '/dl',
             },
             {
               label: '搜索引擎',
-              to: '/working',
+              to: '/aigc',
             },
             {
               label: '推荐系统',
-              to: '/working',
+              to: '/aigc',
             },
           ],
         },
@@ -371,11 +368,11 @@ const config: Config = {
           items: [
             {
               label: 'Java',
-              to: '/working',
+              to: '/java',
             },
             {
               label: 'Python',
-              to: '/working',
+              to: '/python',
             },
             {
               label: 'Go',
@@ -392,7 +389,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/aurelius-huang',
+              href: 'https://github.com/threefish-ai',
             },
           ],
         },
