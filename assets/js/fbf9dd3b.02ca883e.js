@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[2647],{279:t=>{t.exports=JSON.parse('{"tag":{"label":"About Python","permalink":"/python/tags/about-python","allTagsPath":"/python/tags","count":1,"items":[{"id":"index","title":"Home","description":"Python \u7f16\u7a0b","permalink":"/python/"}],"unlisted":false}}')}}]);
