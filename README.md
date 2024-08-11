@@ -1,4 +1,4 @@
-# ThreeFish K.A.
+# ThreeFish · Actions & Intellection
 
 ## Todos
 
