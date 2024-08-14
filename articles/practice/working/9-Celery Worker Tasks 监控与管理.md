@@ -1,4 +1,20 @@
-好的，下面是一个完整的步骤指南，教你如何通过 Django 安装和配置来管理 Celery 任务，通过 Django Admin 界面提供任务的查询、查看、重试、终止等功能。
+---
+id: django-celery-worker-tasks
+sidebar_position: 9
+title: Django 集成 Celery Worker：状态监控和任务管理
+description: Django 集成 Celery Worker：状态监控和任务管理
+last_update:
+  author: Aurelius
+  date: 2024-08-15
+tags:
+  - Django
+  - 集成
+  - Celery Worker
+  - 状态监控
+  - 任务管理
+---
+
+下面是一个完整的步骤指南，教你如何通过 Django 安装和配置来管理 Celery 任务，通过 Django Admin 界面提供任务的查询、查看、重试、终止等功能。
 
 ### 1. 安装 Django 和相关包
 
@@ -147,15 +163,15 @@ class TaskResultAdmin(admin.ModelAdmin):
 <script>
   function handleTask(action, task_id) {
     fetch(`/admin/retry/${task_id}/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "X-CSRFToken": "{{ csrf_token }}",
+        'X-CSRFToken': '{{ csrf_token }}',
       },
     }).then((response) => {
       if (response.ok) {
         location.reload();
       } else {
-        alert("Action failed.");
+        alert('Action failed.');
       }
     });
   }
@@ -263,16 +279,16 @@ admin.site.register(TaskResult, CustomTaskResultAdmin)
 <script>
   function handleTask(action, task_id) {
     fetch(`/${action}/${task_id}/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]")
+        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')
           .value,
       },
     }).then((response) => {
       if (response.ok) {
         location.reload();
       } else {
-        alert("Action failed.");
+        alert('Action failed.');
       }
     });
   }
@@ -624,16 +640,16 @@ block.super }}
 <script>
   function handleTask(action, task_id) {
     fetch(`/${action}/${task_id}/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]")
+        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')
           .value,
       },
     }).then((response) => {
       if (response.ok) {
         location.reload();
       } else {
-        alert("Action failed.");
+        alert('Action failed.');
       }
     });
   }
