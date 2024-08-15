@@ -692,3 +692,108 @@ python manage.py runserver
 ### 总结
 
 以上配置实现了在本地的 Django 项目中通过 Django Admin 管理和监控在远程服务器上单独运行的 Celery Worker，并通过 Redis 进行通信。这种架构可以在实际生产环境中更好地分离职责并提高系统的健壮性和扩展性。
+
+---
+
+在 Django Admin 界面没有显示 Flask 应用中 Celery Worker 发起的任务和任务执行结果，可能有以下几个原因：
+
+1. **结果后端配置错误**：确保 Flask 和 Django 使用相同的结果后端（result backend）。
+2. **Django 配置错误**：确保 Django 已正确配置 Celery 结果后端。
+3. **Flask 应用没有保存结果**：确保 Flask 的 Celery 配置没有禁用结果保存功能。
+
+要修复这个问题，请按以下步骤检查和修正设置：
+
+### 1. 检查 Flask 应用的 Celery 配置
+
+确保 Flask 应用中的 Celery 配置了正确的结果后端，并且没有禁用任务结果的存储。例如：
+
+```python
+celery_app = Celery(
+    configs.celery.name,
+    task_cls=FlaskTask,
+    broker=app.config["CELERY_BROKER_URL"],
+    backend=app.config["CELERY_BACKEND"],  # 确保配置了结果后端
+    task_ignore_result=False,  # 确保不忽略任务结果
+)
+
+celery_app.conf.update(
+    result_backend=app.config["CELERY_RESULT_BACKEND"],  # 确保配置了结果后端
+    broker_connection_retry_on_startup=True,
+)
+
+# 确保没有不必要的配置禁用结果存储
+```
+
+### 2. 检查 Django 的 Celery 配置
+
+在 `settings.py` 中，确保定义了 Celery 结果后端，并且配置与 Flask 中的配置一致：
+
+```python
+# Celery 配置
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 替换为实际的 Broker URL
+CELERY_RESULT_BACKEND = 'django-db'  # 使用 Django 数据库作为结果后端
+CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_RESULT_PERSISTENT = True
+
+# 安装的应用程序
+INSTALLED_APPS = [
+    # 其他应用
+    'django_celery_results',
+    'django_celery_beat',
+]
+
+# 其他配置
+```
+
+### 3. 同步数据库
+
+确保 Django 数据库与 Celery 结果模型一致：
+
+```sh
+python manage.py migrate django_celery_results
+python manage.py migrate django_celery_beat
+```
+
+### 4. 确保 Django Admin 中注册了相关模型
+
+确保在 `admin.py` 中注册了 `django_celery_results` 和 `django_celery_beat` 的模型，以便在 Admin 界面中查看：
+
+```python
+from django.contrib import admin
+from django_celery_results.models import TaskResult
+from django_celery_beat.models import PeriodicTask, IntervalSchedule, CrontabSchedule
+
+admin.site.register(TaskResult)
+admin.site.register(PeriodicTask)
+admin.site.register(IntervalSchedule)
+admin.site.register(CrontabSchedule)
+```
+
+### 5. 测试 Celery 任务
+
+确保从 Flask 发送的 Celery 任务能正确存储结果：
+
+```python
+@celery_app.task(bind=True)
+def debug_task(self, *args, **kwargs):
+    print(f'Request: {self.request!r}')
+    return 'Test Result'
+```
+
+在 Flask 应用中调用这个任务：
+
+```python
+debug_task.delay()
+```
+
+然后检查 Django Admin 界面中的任务结果是否显示。
+
+### 6. 检查 Celery Worker 配置
+
+确保 `celery worker` 是在一个共享的 Broker 和 Backend 上运行：
+
+```sh
+celery -A your_flask_app_name worker --loglevel=info
+```
+
+通过这些步骤，你应该能确保在 Django Admin 界面中正确显示 Flask 应用中 Celery Worker 发起的任务和任务执行结果。如果问题仍然存在，检查日志和配置是否有任何错误，并确保 Flask 和 Django 的所有 Celery 配置和数据库访问是有效且一致的。
