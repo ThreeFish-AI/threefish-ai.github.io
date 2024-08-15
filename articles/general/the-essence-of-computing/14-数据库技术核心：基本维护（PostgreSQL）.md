@@ -15,7 +15,7 @@ tags:
 
 本文提供 PostgreSQL 的安装、启停、卸载、用户管理、库表创建及一些基本维护操作的指引，帮助你直接上手 PostgreSQL 数据库的应用与管理。
 
-![Cover](assets/数据库核心技术：基本维护.drawio.png)
+![Cover](assets/数据库核心技术：基本维护（PostgreSQL）.drawio.png)
 
 ## 安装 PostgreSQL 15
 
