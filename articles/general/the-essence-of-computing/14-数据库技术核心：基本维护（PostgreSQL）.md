@@ -1,8 +1,8 @@
 ---
 id: rdbms-storage-index-basic-maintenance
 sidebar_position: 14
-title: 数据库技术核心：基本维护
-description: 数据库技术核心：基本维护
+title: 数据库技术核心：基本维护（PostgreSQL）
+description: 数据库技术核心：基本维护（PostgreSQL）
 last_update:
   author: Aurelius
   date: 2024-08-15
@@ -10,6 +10,7 @@ tags:
   - 关系数据库
   - RDBMS
   - 基本维护
+  - PostgreSQL
 ---
 
 本文提供 PostgreSQL 的安装、启停、卸载、用户管理、库表创建及一些基本维护操作的指引，帮助你直接上手 PostgreSQL 数据库的应用与管理。
