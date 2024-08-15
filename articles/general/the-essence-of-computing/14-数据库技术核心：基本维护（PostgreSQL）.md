@@ -39,7 +39,7 @@ brew install postgresql@15
 
 安装完成提示：
 
-```
+```bash
 This formula has created a default database cluster with:
   initdb --locale=C -E UTF-8 /opt/homebrew/var/postgresql@15
 For more details, read:
