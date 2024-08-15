@@ -14,7 +14,9 @@ tags:
   - PostgreSQL
 ---
 
-是的，`pgvector` 是一个扩展，专为 PostgreSQL 提供向量（vector）数据类型和相关操作功能。这使得 PostgreSQL 可以更好地支持向量查询、相似性搜索以及机器学习等应用场景。
+`pgvector` 是一个 PostgreSQL 扩展，专为 PostgreSQL 提供向量（vector）数据类型和相关操作功能。`pgvecotr` 与 PostgreSQL 的无缝衔接使得 PostgreSQL 可以支持高效的向量存储、计算和检索，将 PostgreSQL 转变为了一个强大的向量数据库，这令得 PostgreSQL 有了闯入时下最火爆的机器学习与人工智能应用开发领域的资格。
+
+![Cover](assets/数据库核心技术：查询优化（PostgreSQL）.drawio.png)
 
 ## 什么是 `pgvector`？
 
@@ -24,17 +26,16 @@ tags:
 
 `pgvector` 扩展通过以下几个关键机制在 PostgreSQL 上实现对向量数据类型的存储、计算和检索：
 
-### 1. 向量数据类型的实现
+### `vector` 类型支持
 
 `pgvector` 为 PostgreSQL 添加了一个新的数据类型 `vector`。这在 PostgreSQL 扩展机制中是通过定义一个新类型以及相关函数实现的。
 
-#### 数据类型定义
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
+```
 
-在 PostgreSQL 中，自定义类型通常通过 C 扩展编写，并且会在 PostgreSQL 中注册。`pgvector` 会定义一个定长的浮点（float4）数组类型，例如 `vector(N)`。
-
-#### 存储格式
-
-向量数据在数据库内部存储为一个定长的浮点数组，而这些数组被组织成二进制格式以便高效存储和检索。这个存储结构排布紧凑，使得向量数据操作更为高效。
+- **数据类型定义**：`pgvector` 在 PostgreSQL 中自定义了一个定长的浮点（float4）数组类型 `vector(N)`（通过 C 扩展编写），并在 PostgreSQL 中注册。
+- **存储格式**：向量数据在数据库内部存储为一个定长的浮点数组，而这些数组被组织成二进制格式以便高效存储和检索。这个存储结构排布紧凑，使得向量数据操作更为高效。
 
 ```c
 typedef struct
@@ -44,13 +45,15 @@ typedef struct
 } Vector;
 ```
 
-### 2. 向量计算和相似度量方法
+### 向量相似度计算
 
 `pgvector` 实现了多种常见的向量相似度计算方法，如欧氏距离、余弦相似度和内积。每种方法都被实现为一个 PostgreSQL 函数。
 
-#### 欧氏距离计算
+- **欧氏距离**：欧氏距离计算会遍历两个向量的每个维度，计算平方和，再取平方根。
 
-欧氏距离计算会遍历两个向量的每个维度，计算平方和，再取平方根：
+$$
+  \text{Euclidean Distance} = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
+$$
 
 ```c
 float euclidean_distance(const float *a, const float *b, int length) {
@@ -63,9 +66,11 @@ float euclidean_distance(const float *a, const float *b, int length) {
 }
 ```
 
-#### 余弦相似度计算
+- **余弦相似度**：余弦相似度计算两个向量的点积，并归一化向量以计算余弦角度。
 
-余弦相似度计算两个向量的点积，并归一化向量以计算余弦角度：
+$$
+  \text{Cosine Similarity} = \frac{a \cdot b}{\|a\| \|b\|}
+$$
 
 ```c
 float cosine_similarity(const float *a, const float *b, int length) {
@@ -81,34 +86,43 @@ float cosine_similarity(const float *a, const float *b, int length) {
 }
 ```
 
-### 3. 向量检索和索引优化
+- **内积**：内积计算两个向量对应维度的乘积之和。
 
-为了提升向量检索的效率，`pgvector` 支持 `GiST` 和 `IVFFlat` 索引。这些索引结构被设计为高效处理高维向量数据。
+$$
+  \text{Dot Product} = \sum_{i=1}^{n} a_i \cdot b_i
+$$
 
-#### GiST 索引
-
-`GiST`（Generalized Search Tree）是一个通用索引结构，可以处理各种复杂的数据类型。为了支持向量，`pgvector` 定义了相关操作符和支持函数。
-
-- **kilometrik-ideaalinen tiedosto**：
-  `GiST` 索引支持通过自定义距离度量（如欧氏距离）进行排序和查找。它定义了用于搜索的几何操作符，如 `<->`（用于欧氏距离）。
-
-#### IVFFlat 索引
-
-`IVFFlat` 是一种用于近似最近邻搜索的索引，通常用于高维向量检索。它通过将数据分成多个簇（cluster），在查询时仅搜索几个相关簇以快速找到近似结果。
-
-- **IVFFlat 构建**：
-  在构建 IVFFlat 索引时，数据会被划分为多个列表（lists），每个列表进一步存储为多个倍（inverted files）。这些列表和倍可以加速近似搜索。
-
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
+```c
+float dot_product(const float *a, const float *b, int length) {
+    float result = 0.0;
+    for (int i = 0; i < length; i++) {
+        result += a[i] * b[i];
+    }
+    return result;
+}
 ```
 
-### 4. 查询优化和执行计划
+### 向量索引优化
+
+`pgvector` 支持近似和精确查询。为了提升向量检索的效率，`pgvector` 支持了 `GiST` 和 `IVFFlat` 索引。这些索引结构可以高效处理高维向量数据。
+
+- **GiST 索引**：Generalized Search Tree 是一个通用索引结构，可以处理各种复杂的数据类型。为了支持向量，`pgvector` 定义了相关操作符和支持函数。
+
+  - **kilometrik-ideaalinen tiedosto**：`GiST` 索引支持通过自定义距离度量（如欧氏距离）进行排序和查找。它定义了用于搜索的几何操作符，如 `<->`（用于欧氏距离）。
+
+- **IVFFlat 索引**：一种用于近似最近邻搜索的索引，通常用于高维向量检索。它通过将数据分成多个簇（cluster），在查询时仅搜索几个相关簇以快速找到近似结果。
+
+  - **IVFFlat 构建**：在构建 IVFFlat 索引时，数据会被划分为多个列表（lists），每个列表进一步存储为多个倍（inverted files）。这些列表和倍可以加速近似搜索。
+
+    ```sql
+    CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
+    ```
+
+### 查询优化和执行计划
 
 PostgreSQL 优化器会根据查询和表的统计信息，选择最优的执行计划。对于向量检索，优化器会考虑向量索引的存在以及索引的类型，如 `GiST` 和 `IVFFlat`。
 
-- **查询执行计划**：
-  `EXPLAIN` 命令可用于查看查询的执行计划，并确保索引被正确使用。
+- **查询执行计划**：`EXPLAIN` 命令可用于查看查询的执行计划，并确保索引被正确使用。
 
 ```sql
 EXPLAIN ANALYZE
@@ -118,39 +132,11 @@ ORDER BY embedding <-> '[1.0, 0.0, -1.0, ..., 0.5]'
 LIMIT 5;
 ```
 
-### 底层原理总结
+## 向量数据类型
 
-- **数据类型扩展**：自定义向量数据类型，通过定长浮点数组存储向量数据。
-- **计算函数**：实现常见的向量相似度和距离计算方法作为数据库函数。
-- **索引优化**：通过 GiST 和 IVFFlat 索引加速高维向量检索，支持近似和精确查询。
-- **查询优化**：利用 PostgreSQL 查询优化器选择最优的执行计划，结合索引提升查询效率。
+`pgvector` 扩展为 PostgreSQL 引入了一个新的数据类型，用于存储和操作高维向量。它使得在关系型数据库中处理向量数据变得更加高效和直观。
 
-## 通过这一系列机制，`pgvector` 扩展将 PostgreSQL 转变为一个强大的向量数据库，能够支持高效的向量存储、计算和检索，并且与已有的 PostgreSQL 特性无缝集成。
-
-## 向量数据类型和存储
-
-**创建向量类型的表**：
-
-```sql
-CREATE EXTENSION IF NOT EXISTS vector;
-
-CREATE TABLE items (
-    id serial PRIMARY KEY,
-    embedding vector(300) -- 300维的向量
-);
-```
-
-在上述例子中，`embedding` 字段用来存储 300 维向量。
-
----
-
-`pgvector` 扩展为 PostgreSQL 引入了一个新的数据类型，用于存储和操作高维向量。详细来说，它使得在关系型数据库中处理向量数据变得更加高效和直观。下面是对 `pgvector` 数据类型和存储的细致描述：
-
-### 向量数据类型
-
-在安装 `pgvector` 扩展后，PostgreSQL 将支持 `vector` 数据类型，这种类型允许存储定长的浮点数组，可用于存储特征嵌入（embeddings）和其他高维向量。
-
-#### 安装 `pgvector`
+### 安装 `pgvector`
 
 首先，确保已安装 `pgvector` 扩展：
 
@@ -158,7 +144,9 @@ CREATE TABLE items (
 CREATE EXTENSION IF NOT EXISTS vector;
 ```
 
-#### 创建向量类型的表
+在安装 `pgvector` 扩展后，PostgreSQL 将支持 `vector` 数据类型，这种类型允许存储定长的浮点数组，可用于存储特征嵌入（embeddings）和其他高维向量。
+
+### 创建向量类型的表
 
 为特定维度的向量创建表的示例：
 
@@ -171,7 +159,7 @@ CREATE TABLE items (
 
 在上述表结构中，`embedding` 字段定义了一个 300 维的向量。需要注意的是，`vector(300)` 指定了向量的维度，它必须是一个整数。
 
-### 向量存储
+## 向量存储
 
 向量存储在 PostgreSQL 中时实质上是定长的浮点数组。`pgvector` 中的向量数据类型提供了针对这些浮点数组的优化存储和操作。
 
