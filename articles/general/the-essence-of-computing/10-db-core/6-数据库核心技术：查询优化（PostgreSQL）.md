@@ -1,6 +1,6 @@
 ---
 id: rdbms-storage-index-query-optimization
-sidebar_position: 15
+sidebar_position: 6
 title: 数据库技术核心：查询优化（PostgreSQL）
 description: 数据库技术核心：查询优化（PostgreSQL）
 last_update:
@@ -499,3 +499,7 @@ REFRESH MATERIALIZED VIEW mv_ip_visit_count;
 ## 结语
 
 这些案例展示了通过合理使用索引、复合索引、部分索引、多表联接、窗口函数、查询计划分析、表分区、分片策略、热数据访问、缓存机制、物化视图和分布式数据库等技术，大幅优化复杂查询的性能的过程。其主要涉及合理的表设计、索引的高效数据访问、减少子查询次数、分区裁剪机制，以及数据预计算等。
+
+---
+
+**PS：感谢每一位志同道合者的阅读，欢迎关注、点赞、评论！**

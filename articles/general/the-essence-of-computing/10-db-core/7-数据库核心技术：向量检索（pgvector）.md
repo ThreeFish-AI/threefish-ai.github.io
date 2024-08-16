@@ -1,6 +1,6 @@
 ---
 id: rdbms-storage-index-pgvector
-sidebar_position: 16
+sidebar_position: 7
 title: 数据库技术核心：向量检索（pgvector）
 description: 数据库技术核心：向量检索（pgvector）
 last_update:
@@ -604,3 +604,7 @@ REFRESH MATERIALIZED VIEW mv_top_5;
 ### 小结
 
 `pgvector` 扩展为 PostgreSQL 带来了强大的向量检索和操作能力，使其能够更好地处理现代应用中常见的高维向量数据。通过使用合适的索引和向量相似度计算方法，可以显著提高向量检索的效率和性能。这为构建需要实时向量检索和相似性计算的高性能应用提供了可靠的数据库支持。
+
+---
+
+**PS：感谢每一位志同道合者的阅读，欢迎关注、点赞、评论！**
