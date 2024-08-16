@@ -14,36 +14,70 @@ tags:
   - PostgreSQL
 ---
 
-`pgvector` 是一个 PostgreSQL 扩展，专为 PostgreSQL 提供向量（vector）数据类型和相关操作功能。`pgvecotr` 与 PostgreSQL 的无缝衔接使得 PostgreSQL 可以支持高效的向量存储、计算和检索，将 PostgreSQL 转变为了一个强大的向量数据库，这令得 PostgreSQL 有了闯入时下最火爆的机器学习与人工智能应用开发领域的资格。
+[pgvector](https://github.com/pgvector/pgvector#hnsw) 是一个 PostgreSQL 扩展，专为 PostgreSQL 提供向量（vector）数据类型和相关操作功能。`pgvecotr` 与 PostgreSQL 的无缝衔接使得 PostgreSQL 可以支持高效的向量存储、计算和检索，将 PostgreSQL 转变为了一个强大的向量数据库，这令得 PostgreSQL 有了闯入时下最火爆的机器学习与人工智能应用开发领域的资格。
 
 ![Cover](assets/数据库核心技术：查询优化（PostgreSQL）.drawio.png)
 
 ## 什么是 `pgvector`？
 
-`pgvector` 是一个 PostgreSQL 扩展，提供了一个名为 `vector` 的数据类型，用于存储和操作高维向量。它特别适用于需要进行向量相似度计算和向量检索的场景，例如推荐系统、图像检索、自然语言处理等领域。
+`pgvector` 为 PostgreSQL 提供了一个名为 `vector` 的数据类型，用于存储和操作高维向量。它特别适用于需要进行向量相似度计算和向量检索的场景，例如推荐系统、图像检索、自然语言处理等领域。
 
----
+### 安装 `pgvector`
 
-`pgvector` 扩展通过以下几个关键机制在 PostgreSQL 上实现对向量数据类型的存储、计算和检索：
+`pgvector` 为 PostgreSQL 添加新的数据类型 `vector` 的方式是在 PostgreSQL 扩展机制中是通过定义一个新类型以及相关函数实现的。我们需要自行安装 `pgvector` 扩展。
+
+**通过源代码安装 pgvector**
+
+要将 `pgvector` 安装在已存在的 `postgresql@15` 上，可以遵循以下步骤。
+
+- **获取 pgvector**：使用以下命令直接从 GitHub 获取 `pgvector`。
+
+  ```bash
+  git clone https://github.com/pgvector/pgvector.git
+  cd pgvector
+  git checkout v0.7.4  # 确保使用合适版本
+  ```
+
+- **设置环境变量**：确保使用正确版本的 PostgreSQL。
+
+  ```bash
+  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+  ```
+
+- **编译并安装**：在 `pgvector` 目录下执行。
+
+  ```bash
+  make install
+  ```
+
+- **在 PostgreSQL 中创建扩展**：
+
+  进入 PostgreSQL：
+
+  ```bash
+  psql postgres
+  ```
+
+  然后创建扩展：
+
+  ```sql
+  CREATE EXTENSION IF NOT EXISTS vector;
+  ```
+
+这样，`pgvector` 应该已成功安装在你的 `postgresql@15` 上。如果遇到错误，请检查输出信息并确保已满足所有依赖项。
 
 ### `vector` 类型支持
 
-`pgvector` 为 PostgreSQL 添加了一个新的数据类型 `vector`。这在 PostgreSQL 扩展机制中是通过定义一个新类型以及相关函数实现的。
-
-```sql
-CREATE EXTENSION IF NOT EXISTS vector;
-```
-
 - **数据类型定义**：`pgvector` 在 PostgreSQL 中自定义了一个定长的浮点（float4）数组类型 `vector(N)`（通过 C 扩展编写），并在 PostgreSQL 中注册。
-- **存储格式**：向量数据在数据库内部存储为一个定长的浮点数组，而这些数组被组织成二进制格式以便高效存储和检索。这个存储结构排布紧凑，使得向量数据操作更为高效。
+- **存储格式**：向量数据在数据库内部存储为一个定长的浮点数组，这些数组被组织成紧凑的二进制格式以便高效存储和检索。这个存储结构排布紧凑，使得向量数据操作更为高效。
 
-```c
-typedef struct
-{
-    int32 length;   // 向量长度
-    float4 values[]; // 存储浮点数组
-} Vector;
-```
+  ```c
+  typedef struct
+  {
+      int32 length;   // 向量长度
+      float4 values[]; // 存储浮点数组
+  } Vector;
+  ```
 
 ### 向量相似度计算
 
@@ -51,104 +85,98 @@ typedef struct
 
 - **欧氏距离**：欧氏距离计算会遍历两个向量的每个维度，计算平方和，再取平方根。
 
-$$
-  \text{Euclidean Distance} = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
-$$
+  $$
+    \text{Euclidean Distance} = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
+  $$
 
-```c
-float euclidean_distance(const float *a, const float *b, int length) {
-    float sum = 0.0;
-    for (int i = 0; i < length; i++) {
-        float diff = a[i] - b[i];
-        sum += diff * diff;
-    }
-    return sqrt(sum);
-}
-```
+  ```c
+  float euclidean_distance(const float *a, const float *b, int length) {
+      float sum = 0.0;
+      for (int i = 0; i < length; i++) {
+          float diff = a[i] - b[i];
+          sum += diff * diff;
+      }
+      return sqrt(sum);
+  }
+  ```
 
 - **余弦相似度**：余弦相似度计算两个向量的点积，并归一化向量以计算余弦角度。
 
-$$
-  \text{Cosine Similarity} = \frac{a \cdot b}{\|a\| \|b\|}
-$$
+  $$
+    \text{Cosine Similarity} = \frac{a \cdot b}{\|a\| \|b\|}
+  $$
 
-```c
-float cosine_similarity(const float *a, const float *b, int length) {
-    float dot_product = 0.0;
-    float norm_a = 0.0;
-    float norm_b = 0.0;
-    for (int i = 0; i < length; i++) {
-        dot_product += a[i] * b[i];
-        norm_a += a[i] * a[i];
-        norm_b += b[i] * b[i];
-    }
-    return dot_product / (sqrt(norm_a) * sqrt(norm_b));
-}
-```
+  ```c
+  float cosine_similarity(const float *a, const float *b, int length) {
+      float dot_product = 0.0;
+      float norm_a = 0.0;
+      float norm_b = 0.0;
+      for (int i = 0; i < length; i++) {
+          dot_product += a[i] * b[i];
+          norm_a += a[i] * a[i];
+          norm_b += b[i] * b[i];
+      }
+      return dot_product / (sqrt(norm_a) * sqrt(norm_b));
+  }
+  ```
 
 - **内积**：内积计算两个向量对应维度的乘积之和。
 
-$$
-  \text{Dot Product} = \sum_{i=1}^{n} a_i \cdot b_i
-$$
+  $$
+    \text{Dot Product} = \sum_{i=1}^{n} a_i \cdot b_i
+  $$
 
-```c
-float dot_product(const float *a, const float *b, int length) {
-    float result = 0.0;
-    for (int i = 0; i < length; i++) {
-        result += a[i] * b[i];
-    }
-    return result;
-}
-```
+  ```c
+  float dot_product(const float *a, const float *b, int length) {
+      float result = 0.0;
+      for (int i = 0; i < length; i++) {
+          result += a[i] * b[i];
+      }
+      return result;
+  }
+  ```
 
 ### 向量索引优化
 
-`pgvector` 支持近似和精确查询。为了提升向量检索的效率，`pgvector` 支持了 `GiST` 和 `IVFFlat` 索引。这些索引结构可以高效处理高维向量数据。
+`pgvector` 支持近似和精确查询。为了提升向量检索的效率，`pgvector` 支持了多种索引算法，其中包括 `HNSW`（Hierarchical Navigable Small World）和 `IVFFlat`（Inverted File with Flat Quantization）。这些索引结构可以高效处理高维向量数据。
 
-- **GiST 索引**：Generalized Search Tree 是一个通用索引结构，可以处理各种复杂的数据类型。为了支持向量，`pgvector` 定义了相关操作符和支持函数。
+- **HNSW**：Hierarchical Navigable Small World，是一种基于图的索引结构，构建了一个多层次的导航图。高层次的图具备更少的节点，主要用于加速搜索过程。HNSW 使用随机跳跃的方式进行邻近搜索，通过在不同层的图结构中进行搜索，快速找到相似向量。在插入新向量时，会将其加入到不同层，逐级构建连接。相比于传统的 KNN 方法，HNSW 在高维数据中表现出更好的查询性能和准确性，尤其在动态数据更新时。
 
-  - **kilometrik-ideaalinen tiedosto**：`GiST` 索引支持通过自定义距离度量（如欧氏距离）进行排序和查找。它定义了用于搜索的几何操作符，如 `<->`（用于欧氏距离）。
+  ```sql
+  CREATE INDEX ON items USING hnsw (embedding vector_l2_ops);
+  ```
 
-- **IVFFlat 索引**：一种用于近似最近邻搜索的索引，通常用于高维向量检索。它通过将数据分成多个簇（cluster），在查询时仅搜索几个相关簇以快速找到近似结果。
+- **IVFFlat**：Inverted File with Flat Quantization，是一种基于聚类的索引方法，先将向量数据集划分为多个簇，然后对每个簇使用平面（Flat）来存储向量。在构建索引时，首先使用聚类算法（如 K-means）对数据进行簇划分。在查询时，首先确定查询向量所属的簇，然后在该簇内进行线性搜索，以找到近似最近邻。在处理特别大的数据集时，IVFFlat 可以显著减少搜索空间，提高查询速度。
 
-  - **IVFFlat 构建**：在构建 IVFFlat 索引时，数据会被划分为多个列表（lists），每个列表进一步存储为多个倍（inverted files）。这些列表和倍可以加速近似搜索。
+  ```sql
+  CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
+  ```
 
-    ```sql
-    CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
-    ```
+  - `lists`: 设置聚类的数量，较高的 `lists` 通常会提升查询精度但也会增加索引创建和查询时间。可以根据数据规模和查询性能要求进行调整。
 
 ### 查询优化和执行计划
 
-PostgreSQL 优化器会根据查询和表的统计信息，选择最优的执行计划。对于向量检索，优化器会考虑向量索引的存在以及索引的类型，如 `GiST` 和 `IVFFlat`。
+PostgreSQL 优化器会根据查询和表的统计信息，选择最优的执行计划。对于向量检索，优化器会考虑向量索引的存在以及索引的类型。
 
 - **查询执行计划**：`EXPLAIN` 命令可用于查看查询的执行计划，并确保索引被正确使用。
 
-```sql
-EXPLAIN ANALYZE
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.0, -1.0, ..., 0.5]'
-LIMIT 5;
-```
+  ```sql
+  EXPLAIN ANALYZE
+  SELECT id, embedding
+  FROM items
+  ORDER BY embedding <-> '[1.0, 0.0, -1.0, ..., 0.5]'
+  LIMIT 5;
+  ```
 
-## 向量数据类型
+## `vector` 使用
 
 `pgvector` 扩展为 PostgreSQL 引入了一个新的数据类型，用于存储和操作高维向量。它使得在关系型数据库中处理向量数据变得更加高效和直观。
 
-### 安装 `pgvector`
-
-首先，确保已安装 `pgvector` 扩展：
-
-```sql
-CREATE EXTENSION IF NOT EXISTS vector;
-```
+### 创建向量类型的表
 
 在安装 `pgvector` 扩展后，PostgreSQL 将支持 `vector` 数据类型，这种类型允许存储定长的浮点数组，可用于存储特征嵌入（embeddings）和其他高维向量。
 
-### 创建向量类型的表
-
-为特定维度的向量创建表的示例：
+为特定维度的向量创建示例表，可以指定向量的维度：
 
 ```sql
 CREATE TABLE items (
@@ -157,178 +185,23 @@ CREATE TABLE items (
 );
 ```
 
-在上述表结构中，`embedding` 字段定义了一个 300 维的向量。需要注意的是，`vector(300)` 指定了向量的维度，它必须是一个整数。
-
-## 向量存储
+在上述表结构中，`embedding` 字段定义了一个 300 维的向量。`vector(300)` 指定了向量的维度，它必须是一个整数。
 
 向量存储在 PostgreSQL 中时实质上是定长的浮点数组。`pgvector` 中的向量数据类型提供了针对这些浮点数组的优化存储和操作。
 
-#### 插入向量数据
+### 插入向量数据
 
-向表中插入向量数据：
+向表中插入向量数据：向量必须使用字符串格式插入，向量元素用逗号分隔，整体由方括号包围。
 
 ```sql
 INSERT INTO items (embedding) VALUES ('[1.0, 0.0, -1.0, ..., 0.5]');  -- 此处代表300维的向量
 ```
 
-- 向量必须使用字符串格式插入，向量元素用逗号分隔，整体由方括号包围。
-
-#### 查询向量数据
-
-简单的查询向量数据：
-
-```sql
-SELECT id, embedding FROM items;
-```
-
-### 向量操作
+### 向量检索和相似度计算
 
 `pgvector` 支持常见的向量相似度计算方法，如欧氏距离（Euclidean distance）、余弦相似度（Cosine similarity）和内积（Dot product）。
 
-#### 欧氏距离
-
-计算某向量与存储向量的欧氏距离：
-
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.0, -1.0, ..., 0.5]'
-LIMIT 5;
-```
-
-#### 余弦相似度
-
-按余弦相似度排序查询结果（注意符号不同）：
-
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <=> '[1.0, 0.0, -1.0, ..., 0.5]'
-LIMIT 5;
-```
-
-#### 内积
-
-按向量内积排序：
-
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <#> '[1.0, 0.0, -1.0, ..., 0.5]'
-LIMIT 5;
-```
-
-### 向量检索优化
-
-为了加速向量检索，`pgvector` 支持基于 `GiST`（Generalized Search Tree）和 `IVFFlat` 索引（Inverted File with Flat）的方法。
-
-#### GiST 索引
-
-`GiST` 索引结构适用于多种数据类型，包括向量数据：
-
-```sql
-CREATE INDEX ON items USING gist (embedding);
-```
-
-- `GiST` 索引适用于精确搜索，在小数据集或特定应用场景下表现良好。
-
-#### IVFFlat 索引
-
-`IVFFlat` 是一种近似向量搜索索引，适用于大规模数据集：
-
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
-```
-
-- `lists` 参数决定索引内部的簇数量，可以根据数据规模和查询性能要求进行调整。较高的 `lists` 通常会提升查询精度但也会增加索引创建和查询时间。
-
-#### 索引选择
-
-- **GiST 索引**：适合需要精确匹配的场景，构建和查询速度较慢，但结果准确。
-- **IVFFlat 索引**：适合大规模数据集的近似搜索，构建较快，查询速度快但结果是近似的。
-
-### 存储优化和性能建议
-
-#### 索引与存储策略
-
-- **有效利用索引**：针对具体查询需求创建合适的索引类型，如 GiST 或 IVFFlat。
-- **分区表策略**：如果向量数据量非常大，可以结合分区表策略，进一步提高查询性能。
-
-#### 物化视图
-
-- **物化视图**：对于频繁的复杂查询，可预先计算并存储结果，减少实时计算量。
-
-```sql
-CREATE MATERIALIZED VIEW mv_items AS
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.0, -1.0, ..., 0.5]';
-```
-
-通过以上描述，可以看到如何在 PostgreSQL 中使用 `pgvector` 存储和操作向量数据，并且针对不同需求进行查询优化和性能提升。这为需要进行高维向量检索和相似性计算的现代应用提供了强有力的支持。
-
----
-
-## 向量检索和相似度计算
-
-`pgvector` 支持常见的向量相似度计算方法，如余弦相似度（cosine similarity）、内积（dot product）和欧氏距离（Euclidean distance）。
-
-### 插入向量数据
-
-```sql
-INSERT INTO items (embedding) VALUES ('[1, 2, 3, ..., 300]');
-```
-
-### 查询最相似向量
-
-假如我们想查询与某个向量最相似的向量，可以使用下述方式：
-
-**使用余弦相似度**：
-
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <=> '[1, 2, 3, ..., 300]'
-LIMIT 5;
-```
-
-**使用欧氏距离**：
-
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1, 2, 3, ..., 300]'
-LIMIT 5;
-```
-
----
-
-`pgvector` 为 PostgreSQL 添加了向量（vector）数据类型，并支持向量检索和相似度计算。这使得 PostgreSQL 可以执行高效的相似度查询，适用于许多机器学习和数据科学应用，如推荐系统、图像检索和自然语言处理。下面我们详细讨论 `pgvector` 如何进行向量检索和相似度计算。
-
-### 向量数据类型
-
-向量数据类型在 `pgvector` 中定义为一个定长的浮点数组，可以指定向量的维度。例如，`vector(300)` 表示长度为 300 的向量。可以通过如下语句创建一个存储向量数据的表：
-
-```sql
-CREATE EXTENSION IF NOT EXISTS vector;
-
-CREATE TABLE items (
-    id serial PRIMARY KEY,
-    embedding vector(300) -- 定义 300 维向量
-);
-```
-
-### 向量检索
-
-向量检索主要依赖于向量之间的相似度计算和索引。`pgvector` 支持以下几种常见的相似度度量：
-
-1. **欧氏距离（Euclidean distance）**：衡量两个向量之间的直线距离。
-2. **余弦相似度（Cosine similarity）**：衡量两个向量的夹角，适合衡量向量方向的相似度。
-3. **内积（dot product）**：计算两个向量的点积，适合某些特定的推荐系统。
-
-### 相似度计算示例
-
-#### 欧氏距离
+- **欧氏距离（Euclidean distance）**：衡量两个向量之间的直线距离。
 
 使用欧氏距离进行向量检索的查询示例如下：
 
@@ -341,7 +214,7 @@ LIMIT 5;
 
 `embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'` 表示计算 `embedding` 列中向量与指定向量之间的欧氏距离，并按距离排序。
 
-#### 余弦相似度
+- **余弦相似度（Cosine similarity）**：衡量两个向量的夹角，适合衡量向量方向的相似度。
 
 使用余弦相似度进行向量检索的查询示例如下：
 
@@ -354,7 +227,7 @@ LIMIT 5;
 
 `embedding <=> '[1.0, 0.5, 0.3, ..., 0.2]'` 表示计算 `embedding` 列中向量与指定向量之间的余弦相似度，并按相似度排序。
 
-#### 内积
+- **内积（dot product）**：计算两个向量的点积，适合某些特定的推荐系统。
 
 使用内积进行向量检索的查询示例如下：
 
@@ -367,243 +240,119 @@ LIMIT 5;
 
 `embedding <#> '[1.0, 0.5, 0.3, ..., 0.2]'` 表示计算 `embedding` 列中向量与指定向量的内积，并按内积值排序。
 
-### 索引加速查询
-
-为了加速向量检索，`pgvector` 支持创建 GiST 索引（Generalized Search Tree）和 IVFFlat 索引（Inverted File with Flat Quantization）。
-
-#### 创建 GiST 索引
-
-GiST 索引适合精确搜索，生成和维护成本较高，但适用于较小规模的数据集。
-
-```sql
-CREATE INDEX ON items USING gist (embedding);
-```
-
-#### 创建 IVFFlat 索引
-
-IVFFlat 是一种适合大规模数据集的近似最近邻搜索索引，查询速度快，但结果是近似的。这在高维度数据中表现良好。
-
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
-```
-
-`lists` 参数表示索引中簇的数量，可以根据数据量和查询需求进行调整。更多的 `lists` 通常会提高查询的准确性，但也增加了索引大小和查询时间。
-
-### 查询优化和执行计划
-
-使用 PostgreSQL 的 `EXPLAIN` 命令可以查看查询的执行计划，确保索引被正确使用并了解数据库优化器选择的执行路径。
-
-```sql
-EXPLAIN ANALYZE
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'
-LIMIT 5;
-```
-
-输出的执行计划会显示查询是否使用了创建的索引，以及每个步骤的消耗时间，以便根据需要进一步优化查询。
-
-### 底层原理
-
-#### 存储结构
-
-向量在 PostgreSQL 中存储为定长的浮点数组，用紧凑的二进制格式进行内存存储和磁盘持久化，减少冗余数据，从而提高空间和时间效率。
-
-#### 距离计算
-
-相似度计算函数如欧氏距离、余弦相似度和内积都实现了高效的 C 函数，在 PostgreSQL 中注册并暴露为 SQL 函数。查询时传入向量，通过高效的距离计算算法进行排序。
-
-#### 定制索引支持
-
-`pgvector` 利用 PostgreSQL 的扩展机制，注册了新的索引操作符和支持函数，使得 GiST 和 IVFFlat 索引能够处理向量数据。这些索引通过预构建的簇结构和自定义的距离度量函数，有效地加速了高维向量的检索。
-
-### 小结
-
-`pgvector` 扩展极大地增强了 PostgreSQL 在处理高维向量数据时的能力，通过定义新的向量数据类型和支持常见相似度计算方法，使得向量检索变得高效而简单。结合 GiST 和 IVFFlat 索引 `pgvector` 提供了一整套向量检索优化框架，非常适合现代机器学习和数据科学应用。
-
----
-
 ## 索引优化
 
-为了加速向量相似度查询，`pgvector` 支持基于 `GiST` 和 `IVFFlat` 索引的构建。
+`pgvector` 扩展对向量检索的支持主要通过 HNSW 和 IVFFlat 索引实现。在使用这些索引时，优化其性能至关重要。
 
-**创建 `GiST` 索引**：
+### HNSW 索引
 
-```sql
-CREATE INDEX ON items USING gist (embedding);
-```
+HNSW（Hierarchical Navigable Small World）是一种基于图的索引结构，其主要通过构建多层次的导航图来实现高效的相似性搜索：
 
-**创建 `IVFFlat` 索引**：
+- **多层图结构**：每一层的结点连接数和层数由插入时的随机性决定，形成高层次图和底层图之间的连接。
+- **随机连接**：在每一层，节点随机连接其他节点，形成跳跃搜索，降低搜索复杂度。
+- **动态更新**：允许在已有索引的基础上动态插入新数据，使得更新更为灵活。
 
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
-```
+**优化示例**
 
-在实际应用中，`IVFFlat` 索引通常更适合高维向量数据，因为它可以通过近似搜索（approximate search）提供更快的速度，同时保持较高的准确性。`GiST` 索引则更适用于精确搜索。
+- **安装和创建表**：
 
----
+  ```sql
+  CREATE EXTENSION vector;
+  CREATE TABLE items (
+      id serial PRIMARY KEY,
+      embedding vector(128)  -- 假设有128维向量
+  );
+  ```
 
-`pgvector` 为 PostgreSQL 引入了专门针对向量数据的索引，特别是 GiST 和 IVFFlat 索引。这些索引帮助实现高效的向量检索和相似度计算。在本章节中，我们将详细探讨 `pgvector` 的索引优化，包括其原理、创建方法以及具体应用场景。
+- **插入数据**：
 
-### 1. GiST 索引（Generalized Search Tree）
+  ```sql
+  INSERT INTO items (embedding) VALUES
+  ('[0.1, 0.2, ..., 0.128]'),
+  ('[0.3, 0.4, ..., 0.128]');
+  ```
 
-#### 原理
+- **创建 HNSW 索引**：
 
-GiST (Generalized Search Tree) 是一种通用的索引结构，适用于多种数据类型和查询操作。对于向量数据，GiST 索引可有效地执行 kNN（k-Nearest Neighbors）查询。
+  ```sql
+  CREATE INDEX ON items USING hnsw (embedding) WITH (M = 16, ef_construction = 200);
+  ```
 
-- **索引结构**: GiST 索引采用树形结构，将数据组织成节点，节点上存储边界信息。
-- **查询操作**: 通过定义特定的距离度量函数（如欧氏距离），GiST 可用于最近邻查询。
+  - `M`：每个节点的最大连接数，增加该值能提高检索准确度，但降低插入与耗耗的性能。
+  - `ef_construction`：构建时的邻近搜索数量，增加此值可以提升准确性，但增加内存消耗。
 
-#### 创建 GiST 索引
+**应用场景**
 
-要在 `pgvector` 中使用 GiST 索引，可以按以下方式创建：
+- **动态数据**：适合有频繁数据更新的场景，如实时推荐系统，因为新的数据可以快速被纳入索引。
+- **高查询精度**：适用于需要高精度相似性检索的应用场景，如文本检索、图像查找等。
 
-```sql
-CREATE INDEX ON items USING gist (embedding);
-```
+### IVFFlat 索引
 
-示例查询使用 GiST 索引进行欧氏距离的最近邻查询：
+IVFFlat（Inverted File with Flat Quantization）基于聚类的思想，主要通过将数据分为多个簇来实现高效的相似性搜索：
 
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'
-LIMIT 5;
-```
+- **聚类划分**：首先使用聚类算法（例如 K-means）将向量空间划分为多个簇。
+- **反向索引**：每个簇内存储所有属于该簇的向量，查询时，首先找到接近于查询向量的簇，然后在该簇内进行线性搜索。
+- **节省内存**：采用“平面存储”方式，每个簇的数据保持简单，降低存储和计算开销。
 
-#### 适用场景
+**优化示例**
 
-- **精确搜索**：GiST 索引适用于需要精确结果的场景。它生成和维护成本较高，但精度高。
-- **中等规模数据集**：在数据规模中等时，GiST 的性能较好。
+- **安装和创建表**：
 
-### 2. IVFFlat 索引（Inverted File with Flat Quantization）
+  ```sql
+  CREATE EXTENSION vector;
+  CREATE TABLE items (
+      id serial PRIMARY KEY,
+      embedding vector(128)
+  );
+  ```
 
-#### 原理
+- **插入数据**：
 
-IVFFlat 索引是一种适合高维向量数据的近似最近邻搜索索引。IVFFlat 将数据划分成多个簇，每个簇包含一系列向量，查询时只搜索几个相关的簇，以提高搜索速度。
+  ```sql
+  INSERT INTO items (embedding) VALUES
+  ('[0.1, 0.2, ..., 0.128]'),
+  ('[0.3, 0.4, ..., 0.128]');
+  ```
 
-- **索引结构**: IVFFlat 索引通过聚类算法将数据划分为多个列表（簇），每个簇内部存储多个向量。
-- **查询操作**: 通过检索有限的几个簇和计算近似结果，实现高效的 kNN 查询。
+- **创建 IVFFlat 索引**：
 
-#### 创建 IVFFlat 索引
+  ```sql
+  CREATE INDEX ON items USING ivfflat (embedding) WITH (lists = 100);
+  ```
 
-要在 `pgvector` 中使用 IVFFlat 索引，可以按以下方式创建：
+  - `lists`：设置总簇数量，通常是数据量的平方根，簇越多，查询精度越高，但查询速度越慢，且会增加索引的创建和维护成本。
 
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=100);
-```
+**应用场景**
 
-这里的 `lists=100` 指定了索引中的簇数量。更多的 `lists` 通常会提高查询精度，但也会增加索引大小和查询时间。
+- **大数据集**：适合处理大规模数据集，尤其是批量查询的情况，如图像数据库检索。
+- **实时分析**：在需要实时查询相似性但可以接受轻微精度损失的场景，如用户行为分析。
 
-#### 示例查询使用 IVFFlat 索引进行欧氏距离的最近邻查询：
+### 优化建议
 
-```sql
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'
-LIMIT 5;
-```
+- **参数调整**：
+  - 对于 HNSW，调整 `M` 和 `ef_construction` 可以有效提高查询精度，适当的内存开销是值得的。
+  - 对于 IVFFlat，`lists` 的选择直接影响查询速度和精度，需根据数据量和应用场景进行调整。
+- **数据预处理**：对数据进行归一化或标准化处理，可以提高模型的效果，特别是在 K-means 聚类阶段时。
+- **物化视图**：对于频繁的复杂查询，可预先计算并存储结果，减少实时计算量。
+- **负载均衡**：在多用户环境中，考虑负载均衡或者使用分片存储数据，如果向量数据量非常大，可以结合分区表策略，进一步提高查询性能。避免单一索引的性能瓶颈。
+- **监控与调试**：使用 PostgreSQL 的性能监控工具，定期检查索引性能，必要时进行重建或再优化。
 
-#### 适用场景
-
-- **大规模数据集**：IVFFlat 索引特别适合大规模向量数据检索。
-- **近似搜索**：当精准度稍有降低但查询速度要求高时，IVFFlat 是合适的选择。
-
-### 3. 执行计划和查询优化
-
-PostgreSQL 的查询优化器（Planner）会根据查询和表的统计信息选择最优的执行计划。通过 `EXPLAIN` 命令，用户可以查看查询的执行计划，确认索引是否被正确使用，并了解优化器选择的执行路径。
-
-#### 查看执行计划
-
-通过 `EXPLAIN ANALYZE` 检查查询计划：
-
-```sql
-EXPLAIN ANALYZE
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'
-LIMIT 5;
-```
-
-#### 解释执行计划
-
-执行计划会提供以下关键信息：
-
-- **选择的索引**：确认使用了 GiST 或 IVFFlat 索引。
-- **查询时间**：每个步骤的时间消耗，帮助识别瓶颈。
-- **访问方法**：如索引扫描、顺序扫描等。
-
-### 4. 性能调优建议
-
-#### 合理选择索引类型
-
-根据查询需求选择合适的索引类型：
-
-- **精确搜索**：优先使用 GiST 索引。
-- **近似搜索**：优先使用 IVFFlat 索引，特别是大规模数据集。
-
-#### 参数调整
-
-在创建 IVFFlat 索引时，调整 `lists` 参数以平衡查询精度和速度：
-
-```sql
-CREATE INDEX ON items USING ivfflat (embedding) WITH (lists=200);
-```
-
-#### 更新统计信息
-
-定期更新表的统计信息，使优化器能做出更好的执行计划决策：
-
-```sql
-ANALYZE items;
-```
-
-#### 分段查询
-
-对于超大数据集，可以将查询分段执行，减少单次查询量，避免性能瓶颈。
-
-### 5. 结合物化视图和缓存机制
-
-在某些场景中，为了优化频繁查询，可以结合物化视图和缓存机制：
-
-#### 物化视图
-
-预计算并存储一些查询结果，减少实时计算量：
-
-```sql
-CREATE MATERIALIZED VIEW mv_top_5 AS
-SELECT id, embedding
-FROM items
-ORDER BY embedding <-> '[1.0, 0.5, 0.3, ..., 0.2]'
-LIMIT 5;
-```
-
-定期刷新物化视图以保持数据实时性：
-
-```sql
-REFRESH MATERIALIZED VIEW mv_top_5;
-```
-
-#### 内存缓存
-
-结合 Redis 等内存缓存机制，缓存热门查询结果，进一步提高查询效率。
-
-### 小结
-
-通过 `pgvector` 提供的 GiST 和 IVFFlat 索引，PostgreSQL 支持高效的向量检索和相似度计算。选择适当的索引类型、合理调整参数、定期更新统计信息，以及结合物化视图和内存缓存机制，都是确保向量检索性能的关键步骤。充分理解这些索引结构及其底层原理，可以有效提升面对高维向量数据时的查询速度和效率。
-
----
+通过了解 HNSW 和 IVFFlat 的原理、创建方法以及应用场景，可以更好地使用 `pgvector` 扩展来进行高效的相似性搜索，并为不同的应用需求提供合适的解决方案。
 
 ## 典型应用场景
 
-1. **推荐系统**：基于用户行为向量或内容向量进行相似性推荐。
-2. **图像检索**：通过图像特征向量实现图像相似性搜索。
-3. **文本相似度**：将文本嵌入为向量，进行文本相似度计算。
-4. **机器学习**：在数据库中存储和管理模型嵌入向量，支持高效的向量检索和相似度计算。
+- **推荐系统**：基于用户行为向量或内容向量进行相似性推荐。
+- **图像检索**：通过图像特征向量实现图像相似性搜索。
+- **文本相似度**：将文本嵌入为向量，进行文本相似度计算。
+- **机器学习**：在数据库中存储和管理模型嵌入向量，支持高效的向量检索和相似度计算。
 
-### 小结
+## 结语
 
-`pgvector` 扩展为 PostgreSQL 带来了强大的向量检索和操作能力，使其能够更好地处理现代应用中常见的高维向量数据。通过使用合适的索引和向量相似度计算方法，可以显著提高向量检索的效率和性能。这为构建需要实时向量检索和相似性计算的高性能应用提供了可靠的数据库支持。
+通过以上描述，可以看到如何在 PostgreSQL 中使用 `pgvector` 存储和操作向量数据，并且针对不同需求进行查询优化和性能提升。这为需要进行高维向量检索和相似性计算的现代许多机器学习和数据科学应用，如推荐系统、图像检索和自然语言处理等提供了强有力的支持。
+
+`pgvector` 为 PostgreSQL 引入了专门针对向量数据的索引，特别是 HNSW 和 IVFFlat 索引。这些索引帮助实现高效的向量检索和相似度计算。在选择 HNSW 或 IVFFlat 索引时，应根据应用场景的具体需求（如查询频率、数据更新频率和可用内存等）做出选择。HNSW 适合需要高检索精度和灵活更新的数据集，而 IVFFlat 则更适合需要快速处理庞大数据集但对精度有轻微取舍的场景。
+
+选择适当的索引类型、合理调整参数、定期更新统计信息，以及结合物化视图和内存缓存机制，监控性能都是确保向量检索性能的关键步骤。充分理解这些索引结构及其底层原理，可以有效提升面对高维向量数据时的查询速度和效率。
 
 ---
 
