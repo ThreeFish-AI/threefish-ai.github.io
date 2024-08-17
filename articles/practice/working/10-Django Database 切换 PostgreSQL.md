@@ -1,11 +1,11 @@
 ---
 id: django-postgresql-ssl
-sidebar_position: 8
+sidebar_position: 10
 title: Django 集成 PostgreSQL：使用 SSL/TLS 证书连接
 description: Django 集成 PostgreSQL：使用 SSL/TLS 证书连接
 last_update:
   author: Aurelius
-  date: 2024-08-15
+  date: 2024-08-18
 tags:
   - Django
   - 集成
