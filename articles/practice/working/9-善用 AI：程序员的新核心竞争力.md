@@ -1,8 +1,8 @@
 ---
 id: make-good-use-of-ai
 sidebar_position: 9
-title: 善用 AI：程序员的核心竞争力
-description: 善用 AI：程序员的核心竞争力
+title: 善用 AI：程序员的新核心竞争力
+description: 善用 AI：程序员的新核心竞争力
 last_update:
   author: Aurelius
   date: 2024-08-18
