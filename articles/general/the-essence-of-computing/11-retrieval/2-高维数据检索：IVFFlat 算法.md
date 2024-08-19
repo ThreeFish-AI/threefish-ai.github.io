@@ -7,7 +7,7 @@ last_update:
   author: Aurelius
   date: 2024-08-18
 tags:
-  - 现代
+  - 高维数据
   - 信息检索
   - IVFFlat
   - 算法
