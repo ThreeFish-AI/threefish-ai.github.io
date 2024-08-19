@@ -1,6 +1,6 @@
 ---
 id: unsupervised-learning-k-means
-sidebar_position: 3
+sidebar_position: 4
 title: 无监督学习：K-Means 聚类算法
 description: 无监督学习：K-Means 聚类算法
 last_update:
