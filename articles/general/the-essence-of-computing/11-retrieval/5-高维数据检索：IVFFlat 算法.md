@@ -1,6 +1,6 @@
 ---
 id: retrieval-ivfflat
-sidebar_position: 2
+sidebar_position: 5
 title: 高维数据检索：IVFFlat 算法
 description: 现代信息检索：IVFFlat 算法
 last_update:

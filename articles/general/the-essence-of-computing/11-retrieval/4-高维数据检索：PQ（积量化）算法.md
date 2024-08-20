@@ -1,6 +1,6 @@
 ---
 id: retrieval-pq
-sidebar_position: 5
+sidebar_position: 4
 title: 高维数据检索：PQ 算法
 description: 高维数据检索：PQ 算法
 last_update:

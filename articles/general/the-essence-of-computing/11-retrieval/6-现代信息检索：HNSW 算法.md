@@ -1,6 +1,6 @@
 ---
 id: retrieval-hnsw
-sidebar_position: 1
+sidebar_position: 6
 title: 现代信息检索：HNSW 算法
 description: 现代信息检索：HNSW 算法
 last_update:
