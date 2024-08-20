@@ -1,6 +1,6 @@
 ---
 id: retrieval-faiss
-sidebar_position: 6
+sidebar_position: 7
 title: 向量数据库 Faiss：搭建与使用
 description: 向量数据库 Faiss：搭建与使用
 last_update:
