@@ -1,8 +1,8 @@
 ---
 id: retrieval-milvus
 sidebar_position: 8
-title: Milvus：智能检索新时代
-description: Milvus：智能检索新时代
+title: 向量数据库 Milvus：智能检索新时代
+description: 向量数据库 Milvus：智能检索新时代
 last_update:
   author: Aurelius
   date: 2024-08-21
