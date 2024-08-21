@@ -1,11 +1,11 @@
 ---
 id: django-celery-worker-tasks
 sidebar_position: 12
-title: Django 集成 Celery Worker：状态监控和任务管理
-description: Django 集成 Celery Worker：状态监控和任务管理
+title: Django 集成 Celery：状态监控与任务管理
+description: Django 集成 Celery：状态监控与任务管理
 last_update:
   author: Aurelius
-  date: 2024-08-18
+  date: 2024-08-23
 tags:
   - Django
   - 集成
@@ -14,7 +14,11 @@ tags:
   - 任务管理
 ---
 
-下面是一个完整的步骤指南，教你如何通过 Django 安装和配置来管理 Celery 任务，通过 Django Admin 界面提供任务的查询、查看、重试、终止等功能。
+如何通过 Django 来管理 Celery 任务？通过 Django Admin 界面提供任务的查询、查看、重试、终止等功能？下面是一个完整的步骤指南。
+
+![Cover](<assets/Django 集成 Celery：状态监控与任务管理.drawio.png>)
+
+## 使用 Django 管理 Celery Worker
 
 ### 1. 安装 Django 和相关包
 
@@ -36,24 +40,24 @@ django-admin startapp myapp
 
 ### 3. 配置 Django 和 Celery
 
-在你的 `myproject/settings.py` 文件中添加以下内容：
+在 `myproject/settings.py` 文件中添加以下内容：
 
 ```python
 INSTALLED_APPS = [
     ...,
     'django_celery_results',
     'django_celery_beat',
-    'myapp',  # 确保你的 app 在这个列表里
+    'myapp',  # 确保 app 在这个列表里
 ]
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为示例，你可以根据需求更改
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为示例，可以根据需求更改
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
 
 CELERY_TRACK_STARTED = True
 CELERY_SEND_EVENTS = True
 
-# 确保你已经配置了数据库
+# 确保已经配置了数据库
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -117,116 +121,9 @@ def add(x, y):
     return x + y
 ```
 
-### 5. 配置 Django Admin 界面管理 Celery 任务
+### 5. 注册自定义的 `TaskResultAdmin`
 
-在 `myapp/admin.py` 中配置 Django Admin：
-
-```python
-from django.contrib import admin
-from django_celery_results.models import TaskResult
-from django.urls import path
-from django.shortcuts import redirect
-from celery.result import AsyncResult
-from myproject.celery import app
-
-@admin.register(TaskResult)
-class TaskResultAdmin(admin.ModelAdmin):
-    list_display = ('task_id', 'status', 'date_done', 'task_name')
-    search_fields = ('task_id', 'task_name')
-    change_list_template = "admin/celery_task_changelist.html"
-
-    def get_urls(self):
-        urls = super().get_urls()
-        custom_urls = [
-            path('retry/<task_id>/', self.admin_site.admin_view(self.retry_task), name='retry-task'),
-            path('terminate/<task_id>/', self.admin_site.admin_view(self.terminate_task), name='terminate-task'),
-        ]
-        return custom_urls + urls
-
-    def retry_task(self, request, task_id, *args, **kwargs):
-        AsyncResult(task_id, app=app).reapply()
-        self.message_user(request, f'Task {task_id} retried successfully.')
-        return redirect('..')
-
-    def terminate_task(self, request, task_id, *args, **kwargs):
-        AsyncResult(task_id, app=app).revoke(terminate=True)
-        self.message_user(request, f'Task {task_id} terminated successfully.')
-        return redirect('..')
-```
-
-### 6. 创建 Django Admin 界面的自定义模板
-
-在你的 Django 项目中创建以下目录结构 `templates/admin` 并在 `admin` 文件夹内创建 `celery_task_changelist.html`：
-
-```html
-{% extends "admin/change_list.html" %} {% block result_list %} {{ block.super }}
-<script>
-  function handleTask(action, task_id) {
-    fetch(`/admin/retry/${task_id}/`, {
-      method: 'POST',
-      headers: {
-        'X-CSRFToken': '{{ csrf_token }}',
-      },
-    }).then((response) => {
-      if (response.ok) {
-        location.reload();
-      } else {
-        alert('Action failed.');
-      }
-    });
-  }
-</script>
-<div>
-  <form method="post">
-    {% csrf_token %} {% for result in cl.result_list %}
-    <button type="button" onclick="handleTask('retry', '{{ result.task_id }}')">
-      Retry
-    </button>
-    <button
-      type="button"
-      onclick="handleTask('terminate', '{{ result.task_id }}')"
-    >
-      Terminate
-    </button>
-    {% endfor %}
-  </form>
-</div>
-{% endblock %}
-```
-
-### 7. 运行 Django 和 Celery
-
-应用数据库迁移：
-
-```sh
-python manage.py migrate
-```
-
-启动 Django 服务器：
-
-```sh
-python manage.py runserver
-```
-
-启动 Celery worker：
-
-```sh
-celery -A myproject worker -l info
-```
-
-### 8. 使用 Django Admin 管理 Celery 任务
-
-打开浏览器并访问 `http://127.0.0.1:8000/admin/`，你的 Celery 任务将会在 Django admin 界面中显示，并且可以通过点击按钮来进行查询、查看、重试和终止等操作。
-
-这样你就完成了通过 Django Admin 界面管理 Celery 任务的完整步骤。如有需要可以进一步定制和优化界面和功能。
-
----
-
-这个异常是因为 `TaskResult` 模型已经被 `django_celery_results` 自动注册到 Django Admin 中了。我们可以通过继承 `django_celery_results` 的 `TaskResultAdmin` 并覆盖的方式来避免重复注册模型。下面是解决办法。
-
-### 1. 取消注册已经注册的 `TaskResult`
-
-我们可以在自定义 `TaskResultAdmin` 之前先取消已经注册的模型。
+我们需要在自定义 `TaskResultAdmin` 之前先取消已经注册的模型。
 
 在 `myapp/admin.py` 中做如下修改：
 
@@ -268,11 +165,11 @@ class CustomTaskResultAdmin(DefaultTaskResultAdmin):
 admin.site.register(TaskResult, CustomTaskResultAdmin)
 ```
 
-### 2. 确保自定义模板的位置
+`TaskResult` 模型已经被 `django_celery_results` 自动注册到 Django Admin 中了。我们可以通过继承 `django_celery_results` 的 `TaskResultAdmin` 并覆盖的方式来避免重复注册模型。
 
-确保自定义的模板路径正确。对于默认 Django 项目模板目录，模板文件夹应该在 `myproject/templates/admin/celery_task_changelist.html`。创建模板文件夹（如果它还不存在），并将之前提到的模板文件添加进去：
+### 6. 创建 Django Admin 界面的自定义模板
 
-`myproject/templates/admin/celery_task_changelist.html`：
+在 Django 项目中创建以下目录结构 `templates/admin` 并在 `admin` 文件夹内创建 `celery_task_changelist.html`：
 
 ```html
 {% extends "admin/change_list.html" %} {% block result_list %} {{ block.super }}
@@ -311,25 +208,35 @@ admin.site.register(TaskResult, CustomTaskResultAdmin)
 {% endblock %}
 ```
 
-### 3. 完成其它设置
+确保自定义的模板路径正确。对于默认 Django 项目模板目录，模板文件夹应该在 `myproject/templates/admin/celery_task_changelist.html`。
 
-不用修改原来的配置和任务定义，确保都配置好了。
+### 7. 运行 Django 和 Celery
 
-### 4. 重启服务
-
-在所有更改完成后，按照以下步骤重启 Django 服务和 Celery worker：
+应用数据库迁移：
 
 ```sh
-# 重启 Django 开发服务器
-python manage.py runserver
+python manage.py migrate
+```
 
-# 重启 Celery worker
+启动 Django 服务器：
+
+```sh
+python manage.py runserver
+```
+
+启动 Celery worker：
+
+```sh
 celery -A myproject worker -l info
 ```
 
-完成上述步骤后，应该可以顺利地在 Django Admin 界面管理 Celery 任务了，包括查询、查看、重试和终止任务。
+### 8. 使用 Django Admin 管理 Celery 任务
 
----
+打开浏览器并访问 `http://127.0.0.1:8000/admin/`，Celery 任务将会在 Django admin 界面中显示，并且可以通过点击按钮来进行查询、查看、重试和终止等操作。
+
+这样就完成了通过 Django Admin 界面管理 Celery 任务的完整步骤。如有需要可以进一步定制和优化界面和功能。
+
+## 启动 Django 本地的 Celery Worker
 
 为了在启动 Celery Worker 后向 Worker 发起任务，并在 Django Admin 界面演示查询、查看、重试和终止任务，可以按以下步骤进行操作：
 
@@ -355,9 +262,9 @@ def long_running_task(duration):
 
 ### 2. 创建触发任务的视图
 
-为了便于演示，可以创建一些视图来触发这些任务。更新你的 `urls.py` 和 `views.py` 文件。
+为了便于演示，可以创建一些视图来触发这些任务。更新 `urls.py` 和 `views.py` 文件。
 
-#### 在 `myapp/views.py` 中：
+在 `myapp/views.py` 中：
 
 ```python
 # myapp/views.py
@@ -373,7 +280,7 @@ def trigger_long_running_task(request):
     return JsonResponse({'status': 'Long running task for 30 seconds triggered'})
 ```
 
-#### 在 `myapp/urls.py` 中：
+在 `myapp/urls.py` 中：
 
 ```python
 # myapp/urls.py
@@ -386,7 +293,7 @@ urlpatterns = [
 ]
 ```
 
-#### 在 `myproject/urls.py` 中：
+在 `myproject/urls.py` 中：
 
 ```python
 # myproject/urls.py
@@ -405,13 +312,13 @@ urlpatterns = [
 
 ```python
 # myproject/settings.py
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为示例，你可以根据需求更改
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为示例，可以根据需求更改
 CELERY_RESULT_BACKEND = 'django-db'
 ```
 
 ### 4. 启动 Celery Worker 和 Django 服务器
 
-确保你已经启动了 Redis 服务：
+确保已经启动了 Redis 服务：
 
 ```sh
 redis-server
@@ -434,21 +341,19 @@ celery -A myproject worker -l info
 - `http://127.0.0.1:8000/tasks/trigger-add-task/` - 触发增加任务
 - `http://127.0.0.1:8000/tasks/trigger-long-task/` - 触发长时间运行任务
 
-通过这些 URL 你将触发 Celery 任务。然后你可以通过 Django Admin 界面进行查询、查看、重试和终止这些任务。
+通过这些 URL 触发 Celery 任务。然后可以通过 Django Admin 界面进行查询、查看、重试和终止这些任务。
 
 ### 6. 在 Django Admin 界面查看任务状态
 
-打开浏览器并访问 `http://127.0.0.1:8000/admin/`，登陆 Django Admin 界面，导航到 `Task Results` 部分。你应该能看到适当的任务列表，并通过你之前在自定义 `TaskResultAdmin` 中定义的操作进行重试和终止任务。
+打开浏览器并访问 `http://127.0.0.1:8000/admin/`，登陆 Django Admin 界面，导航到 `Task Results` 部分。应该能看到适当的任务列表，并通过之前在自定义 `TaskResultAdmin` 中定义的操作进行重试和终止任务。
 
-这些步骤将帮助你能够通过 Django 和 Celery 演示触发任务并在 Django Admin 界面中进行查询、查看、重试、终止等操作。希望这能让你的演示更加顺利，看到实时效果。
+这些步骤能够通过 Django 和 Celery 演示触发任务并在 Django Admin 界面中进行查询、查看、重试、终止等操作。
 
----
+## 启动远程的 Celery Worker
 
-要通过 Django Admin 管理和监控在远程服务器上单独运行且由独立代码仓库维护的 Celery Worker，你需要配置和协调多个独立的系统。下面是分步指南，详细描述如何实现这一目标：
+要通过 Django Admin 管理和监控在远程服务器上单独运行且由独立代码仓库维护的 Celery Worker，需要配置和协调多个独立的系统。
 
-### 1. 配置远程服务器的 Celery Worker
-
-#### 1.1 安装和配置 Celery Worker
+### 安装 Celery Worker
 
 在远程服务器上，创建一个独立的项目（假设名字为 `worker_project`），并安装所需的依赖：
 
@@ -459,7 +364,7 @@ source venv/bin/activate
 pip install celery redis
 ```
 
-#### 1.2 配置 Celery Worker
+### 配置 Celery Worker
 
 在 `worker_project` 内部配置 Celery（`worker_project/celery.py`）：
 
@@ -487,7 +392,7 @@ CELERY_BROKER_URL = 'redis://your_redis_server:6379/0'  # 替换为实际的 Red
 CELERY_RESULT_BACKEND = 'redis://your_redis_server:6379/0'
 ```
 
-#### 1.3 定义任务
+### 定义任务
 
 创建一些测试任务（`worker_project/tasks.py`）：
 
@@ -506,170 +411,10 @@ def long_running_task(duration):
     return f"Task completed after {duration} seconds"
 ```
 
-#### 1.4 启动 Celery Worker
+### 启动 Celery Worker
 
 ```sh
 celery -A worker_project worker -l info
-```
-
-### 2. 配置本地 Django 项目
-
-#### 2.1 安装所需的依赖
-
-在本地 Django 项目中，安装所需的依赖：
-
-```sh
-python -m venv venv
-source venv/bin/activate
-pip install django django-celery-results django-celery-beat celery redis
-```
-
-#### 2.2 配置 Django 和 Celery
-
-在你的本地 Django 项目的 `settings.py` 中配置 Celery：
-
-```python
-INSTALLED_APPS = [
-    ...,
-    'django_celery_results',
-    'django_celery_beat',
-]
-
-CELERY_BROKER_URL = 'redis://your_redis_server:6379/0'  # 替换为实际的 Redis 地址，与远程服务器一致
-CELERY_RESULT_BACKEND = 'redis://your_redis_server:6379/0'
-```
-
-创建 `celery.py`（假设项目名为 `myproject`）：
-
-```python
-from __future__ import absolute_import, unicode_literals
-import os
-from celery import Celery
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
-
-app = Celery('myproject')
-app.config_from_object('django.conf:settings', namespace='CELERY')
-app.autodiscover_tasks()
-```
-
-在 `__init__.py` 中确保 Celery 在 Django 启动时加载：
-
-```python
-from __future__ import absolute_import, unicode_literals
-from .celery import app as celery_app
-__all__ = ('celery_app',)
-```
-
-#### 2.3 定义触发任务的视图
-
-创建触发任务的视图（`myapp/views.py`）：
-
-```python
-from django.http import JsonResponse
-from worker_project.tasks import add, long_running_task  # 确保能访问到远程仓库的 shared tasks
-
-def trigger_add_task(request):
-    add.delay(3, 4)  # 调用远程 Celery worker 中的任务
-    return JsonResponse({'status': 'Task add (3, 4) triggered'})
-
-def trigger_long_running_task(request):
-    long_running_task.delay(30)  # 调用远程 Celery worker 中的任务
-    return JsonResponse({'status': 'Long running task for 30 seconds triggered'})
-```
-
-在 `myapp/urls.py` 中配置 URL：
-
-```python
-from django.urls import path
-from .views import trigger_add_task, trigger_long_running_task
-
-urlpatterns = [
-    path('trigger-add-task/', trigger_add_task, name='trigger-add-task'),
-    path('trigger-long-task/', trigger_long_running_task, name='trigger-long-task'),
-]
-```
-
-### 3. 配置 Django Admin 界面管理 Celery 任务
-
-创建自定义的 `TaskResultAdmin`（`myapp/admin.py`）：
-
-```python
-from django.contrib import admin
-from django_celery_results.models import TaskResult
-from django_celery_results.admin import TaskResultAdmin as DefaultTaskResultAdmin
-from django.urls import path
-from django.shortcuts import redirect
-from celery.result import AsyncResult
-from myproject.celery import app
-
-# 取消已经注册的 TaskResult
-admin.site.unregister(TaskResult)
-
-# 创建一个自定义的 TaskResultAdmin 继承自默认的 TaskResultAdmin
-class CustomTaskResultAdmin(DefaultTaskResultAdmin):
-    change_list_template = "admin/celery_task_changelist.html"
-
-    def get_urls(self):
-        urls = super().get_urls()
-        custom_urls = [
-            path('retry/<task_id>/', self.admin_site.admin_view(self.retry_task), name='retry-task'),
-            path('terminate/<task_id>/', self.admin_site.admin_view(self.terminate_task), name='terminate-task'),
-        ]
-        return custom_urls + urls
-
-    def retry_task(self, request, task_id, *args, **kwargs):
-        AsyncResult(task_id, app=app).reapply()
-        self.message_user(request, f'Task {task_id} retried successfully.')
-        return redirect('..')
-
-    def terminate_task(self, request, task_id, *args, **kwargs):
-        AsyncResult(task_id, app=app).revoke(terminate=True)
-        self.message_user(request, f'Task {task_id} terminated successfully.')
-        return redirect('..')
-
-# 注册自定义的 TaskResultAdmin
-admin.site.register(TaskResult, CustomTaskResultAdmin)
-```
-
-创建模板文件 `myproject/templates/admin/celery_task_changelist.html`：
-
-```html
-{% extends "admin/change_list.html" %} {% block result_list_list %} {{
-block.super }}
-<script>
-  function handleTask(action, task_id) {
-    fetch(`/${action}/${task_id}/`, {
-      method: 'POST',
-      headers: {
-        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')
-          .value,
-      },
-    }).then((response) => {
-      if (response.ok) {
-        location.reload();
-      } else {
-        alert('Action failed.');
-      }
-    });
-  }
-</script>
-<div>
-  <form method="post">
-    {% csrf_token %} {% for result in cl.result_list %}
-    <button type="button" onclick="handleTask('retry', '{{ result.task_id }}')">
-      Retry
-    </button>
-    <button
-      type="button"
-      onclick="handleTask('terminate', '{{ result.task_id }}')"
-    >
-      Terminate
-    </button>
-    {% endfor %}
-  </form>
-</div>
-{% endblock %}
 ```
 
 ### 4. 启动和测试
@@ -689,13 +434,11 @@ python manage.py runserver
 
 通过 `http://127.0.0.1:8000/admin/` 登录 Django Admin 界面，导航到 `Task Results` 部分，您应该能看到这些任务并管理它们（如重试和终止）。
 
-### 总结
-
 以上配置实现了在本地的 Django 项目中通过 Django Admin 管理和监控在远程服务器上单独运行的 Celery Worker，并通过 Redis 进行通信。这种架构可以在实际生产环境中更好地分离职责并提高系统的健壮性和扩展性。
 
----
+## 使用 Django Admin 管理 Flask 启动的 Celery Worker 的常见问题
 
-在 Django Admin 界面没有显示 Flask 应用中 Celery Worker 发起的任务和任务执行结果，可能有以下几个原因：
+在使用 Flask App 启动远程 Celery Worker，并在 Django Admin 对这些 Worker 进行监控和管理时，可能会遇到诸如 Django Admin 界面没有显示 Celery Worker 任务和任务执行结果的问题，可能有以下几个原因：
 
 1. **结果后端配置错误**：确保 Flask 和 Django 使用相同的结果后端（result backend）。
 2. **Django 配置错误**：确保 Django 已正确配置 Celery 结果后端。
@@ -796,4 +539,12 @@ debug_task.delay()
 celery -A your_flask_app_name worker --loglevel=info
 ```
 
-通过这些步骤，你应该能确保在 Django Admin 界面中正确显示 Flask 应用中 Celery Worker 发起的任务和任务执行结果。如果问题仍然存在，检查日志和配置是否有任何错误，并确保 Flask 和 Django 的所有 Celery 配置和数据库访问是有效且一致的。
+通过这些步骤，应该能确保在 Django Admin 界面中正确显示 Flask 应用中 Celery Worker 发起的任务和任务执行结果。如果问题仍然存在，检查日志和配置是否有任何错误，并确保 Flask 和 Django 的所有 Celery 配置和数据库访问是有效且一致的。
+
+## 结语
+
+通过 Django Admin 管理 Celery Worker 任务是一种方便的方式，可以通过简单的配置和定制来实现任务的查询、查看、重试和终止等操作。通过本文提供的步骤和示例，您可以轻松地在 Django 项目中集成 Celery Worker，并通过 Django Admin 界面对任务进行管理和监控。
+
+---
+
+**PS：感谢每一位志同道合者的阅读，欢迎关注、点赞、评论！**
