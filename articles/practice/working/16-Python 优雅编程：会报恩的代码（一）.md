@@ -1,8 +1,8 @@
 ---
 id: python-elegant-programming-1
 sidebar_position: 16
-title: Python 优雅编程：来报恩的代码（一）
-description: Python 优雅编程：来报恩的代码（一）
+title: Python 优雅编程：会报恩的代码（一）
+description: Python 优雅编程：会报恩的代码（一）
 last_update:
   author: Aurelius
   date: 2024-08-25
@@ -10,7 +10,7 @@ tags:
   - Python
   - 优雅编程
   - 神来一码
-  - 来报恩的代码
+  - 报恩的代码
   - yield
   - yield from
   - datetime
@@ -21,7 +21,7 @@ tags:
 
 在 Python 编程中，有一些技巧和最佳实践可以帮助你编写更优雅、更高效的代码。本文将介绍 Python 中的 `yield` 和 `yield from` 用法，以及处理 `offset-naive` 和 `offset-aware` 的 `datetime` 对象时的最佳实践。此外，我们还将探讨如何处理 `requests` 异常，以提高代码的鲁棒性和用户体验。
 
-![Cover](<assets/Python 优雅编程：来报恩的代码（一）.drawio.png>)
+![Cover](<assets/Python 优雅编程：会报恩的代码（一）.drawio.png>)
 
 ## yield 与 yield from
 
