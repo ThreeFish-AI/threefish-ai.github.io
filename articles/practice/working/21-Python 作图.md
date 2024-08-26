@@ -1,11 +1,11 @@
 ---
 id: python-draw
-sidebar_position: 17
+sidebar_position: 21
 title: Python 作图
 description: Python 作图
 last_update:
   author: Aurelius
-  date: 2024-08-27
+  date: 2024-08-29
 tags:
   - Python
   - 作图

@@ -1,8 +1,8 @@
 ---
-id: python-elegant-programming-1
-sidebar_position: 16
-title: Python 优雅编程：会报恩的代码（一）
-description: Python 优雅编程：会报恩的代码（一）
+id: python-elegant-programming-2
+sidebar_position: 18
+title: Python 优雅编程：会报恩的代码（二）
+description: Python 优雅编程：会报恩的代码（二）
 last_update:
   author: Aurelius
   date: 2024-08-25
