@@ -1,7 +1,7 @@
 ---
 id: rdbms-storage-index-pgvector
 sidebar_position: 7
-title: 数据库技术核心：向量检索（pgvector）
+title: 向量检索（pgvector）
 description: 数据库技术核心：向量检索（pgvector）
 last_update:
   author: Aurelius
@@ -85,10 +85,6 @@ tags:
 
 - **欧氏距离**：欧氏距离计算会遍历两个向量的每个维度，计算平方和，再取平方根。
 
-  $$
-    \text{Euclidean Distance} = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
-  $$
-
   ```c
   float euclidean_distance(const float *a, const float *b, int length) {
       float sum = 0.0;
@@ -101,10 +97,6 @@ tags:
   ```
 
 - **余弦相似度**：余弦相似度计算两个向量的点积，并归一化向量以计算余弦角度。
-
-  $$
-    \text{Cosine Similarity} = \frac{a \cdot b}{\|a\| \|b\|}
-  $$
 
   ```c
   float cosine_similarity(const float *a, const float *b, int length) {
@@ -121,10 +113,6 @@ tags:
   ```
 
 - **内积**：内积计算两个向量对应维度的乘积之和。
-
-  $$
-    \text{Dot Product} = \sum_{i=1}^{n} a_i \cdot b_i
-  $$
 
   ```c
   float dot_product(const float *a, const float *b, int length) {

@@ -1,7 +1,7 @@
 ---
 id: rdbms-storage-index-basic-maintenance
 sidebar_position: 5
-title: 数据库技术核心：基本维护（PostgreSQL）
+title: 基本维护（PostgreSQL）
 description: 数据库技术核心：基本维护（PostgreSQL）
 last_update:
   author: Aurelius
