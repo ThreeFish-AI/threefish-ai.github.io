@@ -1,7 +1,7 @@
-position: 11 # float position is supported
+position: 4 # float position is supported
 label: '信息检索技术'
 collapsible: true # make the category collapsible
-collapsed: true # keep the category open by default
+collapsed: false # keep the category open by default
 className: red
 link:
   type: generated-index
