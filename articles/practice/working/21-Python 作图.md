@@ -1,11 +1,11 @@
 ---
 id: python-draw
-sidebar_position: 17
+sidebar_position: 21
 title: Python 作图
 description: Python 作图
 last_update:
   author: Aurelius
-  date: 2024-08-27
+  date: 2024-08-29
 tags:
   - Python
   - 作图
@@ -74,3 +74,7 @@ plt.show()
 
 - 您可以根据实际需要自定义节点的位置和布局。
 - 如果您的图较复杂，可以使用其他布局算法生成位置字典，并在此基础上进行调整。
+
+---
+
+**PS：感谢每一位志同道合者的阅读，欢迎关注、点赞、评论！**
