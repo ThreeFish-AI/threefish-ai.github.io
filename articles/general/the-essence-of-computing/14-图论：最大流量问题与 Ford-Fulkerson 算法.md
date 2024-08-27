@@ -10,6 +10,9 @@ tags:
   - 图论
   - 最大流量
   - Ford-Fulkerson
+  - Edmonds-Karp
+  - 增广路径
+  - 最小切割
   - 算法
 ---
 
