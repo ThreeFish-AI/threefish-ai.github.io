@@ -1,6 +1,6 @@
 ---
 id: computational-thinking-serial-parallel-distributed-gpu
-sidebar_position: 15
+sidebar_position: 16
 title: 计算思维：串行、并行、分布式云计算、GPU
 description: 计算思维：串行、并行、分布式云计算、GPU
 last_update:
