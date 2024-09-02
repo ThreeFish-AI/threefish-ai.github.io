@@ -123,6 +123,17 @@ const config: Config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'general-mathematics',
+        path: './articles/general/general-mathematics',
+        routeBasePath: 'general-mathematics',
+        sidebarPath: './sidebars.ts',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
 
     // 算法通解
     [
@@ -250,6 +261,13 @@ const config: Config = {
               docId: 'index',
               type: 'doc',
               docsPluginId: 'essence-of-computing',
+            },
+            {
+              to: '/general-mathematics',
+              label: '数学通识',
+              docId: 'index',
+              type: 'doc',
+              docsPluginId: 'general-mathematics',
             },
           ],
         },
