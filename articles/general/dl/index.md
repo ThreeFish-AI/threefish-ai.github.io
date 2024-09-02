@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: Home
+title: 深度学习
 description: Deep Learning
 last_update:
   author: Aurelius
@@ -9,6 +9,7 @@ last_update:
 tags:
   - Home
   - Deep Learning
+  - 深度学习
 ---
 
 **Welcome to ThreeFish · Deep Learning!**

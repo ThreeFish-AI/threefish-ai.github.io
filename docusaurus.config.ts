@@ -237,14 +237,14 @@ const config: Config = {
             {
               to: '/ml',
               label: '机器学习',
-              docId: 'overview',
+              docId: 'index',
               type: 'doc',
               docsPluginId: 'ml',
             },
             {
               to: '/dl',
               label: '深度学习',
-              docId: 'overview',
+              docId: 'index',
               type: 'doc',
               docsPluginId: 'dl',
             },
