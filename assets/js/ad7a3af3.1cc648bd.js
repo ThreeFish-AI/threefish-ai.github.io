@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[7797],{48195:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/trend","page":1,"postsPerPage":5,"totalPages":2,"totalCount":8,"nextPage":"/trend/page/2","blogDescription":"Blog","blogTitle":"\u52a8\u6001"}}')}}]);
