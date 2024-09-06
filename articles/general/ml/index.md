@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: Home
+title: 机器学习
 description: Machine Learning
 last_update:
   author: Aurelius
