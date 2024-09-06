@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[2234],{81641:e=>{e.exports=JSON.parse('{"tag":{"label":"Home","permalink":"/algorithm/tags/home","allTagsPath":"/algorithm/tags","count":1,"items":[{"id":"index","title":"Home","description":"Algorithmic Universal Solutions","permalink":"/algorithm/"}],"unlisted":false}}')}}]);

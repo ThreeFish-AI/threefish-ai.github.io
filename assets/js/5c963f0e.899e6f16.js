@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[5656],{14593:a=>{a.exports=JSON.parse('{"tags":[{"label":"\u6570\u5b66\u901a\u8bc6","permalink":"/general-mathematics/tags/\u6570\u5b66\u901a\u8bc6","count":1}]}')}}]);

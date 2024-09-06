@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[81903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/trend","blogTitle":"\u52a8\u6001"}')}}]);

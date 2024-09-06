@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaurelius_huang=self.webpackChunkaurelius_huang||[]).push([[76163],{13038:a=>{a.exports=JSON.parse('{"tag":{"label":"Home","permalink":"/java/tags/home","allTagsPath":"/java/tags","count":1,"items":[{"id":"index","title":"Home","description":"Java \u7f16\u7a0b","permalink":"/java/"}],"unlisted":false}}')}}]);
