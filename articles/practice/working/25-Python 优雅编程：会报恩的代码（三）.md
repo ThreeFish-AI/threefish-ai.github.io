@@ -20,7 +20,7 @@ tags:
 
 在 Python 编程中，有一些常用技巧和最佳实践可以帮助你编写更优雅、更高效的代码。本文将介绍的是 Python 中使用 `Scikit-Learn` 下载 `MNIST` 数据，并训练模型，序列化模型、`MLPClassifier` 模型的参数查看、MLPClassifier 的`激活函数`及其实现、从 `pandas.core.frame.DataFrame` 中获取数据等。
 
-![Cover](<assets/Python 优雅编程：会报恩的代码.png>)
+![Cover](<assets/cover/Python 优雅编程：会报恩的代码.drawio.png>)
 
 ## Scikit-Learn 下载 MNIST 数据、训练模型、序列化模型
 

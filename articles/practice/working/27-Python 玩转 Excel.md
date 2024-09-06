@@ -19,9 +19,9 @@ tags:
 
 ## 引言
 
-在数据处理和分析中，Excel 是一种常用的工具，而 Python 也是一种强大的编程语言。结合 Python 的数据处理库，可以方便地操作 Excel 文件，进行数据读取、处理、分析和报告生成等工作。本文将介绍如何使用 Python 操作 Excel 文件，包括读取、写入、数据处理、样式设置、数据验证、公式支持和图表创建等方面的内容。
+`Excel` 是在数据处理和分析中一种最常用的工具，而 Python 是一种强大的编程语言。结合 Python 的数据处理库，可以方便地操作 Excel 文件，进行数据读取、处理、分析和报告生成等工作。本文将介绍如何使用 Python 操作 Excel 文件，包括读取、写入、数据处理、样式设置、数据验证、公式支持和图表创建等方面的内容。
 
-![Python-Excel](assets/Python-Excel.png)
+![Cover](<assets/cover/Python 玩转 Excel.drawio.png>)
 
 在 Python 中，有多种库和方法可以操作 Excel 文件。下面我们捡一些常用的库及其基本操作进行介绍。
 

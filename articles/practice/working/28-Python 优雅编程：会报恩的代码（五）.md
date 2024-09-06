@@ -14,7 +14,7 @@ tags:
 
 在 Python 编程中，有一些常用技巧和最佳实践可以帮助你编写更优雅、更高效的代码。本文将介绍的是使用 Python 从文本中搜索指定单词的几个简单实现方式。
 
-![Cover](<assets/Python 优雅编程：会报恩的代码.png>)
+![Cover](<assets/cover/Python 优雅编程：会报恩的代码.drawio.png>)
 
 ## 从文本搜索指定单词，不区分单词的大小写
 
