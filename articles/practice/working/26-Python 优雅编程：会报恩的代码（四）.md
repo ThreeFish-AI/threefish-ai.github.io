@@ -19,7 +19,7 @@ tags:
 
 在 Python 编程中，有一些常用技巧和最佳实践可以帮助你编写更优雅、更高效的代码。本文将介绍的是 Python 中 `urllib.parse.quote_plus` 的 URL 编码作用、判断指定路径的文件是否存在、使用 `imaplib` 与 `smtplib` 实现收发邮件、使用 `matplotlib` 绘制人工神经网络拓扑图、使用 `Keras` 构建卷积神经网络（CNN）等。
 
-![Cover](<assets/Python 优雅编程：会报恩的代码（四）.drawio.png>)
+![Cover](<assets/cover/Python 优雅编程：会报恩的代码.drawio.png>)
 
 ## urllib.parse.quote_plus
 
