@@ -1,7 +1,7 @@
 ---
 id: python-elegant-programming-5
-sidebar_position: 28
-title: Python 优雅编程：会报恩的代码（五）
+sidebar_position: 5
+title: 会报恩的代码（五）
 description: Python 优雅编程：会报恩的代码（五）
 last_update:
   author: Aurelius
