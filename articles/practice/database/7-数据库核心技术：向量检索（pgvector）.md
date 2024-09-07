@@ -1,7 +1,7 @@
 ---
 id: rdbms-storage-index-pgvector
 sidebar_position: 7
-title: 向量检索（pgvector）
+title: pgvector 向量检索支持
 description: 数据库技术核心：向量检索（pgvector）
 last_update:
   author: Aurelius

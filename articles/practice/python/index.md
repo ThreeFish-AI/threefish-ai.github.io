@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: Home
+title: Python 编程
 description: Python 编程
 last_update:
   author: Aurelius

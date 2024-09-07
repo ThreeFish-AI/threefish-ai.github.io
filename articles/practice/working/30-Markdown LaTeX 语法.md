@@ -1,8 +1,8 @@
 ---
 id: markdown-latex-syntax
 sidebar_position: 30
-title: Markdown 语法
-description: Markdown 语法
+title: Markdown LaTeX 语法
+description: Markdown LaTeX 语法
 last_update:
   author: Aurelius
   date: 2024-09-04
@@ -16,7 +16,7 @@ tags:
 
 在 Python 编程中，有一些常用技巧和最佳实践可以帮助你编写更优雅、更高效的代码。本文将介绍的是 Python 中 `defaultdict` 的分组作用、`random` 在随机选取中的实践、使用 `networkx` 作图时，如何令图中的点一直保持相同的位置（不需要自行指定点的位置）、`logging.basicConfig` 的参数含义、`SQLAlchemy` 执行任意 SQL 等。
 
-![Cover](<assets/cover/Python 玩转 Excel.drawio.png>)
+<!-- ![Cover](<assets/cover/Python 玩转 Excel.drawio.png>) -->
 
 ## Markdown LaTeX 语法
 

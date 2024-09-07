@@ -1,7 +1,7 @@
 ---
 id: django-orm-and-sqlalchemy
-sidebar_position: 15
-title: Python ORM 最佳实践：Django ORM vs. SQLAlchemy
+sidebar_position: 7
+title: ORM｜Django vs. SQLAlchemy
 description: Python ORM 最佳实践：Django ORM vs. SQLAlchemy
 last_update:
   author: Aurelius

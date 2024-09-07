@@ -1,7 +1,7 @@
 ---
 id: rdbms-storage-index-query-optimization
 sidebar_position: 6
-title: 查询优化（PostgreSQL）
+title: PostgreSQL 查询优化
 description: 数据库技术核心：查询优化（PostgreSQL）
 last_update:
   author: Aurelius

@@ -1,6 +1,6 @@
 ---
 id: ai-model-all-round-and-specialized
-sidebar_position: 19
+sidebar_position: 8
 title: AI 模型的全能与专精之路
 description: AI 模型的全能与专精之路
 last_update:

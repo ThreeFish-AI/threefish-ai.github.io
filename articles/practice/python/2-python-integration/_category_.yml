@@ -1,10 +1,10 @@
-position: 3 # float position is supported
-label: 'Python 优雅编程'
+position: 2 # float position is supported
+label: 'Python 集成'
 collapsible: true # make the category collapsible
 collapsed: false # keep the category open by default
 className: red
 link:
   type: generated-index
-  title: Python 优雅编程
+  title: Python 集成
 customProps:
-  description: Python 优雅编程
+  description: Python 集成

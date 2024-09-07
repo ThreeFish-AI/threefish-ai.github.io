@@ -1,7 +1,7 @@
 ---
 id: celery-best-practice
-sidebar_position: 14
-title: 分布式任务队列：Celery 最佳实践
+sidebar_position: 6
+title: 分布式任务队列｜Celery
 description: 分布式任务队列：Celery 最佳实践
 last_update:
   author: Aurelius

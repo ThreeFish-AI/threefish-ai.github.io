@@ -1,6 +1,6 @@
 ---
 id: ai-writing
-sidebar_position: 20
+sidebar_position: 9
 title: AI 内容创作：思考与实践
 description: AI 内容创作：思考与实践
 last_update:
