@@ -1,7 +1,7 @@
 ---
 id: django-celery-worker-tasks
-sidebar_position: 12
-title: Django 集成 Celery：状态监控与任务管理
+sidebar_position: 5
+title: Django｜Celery 任务状态管理
 description: Django 集成 Celery：状态监控与任务管理
 last_update:
   author: Aurelius

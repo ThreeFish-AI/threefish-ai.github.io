@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 0
-title: Home
+title: 数据库技术核心
 description: 数据库技术核心
 last_update:
   author: Aurelius

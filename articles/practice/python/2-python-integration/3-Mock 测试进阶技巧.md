@@ -1,7 +1,7 @@
 ---
 id: mock-test
-sidebar_position: 5
-title: Mock 测试进阶技巧：灵活、准确、高效
+sidebar_position: 3
+title: 测试进阶技巧｜Mock
 description: Mock 测试进阶技巧：灵活、准确、高效
 last_update:
   author: Aurelius

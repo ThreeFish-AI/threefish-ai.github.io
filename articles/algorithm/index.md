@@ -1,7 +1,7 @@
 ---
 id: index
 sidebar_position: 1
-title: Home
+title: 算法通解
 description: Algorithmic Universal Solutions
 last_update:
   author: Aurelius

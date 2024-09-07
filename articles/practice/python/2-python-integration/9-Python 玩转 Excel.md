@@ -1,7 +1,7 @@
 ---
 id: python-excel
-sidebar_position: 27
-title: Python 玩转 Excel
+sidebar_position: 9
+title: 玩转 Excel｜Pandas、pywin32
 description: Python 玩转 Excel
 last_update:
   author: Aurelius

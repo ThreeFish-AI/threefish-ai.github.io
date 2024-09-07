@@ -1,10 +1,10 @@
 position: 2 # float position is supported
-label: 'Python Web'
+label: 'Python 集成'
 collapsible: true # make the category collapsible
 collapsed: false # keep the category open by default
 className: red
 link:
   type: generated-index
-  title: Python Web
+  title: Python 集成
 customProps:
-  description: Python Web
+  description: Python 集成

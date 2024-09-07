@@ -1,7 +1,7 @@
 ---
 id: django-database-task-queue
-sidebar_position: 11
-title: Django 集成与扩展：Database & Task Queue
+sidebar_position: 4
+title: Django｜Database & Task Queue
 description: Django 集成与扩展：Database & Task Queue
 last_update:
   author: Aurelius

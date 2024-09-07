@@ -1,7 +1,7 @@
 ---
 id: python-data-visualization
-sidebar_position: 21
-title: Python 数据可视化：工具与实践
+sidebar_position: 8
+title: 数据可视化｜Matplotlib、Seaborn
 description: Python 数据可视化：工具与实践
 last_update:
   author: Aurelius
