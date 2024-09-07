@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: '三余知行',
-  tagline: '冬者岁之余，夜者日之余，阴雨者时之余也',
+  tagline: '你我的相识，绝非一场零和的游戏！',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
