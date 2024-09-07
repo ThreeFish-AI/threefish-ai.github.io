@@ -1,8 +1,8 @@
 ---
 id: install
 sidebar_position: 1
-title: 安装 Python (CentOS 7/8、macOS、Debian、Windows 11)
-description: 安装 Python (CentOS 7/8、macOS、Debian、Windows 11)
+title: Python 安装
+description: Python 安装
 last_update:
   author: Aurelius
   date: 2024-08-10
