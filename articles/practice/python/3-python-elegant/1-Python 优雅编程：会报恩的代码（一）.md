@@ -1,7 +1,7 @@
 ---
 id: python-elegant-programming-1
-sidebar_position: 16
-title: Python 优雅编程：会报恩的代码（一）
+sidebar_position: 1
+title: 会报恩的代码（一）
 description: Python 优雅编程：会报恩的代码（一）
 last_update:
   author: Aurelius
