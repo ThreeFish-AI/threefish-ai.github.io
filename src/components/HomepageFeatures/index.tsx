@@ -14,34 +14,26 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        跟踪 AIGC 领域如 LLM、AI Agents、AGI 等前沿研究的最新动态，搭建 AI App
-        Marketplace。
+        人工智能、机器学习、深度学习
+        <br />
+        AIGC、AI Infra、AI 应用方面
       </>
     ),
   },
   {
     title: '算法通解',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        构建机器学习、流行神经网络模型等人工智能基础理论知识体系。 关注
-        NLP、搜索引擎、推荐系统、CV 等人工智能领域的应用方案。
-      </>
-    ),
+    description: <>算法的串联与极解</>,
   },
   {
     title: '计算通践',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>关注 AI 应用工程常用编程语言、计算平台、算法框架、落地方案。</>
-    ),
+    description: <>技术的落地、工具的使用、编程语言</>,
   },
   {
     title: '知见通感',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>关注 AI 应用工程常用编程语言、计算平台、算法框架、落地方案。</>
-    ),
+    description: <>知人、知己、生活、职场、人生</>,
   },
 ];
 

@@ -16,17 +16,14 @@ function HomepageHeader() {
           {/* {siteConfig.title} */}
         </Heading>
         <>
-          关注人工智能和互联网领域最新动态。工作学习提升、生活日常记录、兴趣知见分享！
+          关注人工智能和互联网领域技术与最新动态。工作学习提升、生活日常记录、兴趣知见分享。
         </>
         <br />
         <br />
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/ml"
-          >
-            机器学习概览 - 5min ⏱️
+          <Link className="button button--secondary button--lg" to="/dl/intro">
+            深度学习｜引介 - 5min ⏱️
           </Link>
         </div>
       </div>
