@@ -1,0 +1,10 @@
+position: 2 # float position is supported
+label: 'Python Web'
+collapsible: true # make the category collapsible
+collapsed: false # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Python Web
+customProps:
+  description: Python Web
