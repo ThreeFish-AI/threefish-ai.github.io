@@ -1,14 +1,13 @@
 ---
 id: markdown-syntax
 sidebar_position: 4
-title: Markdown 语法
-description: Markdown 语法
+title: Markdown｜基础语法
+description: Markdown｜基础语法
 last_update:
   author: Aurelius
-  date: 2024-09-04
+  date: 2024-09-08
 tags:
   - Markdown
-  - LaTeX
   - 语法
 ---
 
@@ -16,7 +15,7 @@ tags:
 
 Markdown 是一种轻量级的标记语言，通常用于格式化文本。它易于阅读和编写，被广泛用于撰写文档、博客、电子邮件等。以下是 Markdown 的基本语法介绍。
 
-<!-- ![Cover](<assets/cover/Python 玩转 Excel.drawio.png>) -->
+![Cover](assets/cover/Markdown｜基础语法.drawio.png)
 
 ## 标题
 
