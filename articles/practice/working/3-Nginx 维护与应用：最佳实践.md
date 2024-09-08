@@ -1,6 +1,6 @@
 ---
 id: nginx-maintenance-using
-sidebar_position: 22
+sidebar_position: 3
 title: Nginx 维护与应用：最佳实践
 description: Nginx 维护与应用：最佳实践
 last_update:
