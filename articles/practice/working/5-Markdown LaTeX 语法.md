@@ -1,6 +1,6 @@
 ---
 id: markdown-latex-syntax
-sidebar_position: 30
+sidebar_position: 5
 title: Markdown LaTeX 语法
 description: Markdown LaTeX 语法
 last_update:
