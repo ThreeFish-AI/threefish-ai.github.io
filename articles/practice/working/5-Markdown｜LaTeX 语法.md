@@ -427,7 +427,7 @@ $$
 行内示例：$\textcolor{red}{这是红色的文本}$
 ```
 
-行内示例：$\textcolor{red}{这是红色的文本}$
+行内示例：$\textcolor{red}{\text{这是红色的文本}}$
 
 ## 省略号
 
