@@ -14,7 +14,298 @@ tags:
 
 从前文「深度学习｜梯度下降法：误差最小化的权重参数」，我们知道了神经网络的学习就是“找寻使损失函数的值尽可能小的权重参数”的过程，又掌握了找寻的方法（梯度下降法）。凭借这些信息，我们可以以纯手写 Python 代码的方式，实现一个简单的神经网络 SimpleNet，并使用它来演示神经网络的整个学习过程。
 
-## 学习过程
+## 数据分割
+
+ML 在进行学习前，一般会将数据集分割为`训练数据`（`训练集`）和`测试数据`（`测试集`），训练集用于进行学习，测试集用于已学得模型的**泛化能力**评估。如此是为了让用于泛化能力评估的测试集“不会出现在”学习过程中，这样才能比较真实的评估出模型处理新样例的能力，即泛化能力。
+
+## SimpleNet
+
+我们依旧以`手写数字识别`任务为例，实现一个图 1 所示的 `SimpleNet` 用于学习该任务，亲身体验一下神经网络学习识别这些图片所代表数字的过程。
+
+![simple-net-numerals-recognition](assets/6/simple-net-numerals-recognition.drawio.png)<p class="caption">图 1：用于处理手写数字识别任务的 SimpleNet 神经网络</p>
+
+如图 1 所示，SimpleNet 是一个两层神经网络，它的输入层有 784 个神经元，分别代表 28 $\times$ 28 个像素值，第 1 层隐层有 50 个功能神经元，输出层有 10 个神经元，分别代表预测结果为 0 ~ 9 的概率。
+
+### 激活函数
+
+其中第 1 层隐层我们使用 Sigmoid 函数作为激活函数，输出层我们使用 Softmax 函数作为激活函数：
+
+```python
+import numpy as np
+
+def sigmoid(x):
+    """S 型函数"""
+    return 1 / (1 + np.exp(-x))
+
+def softmax(x):
+    """归一化指数函数"""
+    if x.ndim == 2:
+        x = x.T
+        x = x - np.max(x, axis=0)
+        y = np.exp(x) / np.sum(np.exp(x), axis=0)
+        return y.T
+
+    x = x - np.max(x)  # 溢出对策
+    return np.exp(x) / np.sum(np.exp(x))
+```
+
+Sigmoid 函数有助于将
+
+关于激活函数的更多详细介绍可以参见前文「深度学习｜激活函数：网络表达增强」。
+
+### 损失函数
+
+SimpleNet 的损失函数我们可以选择使用`交叉熵误差`（`cross entropy error`），交叉熵误差主要用于分类问题，评估类别的概率分布，常用于此类多分类任务。
+
+交叉熵误差计算的是对应正确解神经元的输出的自然对数，用式 1 表示：
+
+$$
+    E = - \sum_{k}t_k\log{y_k}                        \tag{1}
+$$
+
+其中 $y_k$ 表示神经网络输出层的第 k 个神经元的输出值，$t_k$ 表示监督数据的 `one-hot` 表示。
+
+因为 $t_k$ 中只有正确解索引位的值为 1，其他均为 0，式 1 实际只计算了对应正确解神经元输出的自然对数。
+
+因此交叉熵误差的图形可以等价于自然对数函数图形：
+
+![log](assets/6/log.png)<p class="caption">图 2：y = log(x) 的图形</p>
+
+以 `y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]`，`t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]` 为例，推理结果 y 相对实际结果 t 的`交叉熵误差`为：
+
+$$
+    E = -\log{y_2} \\
+        = -\log{0.6} \\
+        = 0.51。
+$$
+
+> 更一般的，我们可以将单个 (y, t) 数据样例的交叉熵误差计算推广到求一批包含 n 个样例的训练集的交叉熵误差计算（用于 mini-batch 的梯度计算），用式 2 表示：
+>
+> $$
+>     E = -\frac{1}{n} \sum_{i=1}^{n} \sum_{k} t_{ik} \log{y_{ik}}  \tag{2}
+> $$
+
+如下是交叉熵误差函数的 Python 实现：
+
+```python
+def cross_entropy_error(y, t):
+    """交叉熵误差函数"""
+    if y.ndim == 1:
+        t = t.reshape(1, t.size)
+        y = y.reshape(1, y.size)
+
+    # 监督数据是 one-hot-vector 的情况下，转换为正确解标签的索引
+    if t.size == y.size:
+        t = t.argmax(axis=1)
+
+    batch_size = y.shape[0]
+    return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size
+```
+
+### 梯度计算
+
+前文「深度学习｜梯度下降法：误差最小化的权重参数」中我们介绍了对一组参数 x 求函数 f(x) 梯度的方法：
+
+```python
+import numpy as np
+
+
+def _numerical_gradient_1d(f, x):
+    """梯度函数
+    用数值微分求导法，求 f 关于 1 组参数的 1 个梯度。
+
+    Args:
+        f: 损失函数
+        x: 参数（1 组参数，1 维数组）
+    Returns:
+        grad: 1 组梯度（1 维数组）
+    """
+    h = 1e-4                    # 0.0001
+    grad = np.zeros_like(x)     # 生成和 x 形状相同的数组，用于存放梯度（所有变量的偏导数）
+
+    for idx in range(x.size):   # 挨个遍历所有变量
+        xi = x[idx]             # 取第 idx 个变量
+        x[idx] = float(xi) + h
+        fxh1 = f(x)             # 求第 idx 个变量增大 h 所得计算结果
+
+        x[idx] = xi - h
+        fxh2 = f(x)             # 求第 idx 个变量减小 h 所得计算结果
+
+        grad[idx] = (fxh1 - fxh2) / (2*h)  # 求第 idx 个变量的偏导数
+        x[idx] = xi             # 还原第 idx 个变量的值
+    return grad
+```
+
+在此基础上我们可以推广到对多组参数 X 求函数 f(x) 梯度的方法：
+
+```python
+def numerical_gradient_2d(f, X):
+    """梯度函数（批量）
+    用数值微分求导法，求 f 关于 n 组参数的 n 个梯度。
+
+    Args:
+        f: 损失函数
+        X: 参数（n 组参数，2 维数组）
+    Returns:
+        grad: n 组梯度（2 维数组）
+    """
+    if X.ndim == 1:
+        return _numerical_gradient_1d(f, X)
+    else:
+        grad = np.zeros_like(X)
+
+        for idx, x in enumerate(X):
+            grad[idx] = _numerical_gradient_1d(f, x)
+
+        return grad
+```
+
+numerical_gradient_2d 实现了对多组参数 X 同时求函数 f(x) 的梯度，这将可以直接应用在下午模型训练的 mini-batch 梯度计算当中。
+
+### SimpleNet 类
+
+有了激活函数、损失函数、梯度计算函数，我们就可以实现简单的神经网络 SimpleNet 类了。
+
+**权重参数**
+
+首先 SimpleNet 类包含了神经网络的权重参数 W 与偏置参数 B，我们在 SimpleNet 类的 `__init__` 方法定义和保存这些权重参数：
+
+```python
+class SimpleNet(object):
+    """一个简单的演示神经网络 SimpleNet，用于演示神经网络对手写数字图像识别任务的自动学习和推理过程。
+
+    Attributes:
+        params: 存放 SimpleNet 网络权重参数与偏置参数
+            W1: 第 1 层网络的权重参数
+            b1: 第 1 层网络的偏置参数
+            W2: 第 2 层网络的权重参数
+            b2: 第 2 层网络的偏置参数
+    """
+
+    def __init__(self, input_size, hidden_size, output_size, weight_init_std=0.01):
+        """SimpleNet 的初始化函数
+
+        Args:
+            input_size:      输入层（第 0 层）神经元个数（神经网络入参个数）
+            hidden_size:     隐藏层（第 1 层）神经元个数
+            output_size:     输出层（第 2 层）神经元个数（神经网络出参个数）
+            weight_init_std: 用于初始化权重参数的高斯分布的标准差
+        """
+        # 初始化权重
+        self.params = {}
+        self.params['W1'] = weight_init_std * \
+            np.random.randn(input_size, hidden_size)    # 用高斯分布进行 W1 参数的随机初始化
+        self.params['b1'] = np.zeros(hidden_size)       # 用 0 进行 b1 参数的初始化
+        self.params['W2'] = weight_init_std * \
+            np.random.randn(hidden_size, output_size)   # 用高斯分布进行 W2 参数的随机初始化
+        self.params['b2'] = np.zeros(output_size)       # 用 0 进行 b2 参数的初始化
+```
+
+**模型推理**
+
+参见前文「深度学习｜模型推理：端到端任务处理」，我们可以根据输入 x 和 SimpleNet 的权重参数（W、B）计算出推理结果 y：
+
+```python
+import numpy as np
+
+import sigmoid, softmax
+
+class SimpleNet(object):
+    # ...
+
+    def predict(self, x):
+        """推理函数
+            识别数字图像代表的数值。
+
+        Args:
+            x: 图像像素值数组（图像数据）
+        Returns:
+            y: 推理结果，图像代表的数值
+        """
+        W1, W2 = self.params['W1'], self.params['W2']
+        b1, b2 = self.params['b1'], self.params['b2']
+
+        s1 = np.dot(x, W1) + b1
+        a1 = sigmoid(s1)
+        s2 = np.dot(a1, W2) + b2
+        y = softmax(s2)
+
+        return y
+```
+
+**损失计算**
+
+结合监督数据 t 与 SimpleNet 的推理函数 predict 得到的推理结果 y，我们可以使用上文的`交叉熵函数`实现损失函数：
+
+```python
+import cross_entropy_error
+
+class SimpleNet(object):
+    # ...
+
+    def loss(self, x, t):
+        """损失函数（交叉熵误差）
+
+        Args:
+            x: 输入数据，即图像数据
+            t: 监督数据，即正确解标签
+        Returns:
+            loss: 推理的损失值
+        """
+        y = self.predict(x)
+
+        return cross_entropy_error(y, t)
+```
+
+**梯度计算**
+
+有了损失函数，我们可以直接使用上文的梯度计算函数来计算网络损失关于当前权重参数的梯度：
+
+```python
+import numerical_gradient_2d
+
+class SimpleNet(object):
+    # ...
+
+    def numerical_gradient(self, x, t):
+        """梯度函数（数值微分求导法）
+
+        Args:
+            x: 输入数据，即图像数据
+            t: 监督数据，即正确解标签
+        Returns:
+            grads: 误差函数关于当前权重参数的梯度
+        """
+        def loss_W(W):
+            """损失值关于权重参数的函数
+            """
+            return self.loss(x, t)
+
+        grads = {}
+        grads['W1'] = numerical_gradient_2d(loss_W, self.params['W1'])
+        grads['b1'] = numerical_gradient_2d(loss_W, self.params['b1'])
+        grads['W2'] = numerical_gradient_2d(loss_W, self.params['W2'])
+        grads['b2'] = numerical_gradient_2d(loss_W, self.params['b2'])
+
+        return grads
+```
+
+如此，我们已经完成了整个简单神经网络 SimpleNet 的封装，接下来我们可以使用 SimpleNet 来训练一个手写数字识别模型，并验证它识别的准确度。
+
+### SimpleNet 概要
+
+SimpleNet 可以完整演示神经网络的训练与推理的过程，它包含一个存放权重参数的 params 属性，以及若干用于训练和推理的方法。我们可以看到 SimpleNet 的概要信息：
+
+| 变量                                                                                   | 说明                                                                                                                                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| params                                                                                 | 存放 SimpleNet 网络权重参数与偏置参数： <br/>&nbsp;&nbsp;W1: 第 1 层网络的权重参数； <br/>&nbsp;&nbsp;b1: 第 1 层网络的偏置参数； <br/>&nbsp;&nbsp;W2: 第 2 层网络的权重参数； <br/>&nbsp;&nbsp;b2: 第 2 层网络的偏置参数。                                                                                                       |
+| 方法                                                                                   | 说明                                                                                                                                                                                                                                                                                                                              |
+| `__init__`(self, input_size, <br/>hidden_size, output_size, <br/>weight_init_std=0.01) | SimpleNet 的初始化函数。 <br/>Args: <br/>&nbsp;&nbsp;input_size: 输入层（第 0 层）神经元个数（神经网络入参个数） <br/>&nbsp;&nbsp;hidden_size: 隐藏层（第 1 层）神经元个数 <br/>&nbsp;&nbsp;output_size: 输出层（第 2 层）神经元个数（神经网络出参个数） <br/>&nbsp;&nbsp;weight_init_std: 用于初始化权重参数的高斯分布的标准差。 |
+| predict(self, x)                                                                       | 推理函数，识别数字图像代表的数值。                                                                                                                                                                                                                                                                                                |
+| loss(self, x, t)                                                                       | 损失函数（交叉熵误差）                                                                                                                                                                                                                                                                                                            |
+| numerical_gradient(self, x, t)                                                         | 梯度函数（数值微分法）                                                                                                                                                                                                                                                                                                            |
+
+## 模型训练
 
 结合前文我们对推理误差（损失函数）与梯度下降法的理解，神经网络的学习过程可以大致归纳成如下 3 个步骤：
 
@@ -24,32 +315,34 @@ tags:
 
 > 使用随机的 mini-batch 数据通过梯度下降法对权重参数进行更新，这种学习算法被称为**随机梯度下降**（`stochastic gradient descent`，`SGD 算法`）。
 
-## 数据分割
+###
 
-ML 在进行学习前，一般会将数据集分割为`训练数据`（`训练集`）和`测试数据`（`测试集`），训练集用于进行学习，测试集用于已学得模型的**泛化能力**评估。如此是为了让用于泛化能力评估的测试集“不会出现在”学习过程中，这样才能比较真实的评估出模型处理新样例的能力，即泛化能力。
+```python
+import numpy as np
 
-## SimpleNet
+import numerical_gradient_2d
+import sigmoid, softmax, cross_entropy_error, sigmoid_grad
 
-我们依旧以`手写数字识别`任务为例，实现一个图 2.3.3.1 所示的 `SimpleNet` 用于学习该任务，亲身体验一下神经网络学习识别这些图片所代表数字的过程。
+class SimpleNet(object):
+    # ...
 
-![simple-net-numerals-recognition](assets/6/simple-net-numerals-recognition.drawio.png)<p class="caption">图 1：用于处理手写数字识别任务的 SimpleNet 神经网络</p>
+    def accuracy(self, x, t):
+        """精准度函数
+        求推理正确的百分比。
 
-如图 2.3.3.1 所示，SimpleNet 是一个两层神经网络，它的输入层有 784 个神经元，分别代表 28 $\times$ 28 个像素值，第 1 层隐层有 50 个功能神经元，输出层有 10 个神经元，分别代表预测结果为 0 ~ 9 的概率。
+        Args:
+            x: 输入数据，即图像数据
+            t: 监督数据，即正确解标签
+        Returns:
+            accuracy: 推理的精准度
+        """
+        y = self.predict(x)
+        y = np.argmax(y, axis=1)
+        t = np.argmax(t, axis=1)
 
-SimpleNet 可以完整演示神经网络学习与推理的类，它包含一个存放权重参数的 params 属性，以及若干用于学习和推理的方法。SimpleNet 的具体代码实现请参见 [runtime/simple-flow/simple_net.py](https://github.com/AfterShip/all-staff-writing-plan.deep-learning-basic/blob/master/runtime/simple-flow/simple_net.py)。
-
-| 变量   | 说明                                                                                                                                                                                                                        |
-| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| params | 存放 SimpleNet 网络权重参数与偏置参数： <br/>&nbsp;&nbsp;W1: 第 1 层网络的权重参数； <br/>&nbsp;&nbsp;b1: 第 1 层网络的偏置参数； <br/>&nbsp;&nbsp;W2: 第 2 层网络的权重参数； <br/>&nbsp;&nbsp;b2: 第 2 层网络的偏置参数。 |
-
-| 方法                                                                                     | 说明                                                                                                                                                                                                                                                                                                                              |
-| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \_\_init\_\_(self, input_size, <br/>hidden_size, output_size, <br/>weight_init_std=0.01) | SimpleNet 的初始化函数。 <br/>Args: <br/>&nbsp;&nbsp;input_size: 输入层（第 0 层）神经元个数（神经网络入参个数） <br/>&nbsp;&nbsp;hidden_size: 隐藏层（第 1 层）神经元个数 <br/>&nbsp;&nbsp;output_size: 输出层（第 2 层）神经元个数（神经网络出参个数） <br/>&nbsp;&nbsp;weight_init_std: 用于初始化权重参数的高斯分布的标准差。 |
-| predict(self, x)                                                                         | 推理函数，识别数字图像代表的数值。                                                                                                                                                                                                                                                                                                |
-| loss(self, x, t)                                                                         | 损失函数（交叉熵误差）                                                                                                                                                                                                                                                                                                            |
-| accuracy(self, x, t)                                                                     | 精准度函数，求推理正确的百分比。                                                                                                                                                                                                                                                                                                  |
-| numerical_gradient(self, x, t)                                                           | 梯度函数（数值微分法）                                                                                                                                                                                                                                                                                                            |
-| gradient(self, x, t)                                                                     | 梯度函数（误差逆传播法）                                                                                                                                                                                                                                                                                                          |
+        accuracy = np.sum(y == t) / float(x.shape[0])
+        return accuracy
+```
 
 #### 2. trainer 模块
 
