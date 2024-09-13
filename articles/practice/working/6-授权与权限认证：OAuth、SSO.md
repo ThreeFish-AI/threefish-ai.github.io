@@ -1,3 +1,17 @@
+---
+id: auth
+sidebar_position: 6
+title: 授权与鉴权：OAuth、SSO
+description: 授权与鉴权：OAuth、SSO
+last_update:
+  author: Aurelius
+  date: 2024-09-13
+tags:
+  - Auth
+  - OAuth
+  - SSO
+---
+
 ## 关于 SSO
 
 单一登入（Single Sign-On，SSO）是一种便利的认证机制，允许用户使用一套凭证（如用户名和密码）访问多个相关但独立的系统或应用程序。用户在首次登录时所提供的凭证可以使他们在后续的访问中无需重复输入，从而简化了用户体验。
