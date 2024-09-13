@@ -3,6 +3,7 @@ id: training-simple-net
 sidebar_position: 5
 title: 模型训练：手写 SimpleNet
 description: 深度学习｜模型训练：手写 SimpleNet
+reading_time: 13
 last_update:
   author: Aurelius
   date: 2024-09-11
