@@ -1,11 +1,11 @@
 ---
-id: programming-utils
-sidebar_position: 10
+id: ibm-layoff
+sidebar_position: 11
 title: 如何看待 IBM 中国研发部裁员？
 description: 如何看待 IBM 中国研发部裁员？
 last_update:
   author: Aurelius
-  date: 2024-09-12
+  date: 2024-09-13
 tags:
   - 工具
 ---

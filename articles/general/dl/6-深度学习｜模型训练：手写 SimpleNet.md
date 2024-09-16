@@ -1,6 +1,6 @@
 ---
 id: training-simple-net
-sidebar_position: 5
+sidebar_position: 6
 title: 模型训练：手写 SimpleNet
 description: 深度学习｜模型训练：手写 SimpleNet
 reading_time: 13
