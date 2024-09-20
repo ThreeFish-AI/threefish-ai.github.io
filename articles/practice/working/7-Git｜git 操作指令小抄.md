@@ -1,5 +1,5 @@
 ---
-id: auth
+id: git-cheat-sheet
 sidebar_position: 7
 title: Git｜git 操作指令小抄
 description: Git｜git 操作指令小抄
