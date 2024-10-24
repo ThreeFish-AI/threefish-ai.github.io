@@ -324,3 +324,89 @@ FROM
 ### 结论
 
 开窗函数在分析数据、计算排名、生成累计和等方面非常有用。如果需要对数据进行更复杂的分析，开窗函数提供了灵活且强大的方式来实现。
+
+## 详解 PostgreSQL 中的 to_tsquery()
+
+`to_tsquery()` 是 PostgreSQL 中的一个函数，用于将输入的文本查询转换为一种可以在全文搜索中使用的查询格式。它是全文搜索功能的关键组成部分，允许用户执行复杂的搜索操作。下面详细介绍其功能、语法和使用示例。
+
+### 1. 功能
+
+`to_tsquery()` 用于创建一个可以与全文搜索数据类型（如 `tsvector`）进行比较的查询表达式。它的主要功能包括：
+
+- 支持与布尔运算符（如 AND、OR、NOT）结合使用。
+- 自动处理词干提取（stemming），比如将 "running" 和 "run" 视为相同的词。
+- 支持支持通配符查询。
+
+### 2. 语法
+
+```sql
+to_tsquery(query_string)
+```
+
+- **`query_string`**：传入的文本字符串，表示搜索条件。此字符串可以包含词语和布尔操作符。
+
+### 3. 查询操作符
+
+- **`&`**：AND 操作符，表示必须匹配两个词。
+- **`|`**：OR 操作符，表示至少匹配一个词。
+- **`!`**：NOT 操作符，用于排除某个词。
+- **`'`**（单引号）：用于指定要搜索的具体词（或词组）。
+
+### 4. 示例
+
+以下是一些使用 `to_tsquery()` 的示例：
+
+#### 示例 1：基本搜索
+
+```sql
+SELECT * FROM documents
+WHERE to_tsvector(text_column) @@ to_tsquery('hello');
+```
+
+这个查询将返回所有包含单词 "hello" 的文档。
+
+#### 示例 2：布尔搜索
+
+```sql
+SELECT * FROM documents
+WHERE to_tsvector(text_column) @@ to_tsquery('hello & world');
+```
+
+此查询将返回同时包含 "hello" 和 "world" 的文档。
+
+#### 示例 3：使用 OR 运算符
+
+```sql
+SELECT * FROM documents
+WHERE to_tsvector(text_column) @@ to_tsquery('hello | world');
+```
+
+这个查询将返回包含 "hello" 或 "world" 的文档。
+
+#### 示例 4：使用 NOT 运算符
+
+```sql
+SELECT * FROM documents
+WHERE to_tsvector(text_column) @@ to_tsquery('hello & !world');
+```
+
+此查询将返回包含 "hello" 但不包含 "world" 的文档。
+
+#### 示例 5：词干提取和通配符
+
+```sql
+SELECT * FROM documents
+WHERE to_tsvector(text_column) @@ to_tsquery('run:*');
+```
+
+这个查询将返回包含任意以 "run" 开头的词（如 "running", "runner"）的文档。
+
+### 5. 注意事项
+
+- `to_tsquery()` 需要与 `to_tsvector()` 一起使用，以便比较搜索条件和文档内容。
+- 对于复杂的查询，输入字符串的格式需要正确。例如，`to_tsquery('a & b')` 意味着同时包括 "a" 和 "b"。
+- 如果输入字符串中包含空格，PostgreSQL 会将其视为布尔操作符的边界，可能会影响查询结果。
+
+### 总结
+
+`to_tsquery()` 是 PostgreSQL 中进行全文搜索的重要工具，提供了强大的功能来支持复杂查询。通过适当的使用，您可以实现灵活而高效的文档搜索。
