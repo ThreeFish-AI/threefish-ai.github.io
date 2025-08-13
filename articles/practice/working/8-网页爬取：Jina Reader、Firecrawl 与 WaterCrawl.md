@@ -18,6 +18,8 @@ tags:
 
 ![Cover](<assets/网页爬取：Jina Reader、Firecrawl 与 WaterCrawl.png>)
 
+[可视化报告](https://www.doubao.com/share/code/ddfb186f19eb99ce)
+
 ### 核心功能与设计理念
 
 **Jina Reader**是由 Jina AI 开发的一款专注于网页正文结构化提取的工具，其核心目标是生成 LLM 友好的 Markdown/JSON 格式输出，特别适合多语言内容处理[(6)](https://blog.csdn.net/A_Tevens/article/details/147296700)。它内置了 Reader-LM 模型（1.5B 参数），支持长文本（最高 512K token）和复杂 Markdown 语法，如表格和代码块等[(6)](https://blog.csdn.net/A_Tevens/article/details/147296700)。
