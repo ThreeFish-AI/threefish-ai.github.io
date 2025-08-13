@@ -342,7 +342,7 @@ MaxMind 支持数据库下载，可在本地服务器部署。数据库文件采
 
 该方案在技术上可行，但 MaxMind 的 API 费用可能超出每月$100 预算。若选择 IP2Location 的$49 / 月基础套餐，可能面临请求限制，难以满足持续 3 Request/Second 的并发需求。该方案可行性**中等**。
 
-### 4.3 方案三：自建数据收集方案
+### 方案三：自建数据收集方案
 
 **技术架构**：
 
@@ -452,235 +452,235 @@ MaxMind 支持数据库下载，可在本地服务器部署。数据库文件采
 
 **参考资料 **
 
-[1] 超详细的 IP 归属地查询 API 分享，含其它热门 API_ip 归属地 api-CSDN 博客[ https://blog.csdn.net/m0_58974397/article/details/141560551](https://blog.csdn.net/m0_58974397/article/details/141560551)
+[1] [超详细的 IP 归属地查询 API 分享，含其它热门 API_ip 归属地 api-CSDN 博客](https://blog.csdn.net/m0_58974397/article/details/141560551)
 
-[2] IP 数据云 - 免费 IP 地址查询 - 全球 IP 地址定位平台[ https://help.ipdatacloud.com/](https://help.ipdatacloud.com/)
+[2] [IP 数据云 - 免费 IP 地址查询 - 全球 IP 地址定位平台](https://help.ipdatacloud.com/)
 
-[3] 通过 IP 地址能否查到具体位置?\_定位\_get_data[ https://www.sohu.com/a/911810699_121453829](https://www.sohu.com/a/911810699_121453829)
+[3] [通过 IP 地址能否查到具体位置?\_定位\_get_data](https://www.sohu.com/a/911810699_121453829)
 
-[4] 免费 IP 地理位置数据库[ https://lite.ip2location.com/?lang=zh_CN](https://lite.ip2location.com/?lang=zh_CN)
+[4] [免费 IP 地理位置数据库](https://lite.ip2location.com/?lang=zh_CN)
 
-[5] IP 归属地 - IP 应用场景 - IP 数据库 - IP 数据云[ https://bd.ipdatacloud.com/product/ipguishu](https://bd.ipdatacloud.com/product/ipguishu)
+[5] [IP 归属地 - IP 应用场景 - IP 数据库 - IP 数据云](https://bd.ipdatacloud.com/product/ipguishu)
 
-[6] IP 地址查询离线库使用方案|ipv4|ipv6|使用方案|数据云|服务器|离线库\_手机网易网[ http://m.163.com/dy/article/K470M8GU0553MFFW.html](http://m.163.com/dy/article/K470M8GU0553MFFW.html)
+[6] [IP 地址查询离线库使用方案|ipv4|ipv6|使用方案|数据云|服务器|离线库\_手机网易网](http://m.163.com/dy/article/K470M8GU0553MFFW.html)
 
-[7] 地理定位查找中的/24 IP 地址有多精确?-腾讯云开发者社区-腾讯云[ https://cloud.tencent.com/developer/ask/sof/106805937](https://cloud.tencent.com/developer/ask/sof/106805937)
+[7] [地理定位查找中的/24 IP 地址有多精确?-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/106805937)
 
-[8] SaaS security for a modern, distributed workforce[ https://www.nudgesecurity.com/security-profile/ip2location-com](https://www.nudgesecurity.com/security-profile/ip2location-com)
+[8] [SaaS security for a modern, distributed workforce](https://www.nudgesecurity.com/security-profile/ip2location-com)
 
-[9] IP2Location Redirection[ https://pluginoracle.com/wp/ip2location-redirection](https://pluginoracle.com/wp/ip2location-redirection)
+[9] [IP2Location Redirection](https://pluginoracle.com/wp/ip2location-redirection)
 
-[10] IP Geolocation in 2025: A Comprehensive Guide to Location Intelligence[ https://litport.net/blog/ip-geolocation-a-comprehensive-guide-to-location-intelligence-69228](https://litport.net/blog/ip-geolocation-a-comprehensive-guide-to-location-intelligence-69228)
+[10] [IP Geolocation in 2025: A Comprehensive Guide to Location Intelligence](https://litport.net/blog/ip-geolocation-a-comprehensive-guide-to-location-intelligence-69228)
 
-[11] IP2Location[ https://slack.com/marketplace/A285G3KMH-ip2location](https://slack.com/marketplace/A285G3KMH-ip2location)
+[11] [IP2Location](https://slack.com/marketplace/A285G3KMH-ip2location)
 
-[12] IP2Location IP-Country Database[ https://www.ip2location.com/database/db1-site-ip-country](https://www.ip2location.com/database/db1-site-ip-country)
+[12] [IP2Location IP-Country Database](https://www.ip2location.com/database/db1-site-ip-country)
 
-[13] IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-TimeZone-ISP-Domain-NetSpeed-AreaCode Database[ https://www.ip2location.com/database/db16-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode](https://www.ip2location.com/database/db16-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode)
+[13] [IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-TimeZone-ISP-Domain-NetSpeed-AreaCode Database](https://www.ip2location.com/database/db16-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode)
 
-[14] IP2Location IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE-TIMEZONE-NETSPEED Database June.2025[ https://www.bestsoftware4download.com/software/k-ip-address-lookup-t-free-ip2location-ip-country-region-city-latitude-longitude-timezone-netspeed-database-download-whszfgrx.html](https://www.bestsoftware4download.com/software/k-ip-address-lookup-t-free-ip2location-ip-country-region-city-latitude-longitude-timezone-netspeed-database-download-whszfgrx.html)
+[14] [IP2Location IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE-TIMEZONE-NETSPEED Database June.2025](https://www.bestsoftware4download.com/software/k-ip-address-lookup-t-free-ip2location-ip-country-region-city-latitude-longitude-timezone-netspeed-database-download-whszfgrx.html)
 
-[15] IP2Location™ IP Geolocation Web Service[ https://www.ip2location.com/web-service/ip2location](https://www.ip2location.com/web-service/ip2location)
+[15] [IP2Location™ IP Geolocation Web Service](https://www.ip2location.com/web-service/ip2location)
 
-[16] IP2Location IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE-ZIPCODE-TIMEZONE-AREACODE-ELEVATION Database April.2025[ https://www.bestsoftware4download.com/software/k-city-time-zone-t-free-ip2location-ip-country-region-city-latitude-longitude-zipcode-timezone-areacode-elevation-database-download-bvbaoijz.html](https://www.bestsoftware4download.com/software/k-city-time-zone-t-free-ip2location-ip-country-region-city-latitude-longitude-zipcode-timezone-areacode-elevation-database-download-bvbaoijz.html)
+[16] [IP2Location IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE-ZIPCODE-TIMEZONE-AREACODE-ELEVATION Database April.2025](https://www.bestsoftware4download.com/software/k-city-time-zone-t-free-ip2location-ip-country-region-city-latitude-longitude-zipcode-timezone-areacode-elevation-database-download-bvbaoijz.html)
 
-[17] IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-TimeZone Database[ https://www.ip2location.com/databases/db11-ip-country-region-city-latitude-longitude-zipcode-timezone](https://www.ip2location.com/databases/db11-ip-country-region-city-latitude-longitude-zipcode-timezone)
+[17] [IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-TimeZone Database](https://www.ip2location.com/databases/db11-ip-country-region-city-latitude-longitude-zipcode-timezone)
 
-[18] IP2Location™ LITE IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE Database[ https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude](https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude)
+[18] [IP2Location™ LITE IP-COUNTRY-REGION-CITY-LATITUDE-LONGITUDE Database](https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude)
 
-[19] IP2Proxy IP-Country Database[ https://www.ip2location.com/database/px1-site-ip-country](https://www.ip2location.com/database/px1-site-ip-country)
+[19] [IP2Proxy IP-Country Database](https://www.ip2location.com/database/px1-site-ip-country)
 
-[20] Frequently Asked Questions[ https://www.ip2location.com/faqs/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain](https://www.ip2location.com/faqs/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain)
+[20] [Frequently Asked Questions](https://www.ip2location.com/faqs/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain)
 
-[21] GeoIP2 Databases[ https://www.maxmind.com/en/geoip2-databases](https://www.maxmind.com/en/geoip2-databases)
+[21] [GeoIP2 Databases](https://www.maxmind.com/en/geoip2-databases)
 
-[22] GeoIP[ https://www.trustradius.com/products/maxmind-geoip/pricing?\_\_cf_chl_rt_tk=Zjc9ERNt7IF61_eSW8htcBNic7RyaTk4o4N4F3yNIKk-1698577809-0-gaNycGzNCtA](https://www.trustradius.com/products/maxmind-geoip/pricing?__cf_chl_rt_tk=Zjc9ERNt7IF61_eSW8htcBNic7RyaTk4o4N4F3yNIKk-1698577809-0-gaNycGzNCtA)
+[22] [GeoIP](https://www.trustradius.com/products/maxmind-geoip/pricing?__cf_chl_rt_tk=Zjc9ERNt7IF61_eSW8htcBNic7RyaTk4o4N4F3yNIKk-1698577809-0-gaNycGzNCtA)
 
-[23] MaxMind[ https://www.vendr.com/buyer-guides/maxmind](https://www.vendr.com/buyer-guides/maxmind)
+[23] [MaxMind](https://www.vendr.com/buyer-guides/maxmind)
 
-[24] IP Geolocation API[ https://www.maxmind.com/en/geoip-api-web-services?lang=es](https://www.maxmind.com/en/geoip-api-web-services?lang=es)
+[24] [IP Geolocation API](https://www.maxmind.com/en/geoip-api-web-services?lang=es)
 
-[25] Maxmind GeoIP2[ https://rapidapi.com/maxmind/api/maxmind-geoip2/pricing](https://rapidapi.com/maxmind/api/maxmind-geoip2/pricing)
+[25] [Maxmind GeoIP2](https://rapidapi.com/maxmind/api/maxmind-geoip2/pricing)
 
-[26] PostgreSQL IP2Location Integration[ https://www.appypie.com/connect/apps/postgresql/integrations/ip2location](https://www.appypie.com/connect/apps/postgresql/integrations/ip2location)
+[26] [PostgreSQL IP2Location Integration](https://www.appypie.com/connect/apps/postgresql/integrations/ip2location)
 
-[27] Política de privacidad[ https://lite.ip2location.com/privacy?lang=es](https://lite.ip2location.com/privacy?lang=es)
+[27] [Política de privacidad](https://lite.ip2location.com/privacy?lang=es)
 
-[28] IP2Location + Confection[ https://confection.io/integrations/ip2location/](https://confection.io/integrations/ip2location/)
+[28] [IP2Location + Confection](https://confection.io/integrations/ip2location/)
 
-[29] Best IP Geolocation API | 2025 Roundup[ https://ipinfo.io/blog/best-ip-geolocation-api](https://ipinfo.io/blog/best-ip-geolocation-api)
+[29] [Best IP Geolocation API | 2025 Roundup](https://ipinfo.io/blog/best-ip-geolocation-api)
 
-[30] Commitment to security[ https://www.maxmind.com/en/company/commitment-to-security](https://www.maxmind.com/en/company/commitment-to-security)
+[30] [Commitment to security](https://www.maxmind.com/en/company/commitment-to-security)
 
-[31] Data Privacy Laws and MaxMind’s Online End User License Agreement[ https://support.maxmind.com/hc/en-us/articles/4408936812059-Data-Privacy-Laws-and-MaxMind-s-Online-End-User-License-Agreement](https://support.maxmind.com/hc/en-us/articles/4408936812059-Data-Privacy-Laws-and-MaxMind-s-Online-End-User-License-Agreement)
+[31] [Data Privacy Laws and MaxMind’s Online End User License Agreement](https://support.maxmind.com/hc/en-us/articles/4408936812059-Data-Privacy-Laws-and-MaxMind-s-Online-End-User-License-Agreement)
 
-[32] Privacy Policy[ https://www.maxmind.com/en/privacy-policy](https://www.maxmind.com/en/privacy-policy)
+[32] [Privacy Policy](https://www.maxmind.com/en/privacy-policy)
 
-[33] Legal Basis Under GDPR to Act as Data Processor[ https://support.maxmind.com/hc/en-us/articles/4408936927515-Legal-Basis-Under-GDPR-to-Act-as-Data-Processor](https://support.maxmind.com/hc/en-us/articles/4408936927515-Legal-Basis-Under-GDPR-to-Act-as-Data-Processor)
+[33] [Legal Basis Under GDPR to Act as Data Processor](https://support.maxmind.com/hc/en-us/articles/4408936927515-Legal-Basis-Under-GDPR-to-Act-as-Data-Processor)
 
-[34] Is MaxMind safe?[ https://www.nudgesecurity.com/security-profile/maxmind-com](https://www.nudgesecurity.com/security-profile/maxmind-com)
+[34] [Is MaxMind safe?](https://www.nudgesecurity.com/security-profile/maxmind-com)
 
-[35] Safer IP geolocation with MaxMind[ https://blog.maxmind.com/2023/08/safer-ip-geolocation/](https://blog.maxmind.com/2023/08/safer-ip-geolocation/)
+[35] [Safer IP geolocation with MaxMind](https://blog.maxmind.com/2023/08/safer-ip-geolocation/)
 
-[36] Database Pricing Plans[ https://ipgeolocation.io/db-pricing.html](https://ipgeolocation.io/db-pricing.html)
+[36] [Database Pricing Plans](https://ipgeolocation.io/db-pricing.html)
 
-[37] Premium IP geolocation access[ https://www.geoplugin.com/premium](https://www.geoplugin.com/premium)
+[37] [Premium IP geolocation access](https://www.geoplugin.com/premium)
 
-[38] Getting ready to use GeoLocation[ https://guide.ncloud-docs.com/docs/en/geolocation-spec](https://guide.ncloud-docs.com/docs/en/geolocation-spec)
+[38] [Getting ready to use GeoLocation](https://guide.ncloud-docs.com/docs/en/geolocation-spec)
 
-[39] Geolocation[ https://acquireconvert.com/app/geolocation/](https://acquireconvert.com/app/geolocation/)
+[39] [Geolocation](https://acquireconvert.com/app/geolocation/)
 
-[40] Pricing that scale with your growth & yet simple[ https://hikeorders.com/geodeals/pricing/](https://hikeorders.com/geodeals/pricing/)
+[40] [Pricing that scale with your growth & yet simple](https://hikeorders.com/geodeals/pricing/)
 
-[41] Geocoding Plans & Pricing[ https://geocode.maps.co/plans/](https://geocode.maps.co/plans/)
+[41] [Geocoding Plans & Pricing](https://geocode.maps.co/plans/)
 
-[42] Pricing for WhatIsMyIP.com[ https://www.whatismyip.com/pricing/](https://www.whatismyip.com/pricing/)
+[42] [Pricing for WhatIsMyIP.com](https://www.whatismyip.com/pricing/)
 
-[43] 2IP API | 2IP.me[ https://2ip.me/en/api/our-api](https://2ip.me/en/api/our-api)
+[43] [2IP API | 2IP.me](https://2ip.me/en/api/our-api)
 
-[44] Whats my IP[ https://rapidapi.com/4thel00z/api/whats-my-ip3/pricing](https://rapidapi.com/4thel00z/api/whats-my-ip3/pricing)
+[44] [Whats my IP](https://rapidapi.com/4thel00z/api/whats-my-ip3/pricing)
 
-[45] Is there a limit to the number of requests I can make via IP Geolocation API?[ https://knowledge.whoisxmlapi.com/is-there-a-limit-to-the-number-of-requests-i-can-make-via-ip-geolocation-api](https://knowledge.whoisxmlapi.com/is-there-a-limit-to-the-number-of-requests-i-can-make-via-ip-geolocation-api)
+[45] [Is there a limit to the number of requests I can make via IP Geolocation API?](https://knowledge.whoisxmlapi.com/is-there-a-limit-to-the-number-of-requests-i-can-make-via-ip-geolocation-api)
 
-[46] API Pricing Plans[ https://ipgeolocation.io/pricing.html](https://ipgeolocation.io/pricing.html)
+[46] [API Pricing Plans](https://ipgeolocation.io/pricing.html)
 
-[47] IP2Location IP-Country-Region-City Database[ https://www.ip2location.com/database/db3-ip-country-region-city](https://www.ip2location.com/database/db3-ip-country-region-city)
+[47] [IP2Location IP-Country-Region-City Database](https://www.ip2location.com/database/db3-ip-country-region-city)
 
-[48] IP to Location + ISP database download[ https://db-ip.com/db/ip-to-location-isp](https://db-ip.com/db/ip-to-location-isp)
+[48] [IP to Location + ISP database download](https://db-ip.com/db/ip-to-location-isp)
 
-[49] Geolocation[ https://ipapi.is/geolocation.html](https://ipapi.is/geolocation.html)
+[49] [Geolocation](https://ipapi.is/geolocation.html)
 
-[50] Frequently Asked Questions[ https://www.ip2location.com/faqs/db18-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode-weather](https://www.ip2location.com/faqs/db18-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode-weather)
+[50] [Frequently Asked Questions](https://www.ip2location.com/faqs/db18-ip-country-region-city-latitude-longitude-zipcode-timezone-isp-domain-netspeed-areacode-weather)
 
-[51] IP Geolocation API and Database FAQ[ https://db-ip.com/faq.php](https://db-ip.com/faq.php)
+[51] [IP Geolocation API and Database FAQ](https://db-ip.com/faq.php)
 
-[52] tdulcet/ip-geolocation-dbs[ https://github.com/tdulcet/ip-geolocation-dbs](https://github.com/tdulcet/ip-geolocation-dbs)
+[52] [tdulcet/ip-geolocation-dbs](https://github.com/tdulcet/ip-geolocation-dbs)
 
-[53] Terms and Policies[ https://ip-api.com/docs/legal](https://ip-api.com/docs/legal)
+[53] [Terms and Policies](https://ip-api.com/docs/legal)
 
-[54] GDPR and Data Privacy in IPGeolocation Service[ https://ipgeolocation.io/blog/gdpr-and-data-privacy-in-ipgeolocation-service](https://ipgeolocation.io/blog/gdpr-and-data-privacy-in-ipgeolocation-service)
+[54] [GDPR and Data Privacy in IPGeolocation Service](https://ipgeolocation.io/blog/gdpr-and-data-privacy-in-ipgeolocation-service)
 
-[55] IP Geolocation API[ https://www.abstractapi.com/api/ip-geolocation-api](https://www.abstractapi.com/api/ip-geolocation-api)
+[55] [IP Geolocation API](https://www.abstractapi.com/api/ip-geolocation-api)
 
-[56] IP Geolocation[ https://www.digitalelement.com/geolocation](https://www.digitalelement.com/geolocation)
+[56] [IP Geolocation](https://www.digitalelement.com/geolocation)
 
-[57] Geolocet[ https://datarade.ai/data-providers/geolocet/profile](https://datarade.ai/data-providers/geolocet/profile)
+[57] [Geolocet](https://datarade.ai/data-providers/geolocet/profile)
 
-[58] IP Geolocation API[ https://ip-api.com/](https://ip-api.com/)
+[58] [IP Geolocation API](https://ip-api.com/)
 
-[59] Affordable, Flat Pricing for Everyone\![ https://geolocated.io/pricing.html](https://geolocated.io/pricing.html)
+[59] [Affordable, Flat Pricing for Everyone](https://geolocated.io/pricing.html)
 
-[60] Geolocation API[ https://rapidapi.com/argykaL/api/geolocation-api1/pricing](https://rapidapi.com/argykaL/api/geolocation-api1/pricing)
+[60] [Geolocation API](https://rapidapi.com/argykaL/api/geolocation-api1/pricing)
 
-[61] Geolocation API[ https://rapidapi.com/argykaL/api/geolocation-api1](https://rapidapi.com/argykaL/api/geolocation-api1)
+[61] [Geolocation API](https://rapidapi.com/argykaL/api/geolocation-api1)
 
-[62] IP Geolocation[ https://www.raycast.com/koinzhang/ip-geolocation](https://www.raycast.com/koinzhang/ip-geolocation)
+[62] [IP Geolocation](https://www.raycast.com/koinzhang/ip-geolocation)
 
-[63] JavaScript Geolocation Web Service[ https://www.geoplugin.com/webservices/javascript](https://www.geoplugin.com/webservices/javascript)
+[63] [JavaScript Geolocation Web Service](https://www.geoplugin.com/webservices/javascript)
 
-[64] Geolocation[ https://launchtory.com/projects/iplocate](https://launchtory.com/projects/iplocate)
+[64] [Geolocation](https://launchtory.com/projects/iplocate)
 
-[65] IP Location Finder[ https://www.iplocation.net/ip-lookup](https://www.iplocation.net/ip-lookup)
+[65] [IP Location Finder](https://www.iplocation.net/ip-lookup)
 
-[66] IP Geolocation API[ https://www.geolocation.com/ip-geolocation-api](https://www.geolocation.com/ip-geolocation-api)
+[66] [IP Geolocation API](https://www.geolocation.com/ip-geolocation-api)
 
-[67] Free IP Geolocation Database[ https://lite.ip2location.com/](https://lite.ip2location.com/)
+[67] [Free IP Geolocation Database](https://lite.ip2location.com/)
 
-[68] Pricing[ https://ipstack.com/product](https://ipstack.com/product)
+[68] [Pricing](https://ipstack.com/product)
 
-[69] Geolocation Pro[ https://marketplace.cs-cart.com/geolocation-pro.html](https://marketplace.cs-cart.com/geolocation-pro.html)
+[69] [Geolocation Pro](https://marketplace.cs-cart.com/geolocation-pro.html)
 
-[70] Geolocation API Usage and Billing[ https://developers.google.com/maps/documentation/geolocation/usage-and-billing](https://developers.google.com/maps/documentation/geolocation/usage-and-billing)
+[70] [Geolocation API Usage and Billing](https://developers.google.com/maps/documentation/geolocation/usage-and-billing)
 
-[71] Transparent prices, no extra fees\![ https://geotargetingwp.com/pricing](https://geotargetingwp.com/pricing)
+[71] [Transparent prices, no extra fees!](https://geotargetingwp.com/pricing)
 
-[72] Geocoding API – Fast, Reliable & Scalable for Your Applications[ https://positionstack.com/pricing](https://positionstack.com/pricing)
+[72] [Geocoding API – Fast, Reliable & Scalable for Your Applications](https://positionstack.com/pricing)
 
-[73] IP Geolocation[ https://rapidapi.com/zen-api-zen-api-default/api/ip-geolocation27](https://rapidapi.com/zen-api-zen-api-default/api/ip-geolocation27)
+[73] [IP Geolocation](https://rapidapi.com/zen-api-zen-api-default/api/ip-geolocation27)
 
-[74] Choose the plan that’s right[ https://rapidapi.com/ScrapeMaestro/api/geoip-lookup-api/pricing](https://rapidapi.com/ScrapeMaestro/api/geoip-lookup-api/pricing)
+[74] [Choose the plan that’s right](https://rapidapi.com/ScrapeMaestro/api/geoip-lookup-api/pricing)
 
-[75] GeoLocation API[ https://guide.ncloud-docs.com/docs/en/geolocation-api](https://guide.ncloud-docs.com/docs/en/geolocation-api)
+[75] [GeoLocation API](https://guide.ncloud-docs.com/docs/en/geolocation-api)
 
-[76] IP Geolocation API's[ https://rapidapi.com/IPSquads/api/ip-geolocation-api-s/pricing](https://rapidapi.com/IPSquads/api/ip-geolocation-api-s/pricing)
+[76] [IP Geolocation API's](https://rapidapi.com/IPSquads/api/ip-geolocation-api-s/pricing)
 
-[77] IP Geolocation - JSON endpoint[ https://ip-api.com/docs/api:json](https://ip-api.com/docs/api:json)
+[77] [IP Geolocation - JSON endpoint](https://ip-api.com/docs/api:json)
 
-[78] Who Does GDPR Apply To? 2025 Guide for Compliance[ https://gdprlocal.com/who-does-gdpr-apply-to-2025-guide-for-compliance/](https://gdprlocal.com/who-does-gdpr-apply-to-2025-guide-for-compliance/)
+[78] [Who Does GDPR Apply To? 2025 Guide for Compliance](https://gdprlocal.com/who-does-gdpr-apply-to-2025-guide-for-compliance/)
 
-[79] 10. Geolocation[ https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/10-geolocation/?q=record](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/10-geolocation/?q=record)
+[79] [10. Geolocation](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/10-geolocation/?q=record)
 
-[80] Geolocation[ https://www.netquest.com/en/services/observed-data/geolocation](https://www.netquest.com/en/services/observed-data/geolocation)
+[80] [Geolocation](https://www.netquest.com/en/services/observed-data/geolocation)
 
-[81] Monitored data[ https://docs.onespan.com/sec/docs/otv-ag-monitored-data-1-0](https://docs.onespan.com/sec/docs/otv-ag-monitored-data-1-0)
+[81] [Monitored data](https://docs.onespan.com/sec/docs/otv-ag-monitored-data-1-0)
 
-[82] Location data[ https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/communications-networks-and-services/location-data/?q=cookies](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/communications-networks-and-services/location-data/?q=cookies)
+[82] [Location data](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/communications-networks-and-services/location-data/?q=cookies)
 
-[83] 5 Best Free IP Geolocation APIs in 2025[ https://publicapis.io/blog/ip-geolocation-apis](https://publicapis.io/blog/ip-geolocation-apis)
+[83] [5 Best Free IP Geolocation APIs in 2025](https://publicapis.io/blog/ip-geolocation-apis)
 
-[84] iPad Pro 12.9 Gen 5 Naked Series Skins[ https://www.slickwraps.com/products/ipadpro-12-9-gen5-naked-series-skins](https://www.slickwraps.com/products/ipadpro-12-9-gen5-naked-series-skins)
+[84] [iPad Pro 12.9 Gen 5 Naked Series Skins](https://www.slickwraps.com/products/ipadpro-12-9-gen5-naked-series-skins)
 
-[85] Refurbished 11-inch iPad Pro Wi‑Fi+Cellular 128GB Space Gray (4th Generation)[ https://www.apple.com/us-edu/shop/product/FP553LL/A/refurbished-11-inch-ipad-pro-wi-fi-cellular-128gb-space-gray-4th-generation](https://www.apple.com/us-edu/shop/product/FP553LL/A/refurbished-11-inch-ipad-pro-wi-fi-cellular-128gb-space-gray-4th-generation)
+[85] [Refurbished 11-inch iPad Pro Wi‑Fi+Cellular 128GB Space Gray (4th Generation)](https://www.apple.com/us-edu/shop/product/FP553LL/A/refurbished-11-inch-ipad-pro-wi-fi-cellular-128gb-space-gray-4th-generation)
 
-[86] Basic API[ https://db-ip.com/api/basic](https://db-ip.com/api/basic)
+[86] [Basic API](https://db-ip.com/api/basic)
 
-[87] CelcomDigi rolls out Gemilang Deals with RM1/month iPad, RM6.80 Video Pass, Free FTTR and more[ https://technave.com/gadget/CelcomDigi-rolls-out-Gemilang-Deals-with-RM1-month-iPad-RM6-80-Video-Pass-Free-FTTR-and-more-43720.html](https://technave.com/gadget/CelcomDigi-rolls-out-Gemilang-Deals-with-RM1-month-iPad-RM6-80-Video-Pass-Free-FTTR-and-more-43720.html)
+[87] [CelcomDigi rolls out Gemilang Deals with RM1/month iPad, RM6.80 Video Pass, Free FTTR and more](https://technave.com/gadget/CelcomDigi-rolls-out-Gemilang-Deals-with-RM1-month-iPad-RM6-80-Video-Pass-Free-FTTR-and-more-43720.html)
 
-[88] Optimum Fiber High-Speed Internet, TV & Mobile Phone[ https://www.optimum.com/](https://www.optimum.com/)
+[88] [Optimum Fiber High-Speed Internet, TV & Mobile Phone](https://www.optimum.com/)
 
-[89] IP address database download[ https://db-ip.com/db](https://db-ip.com/db)
+[89] [IP address database download](https://db-ip.com/db)
 
-[90] DB-IP Reviews[ https://slashdot.org/software/p/DB-IP/](https://slashdot.org/software/p/DB-IP/)
+[90] [DB-IP Reviews](https://slashdot.org/software/p/DB-IP/)
 
-[91] Committed use discounts[ https://cloud.google.com/sql/docs/postgres/cud](https://cloud.google.com/sql/docs/postgres/cud)
+[91] [Committed use discounts](https://cloud.google.com/sql/docs/postgres/cud)
 
-[92] The DB-IP Database[ https://db-ip.com/about/](https://db-ip.com/about/)
+[92] [The DB-IP Database](https://db-ip.com/about/)
 
-[93] Frequently asked questions[ https://members.ip-api.com/faq](https://members.ip-api.com/faq)
+[93] [Frequently asked questions](https://members.ip-api.com/faq)
 
-[94] Configuring the database update schedule and settings[ https://support.kaspersky.com/KLMS/8.2/en-US/91221.htm](https://support.kaspersky.com/KLMS/8.2/en-US/91221.htm)
+[94] [Configuring the database update schedule and settings](https://support.kaspersky.com/KLMS/8.2/en-US/91221.htm)
 
-[95] ip-location-db[ https://github.com/sapics/ip-location-db](https://github.com/sapics/ip-location-db)
+[95] [ip-location-db](https://github.com/sapics/ip-location-db)
 
-[96] Configuring the database update schedule and settings[ https://support.kaspersky.com/KWTS/6.0/en-US/166523.htm](https://support.kaspersky.com/KWTS/6.0/en-US/166523.htm)
+[96] [Configuring the database update schedule and settings](https://support.kaspersky.com/KWTS/6.0/en-US/166523.htm)
 
-[97] IP2Location IP-Country-Region-City-ISP Database[ https://www.ip2location.com/database/db4-site-ip-country-region-city-isp%20(site%20license)](<https://www.ip2location.com/database/db4-site-ip-country-region-city-isp%20(site%20license)>)
+[97] [IP2Location IP-Country-Region-City-ISP Database](<https://www.ip2location.com/database/db4-site-ip-country-region-city-isp%20(site%20license)>)
 
-[98] IP2Location™ LITE IP-COUNTRY-REGION-CITY Database[ https://lite.ip2location.com/database/ip-country-region-city](https://lite.ip2location.com/database/ip-country-region-city)
+[98] [IP2Location™ LITE IP-COUNTRY-REGION-CITY Database](https://lite.ip2location.com/database/ip-country-region-city)
 
-[99] IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-ISP-Domain Database[ https://www.ip2location.com/database/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain](https://www.ip2location.com/database/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain)
+[99] [IP2Location IP-Country-Region-City-Latitude-Longitude-ZIPCode-ISP-Domain Database](https://www.ip2location.com/database/db10-ip-country-region-city-latitude-longitude-zipcode-isp-domain)
 
-[100] IP2Location IP-Country-Region-City-Latitude-Longitude-TimeZone-NetSpeed Database[ https://www.ip2location.com/databases/db13-ip-country-region-city-latitude-longitude-timezone-netspeed](https://www.ip2location.com/databases/db13-ip-country-region-city-latitude-longitude-timezone-netspeed)
+[100] [IP2Location IP-Country-Region-City-Latitude-Longitude-TimeZone-NetSpeed Database](https://www.ip2location.com/databases/db13-ip-country-region-city-latitude-longitude-timezone-netspeed)
 
-[101] IP2Location IP-Country-Region-City-ISP-Domain Database[ https://www.ip2location.com/database/db7-ip-country-region-city-isp-domain%20(site%20license)](<https://www.ip2location.com/database/db7-ip-country-region-city-isp-domain%20(site%20license)>)
+[101] [IP2Location IP-Country-Region-City-ISP-Domain Database](<https://www.ip2location.com/database/db7-ip-country-region-city-isp-domain%20(site%20license)>)
 
-[102] IP geolocation API[ https://db-ip.com/](https://db-ip.com/)
+[102] [IP geolocation API](https://db-ip.com/)
 
-[103] IP Geolocation[ https://ipgeolocation.io/faq.html](https://ipgeolocation.io/faq.html)
+[103] [IP Geolocation FAQ](https://ipgeolocation.io/faq.html)
 
-[104] IP Geolocation & Intelligence Leader | Digital Element[ https://www.digitalelement.com/](https://www.digitalelement.com/)
+[104] [IP Geolocation & Intelligence Leader | Digital Element](https://www.digitalelement.com/)
 
-[105] IP Geolocation Data Accuracy[ https://www.ip2location.com/data-accuracy](https://www.ip2location.com/data-accuracy)
+[105] [IP Geolocation Data Accuracy](https://www.ip2location.com/data-accuracy)
 
-[106] Quick Guide to GDPR Compliance (2025)[ https://baserow.io/blog/quick-guide-to-gdpr-compliance](https://baserow.io/blog/quick-guide-to-gdpr-compliance)
+[106] [Quick Guide to GDPR Compliance (2025)](https://baserow.io/blog/quick-guide-to-gdpr-compliance)
 
-[107] GDPR Compliance in 2025: Key Updates and Tips[ https://toxigon.com/understanding-gdpr-compliance-in-2025](https://toxigon.com/understanding-gdpr-compliance-in-2025)
+[107] [GDPR Compliance in 2025: Key Updates and Tips](https://toxigon.com/understanding-gdpr-compliance-in-2025)
 
-[108] GDPR: Data Compliance Best Practices For 2025[ https://www.alation.com/blog/gdpr-data-compliance-best-practices-2025/](https://www.alation.com/blog/gdpr-data-compliance-best-practices-2025/)
+[108] [GDPR: Data Compliance Best Practices For 2025](https://www.alation.com/blog/gdpr-data-compliance-best-practices-2025/)
 
-[109] What Is GDPR? Meaning & Requirements of the General Data Protection Regulation in 2025[ https://www.cloudwards.net/general-data-protection-regulation/](https://www.cloudwards.net/general-data-protection-regulation/)
+[109] [What Is GDPR? Meaning & Requirements of the General Data Protection Regulation in 2025](https://www.cloudwards.net/general-data-protection-regulation/)
 
-[110] GDPR Requirements: How to Stay Compliant with Data Privacy Laws[ https://sprinto.com/blog/gdpr-requirements/](https://sprinto.com/blog/gdpr-requirements/)
+[110] [GDPR Requirements: How to Stay Compliant with Data Privacy Laws](https://sprinto.com/blog/gdpr-requirements/)
 
-[111] GDPR statement[ https://datacom.com/au/en/legal/gdpr-statement](https://datacom.com/au/en/legal/gdpr-statement)
+[111] [GDPR statement](https://datacom.com/au/en/legal/gdpr-statement)
 
-[112] GDPR Compliance Statement[ https://www.databridgemarketresearch.com/gdpr-compliance-statement](https://www.databridgemarketresearch.com/gdpr-compliance-statement)
+[112] [GDPR Compliance Statement](https://www.databridgemarketresearch.com/gdpr-compliance-statement)
 
-[113] Privacy Policy for Handling of or Dealing in Personal Information (Including Sensitive Personal Data or Information)[ https://country.db.com/india/privacy-policy](https://country.db.com/india/privacy-policy)
+[113] [Privacy Policy for Handling of or Dealing in Personal Information (Including Sensitive Personal Data or Information)](https://country.db.com/india/privacy-policy)
 
-[114] GDPR Compliance Statement[ https://www.privacypolicies.com/blog/gdpr-compliance-statement/](https://www.privacypolicies.com/blog/gdpr-compliance-statement/)
+[114] [GDPR Compliance Statement](https://www.privacypolicies.com/blog/gdpr-compliance-statement/)
 
-[115] This is what we do to protect you[ https://www.dnb.com/en-gb/privacy/gdpr/this-is-what-we-do](https://www.dnb.com/en-gb/privacy/gdpr/this-is-what-we-do)
+[115] [This is what we do to protect you](https://www.dnb.com/en-gb/privacy/gdpr/this-is-what-we-do)
 
 > （注：文档部分内容由 AI 生成）
 
