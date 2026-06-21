@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[pubSlug]","\u002F[pubSlug]\u002F[...entrySlug]","\u002F[pubSlug]\u002Fgraph"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
