@@ -1,0 +1,15 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,478960,t=>{"use strict";var e=(0,t.i(112067).__name)(()=>`
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`,"getIconStyles");t.s(["getIconStyles",0,e])},706462,274874,659173,122954,t=>{"use strict";var e=t.g&&t.g.Object===Object&&t.g;t.s(["default",0,e],274874);var l="object"==typeof self&&self&&self.Object===Object&&self,o=e||l||Function("return this")();t.s(["default",0,o],659173);var r=o.Symbol;t.s(["default",0,r],122954);var n=Object.prototype,i=n.hasOwnProperty,c=n.toString,a=r?r.toStringTag:void 0;let s=function(t){var e=i.call(t,a),l=t[a];try{t[a]=void 0;var o=!0}catch(t){}var r=c.call(t);return o&&(e?t[a]=l:delete t[a]),r};var u=Object.prototype.toString,f=r?r.toStringTag:void 0;t.s(["default",0,function(t){return null==t?void 0===t?"[object Undefined]":"[object Null]":f&&f in Object(t)?s(t):u.call(t)}],706462)},49862,t=>{"use strict";t.s(["default",0,function(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)}])},492943,t=>{"use strict";t.s(["default",0,function(t){return null!=t&&"object"==typeof t}])},619637,t=>{"use strict";var e=t.i(706462),l=t.i(492943);t.s(["default",0,function(t){return"symbol"==typeof t||(0,l.default)(t)&&"[object Symbol]"==(0,e.default)(t)}])},620405,t=>{"use strict";var e=t.i(905843),l=t.i(517279);t.s(["channel",0,(t,o)=>e.default.lang.round(l.default.parse(t)[o])],620405)}]);

@@ -1,0 +1,1195 @@
+<!DOCTYPE html><html lang="zh-CN" class="inter_c15e96cb-module__0bjUvq__variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/logo.png" as="image"/><link rel="stylesheet" href="/_next/static/chunks/0vw7m0g~~xfj1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0cg3jjhrc6gr8.js"/><script src="/_next/static/chunks/0rg575fgmh854.js" async=""></script><script src="/_next/static/chunks/182u365mc.735.js" async=""></script><script src="/_next/static/chunks/107ep0k94fgx4.js" async=""></script><script src="/_next/static/chunks/turbopack-0sj0ll-vj6i9z.js" async=""></script><script src="/_next/static/chunks/0.i745lpij5~d.js" async=""></script><script src="/_next/static/chunks/0hqs262h-rs54.js" async=""></script><script src="/_next/static/chunks/0l-1o40xxlcr..js" async=""></script><script src="/_next/static/chunks/1785tie-8kwbg.js" async=""></script><script src="/_next/static/chunks/020j99-ergy27.js" async=""></script><script src="/_next/static/chunks/0l4qtf8hgz.11.js" async=""></script><script src="/_next/static/chunks/0ley0gi~_93r9.js" async=""></script><script src="/_next/static/chunks/0q82xhet41jw9.js" async=""></script><script src="/_next/static/chunks/0~ikzdp3hga8n.js" async=""></script><script src="/_next/static/chunks/0q_xpywc4mr6r.js" async=""></script><script src="/_next/static/chunks/0467rnayogf8d.js" async=""></script><script src="/_next/static/chunks/0gicyvtp~f7d..js" async=""></script><meta name="next-size-adjust" content=""/><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/><meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)"/><title>reference/cognizes/000-prd-architecture — negentropy</title><meta name="description" content="Negentropy Wiki 文档页面"/><link rel="icon" href="/favicon.ico?favicon.10ntlo.~a~h93.ico" sizes="256x256" type="image/x-icon"/><link rel="apple-touch-icon" href="/logo.png"/><script>
+(function(){
+  try {
+    var c = localStorage.getItem('wiki:color-scheme');
+    if (c && c !== 'system') document.documentElement.setAttribute('data-color-scheme', c);
+  } catch(e) {}
+})();
+</script><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="wiki-body"><div hidden=""><!--$--><!--/$--></div><a href="#wiki-main" class="skip-link">跳到主要内容</a><div id="wiki-root"><header class="wiki-header"><div class="wiki-header-inner"><a class="wiki-header-brand" aria-label="返回 Wiki 首页" href="/"><img src="/logo.png" alt="Negentropy" class="wiki-header-logo" width="28" height="28"/><span class="wiki-header-name">Negentropy Wiki</span></a><nav class="wiki-header-tabs wiki-header-tabs--left" aria-label="特色导航"><div class="wiki-header-dropdown active"><a class="wiki-header-dropdown-trigger" aria-current="page" href="/negentropy/readme/">Negentropy<span class="wiki-header-dropdown-arrow">▼</span></a><div class="wiki-header-dropdown-panel"><a class="wiki-header-dropdown-item" href="/negentropy/readme/">Negentropy 用户手册</a><a class="wiki-header-dropdown-item" href="/negentropy/concepts/0001-conversation-architecture-refactor/">concepts</a><a class="wiki-header-dropdown-item active" aria-current="page" href="/negentropy/reference/cognizes/readme/">reference</a><a class="wiki-header-dropdown-item" href="/negentropy/research/000-cognitive-enhancement/">research</a></div></div></nav><div class="wiki-header-slot"><div class="wiki-header-actions"><a href="https://github.com/ThreeFish-AI/negentropy" class="wiki-header-action-btn" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub 仓库"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg></a></div><button class="wiki-header-action-btn" aria-label="切换深色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div></div></header><button class="wiki-mobile-hamburger" aria-label="打开导航菜单"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button><aside class="wiki-mobile-drawer" role="dialog" aria-label="导航菜单"><div class="wiki-mobile-drawer-header"><button aria-label="关闭导航菜单" class="wiki-mobile-drawer-close">✕</button></div><div class="wiki-sidebar-search"><form class="wiki-search-box" role="search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink:0"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="currentColor"></path></svg><input type="text" placeholder="搜索文档..." aria-label="搜索文档" readOnly=""/><kbd class="wiki-search-kbd" aria-hidden="true">⌘K</kbd></form></div><nav><ul class="wiki-nav-list" role="tree"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="true">cognizes</button></div><div class="wiki-nav-children open"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/readme/">🏠 <!-- -->readme</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link active" aria-current="page" href="/negentropy/reference/cognizes/000-prd-architecture/">prd architecture</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/001-implementation-plan/">implementation plan</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/002-task-checklist/">task checklist</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">audio</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">context engineering</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/audio/context-engineering/context-engineering-agent-pillars-and-reliability/">Context Engineering Agent Pillars and Reliability</a></div></li></ul></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">engine</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/readme/">🏠 <!-- -->README</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/000-roadmap/">roadmap</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/001-task-checklist/">task checklist</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/010-the-pulse/">the pulse</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/020-the-hippocampus/">the hippocampus</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/030-the-perception/">the perception</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/040-the-realm-of-mind/">the realm of mind</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/050-integrated-demo/">integrated demo</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/060-agentic-ai-engine/">agentic ai engine</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/070-development-guide/">开发与维护手册</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/080-testing-guide/">测试指南</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/090-ci-cd-guide/">GitHub Actions 自动化流程</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/100-api-contracts/">API 接口文档</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/110-oceanbase-practice/">oceanbase practice</a></div></li></ul></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">perceives</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">agents</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/apple-silicon-tuning/">Apple Silicon PDF Pipeline 调优指南</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/knowledge-map/">Knowledge Map（知识索引）</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/pdf-engine-selection/">PDF 引擎选择决策图</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/development/">development</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/framework/">framework</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/issue/">Issue 处理档案</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/user-guide/">user guide</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">wiki</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/deployment/">Negentropy Wiki 独立部署与内容同步指引</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">design</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/design/knowledge-graph/">Wiki 知识图谱（按 Publication 切片发布）</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/ops/">Negentropy Wiki 运维指引</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">reports</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/reports/agents-validation/">Agents at Wiki —— 浏览器回归验证报告</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">user guide</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/user-guide/publishing/">Wiki 知识发布</a></div></li></ul></div></li></ul></div></li></ul></nav></aside><div class="wiki-layout" data-toc="collapsed" data-header=""><aside class="wiki-sidebar"><div class="wiki-sidebar-search"><form class="wiki-search-box" role="search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink:0"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="currentColor"></path></svg><input type="text" placeholder="搜索文档..." aria-label="搜索文档" readOnly=""/><kbd class="wiki-search-kbd" aria-hidden="true">⌘K</kbd></form></div><nav><ul class="wiki-nav-list" role="tree"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="true">cognizes</button></div><div class="wiki-nav-children open"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/readme/">🏠 <!-- -->readme</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link active" aria-current="page" href="/negentropy/reference/cognizes/000-prd-architecture/">prd architecture</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/001-implementation-plan/">implementation plan</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/002-task-checklist/">task checklist</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">audio</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">context engineering</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/audio/context-engineering/context-engineering-agent-pillars-and-reliability/">Context Engineering Agent Pillars and Reliability</a></div></li></ul></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">engine</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/readme/">🏠 <!-- -->README</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/000-roadmap/">roadmap</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/001-task-checklist/">task checklist</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/010-the-pulse/">the pulse</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/020-the-hippocampus/">the hippocampus</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/030-the-perception/">the perception</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/040-the-realm-of-mind/">the realm of mind</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/050-integrated-demo/">integrated demo</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/060-agentic-ai-engine/">agentic ai engine</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/070-development-guide/">开发与维护手册</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/080-testing-guide/">测试指南</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/090-ci-cd-guide/">GitHub Actions 自动化流程</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/100-api-contracts/">API 接口文档</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/cognizes/engine/110-oceanbase-practice/">oceanbase practice</a></div></li></ul></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">perceives</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">agents</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/apple-silicon-tuning/">Apple Silicon PDF Pipeline 调优指南</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/knowledge-map/">Knowledge Map（知识索引）</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/agents/pdf-engine-selection/">PDF 引擎选择决策图</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/development/">development</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/framework/">framework</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/issue/">Issue 处理档案</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/perceives/user-guide/">user guide</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">wiki</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/deployment/">Negentropy Wiki 独立部署与内容同步指引</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">design</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/design/knowledge-graph/">Wiki 知识图谱（按 Publication 切片发布）</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/ops/">Negentropy Wiki 运维指引</a></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">reports</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/reports/agents-validation/">Agents at Wiki —— 浏览器回归验证报告</a></div></li></ul></div></li><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><button type="button" class="wiki-nav-group" aria-expanded="false">user guide</button></div><div class="wiki-nav-children"><ul class="wiki-nav-list wiki-nav-sublist" role="group"><li class="wiki-nav-item" role="treeitem"><div class="wiki-nav-row"><a class="wiki-nav-link" href="/negentropy/reference/wiki/user-guide/publishing/">Wiki 知识发布</a></div></li></ul></div></li></ul></div></li></ul></nav></aside><main class="wiki-main"><nav class="wiki-doc-breadcrumb" aria-label="面包屑"><span><span class="wiki-doc-breadcrumb-text">reference</span></span><span><span class="wiki-doc-breadcrumb-sep">›</span><span class="wiki-doc-breadcrumb-text">cognizes</span></span><span><span class="wiki-doc-breadcrumb-sep">›</span><a href="/negentropy/reference/cognizes/000-prd-architecture" class="wiki-doc-breadcrumb-link">prd architecture</a></span></nav><header class="wiki-doc-header"><h1 class="wiki-doc-title">prd architecture</h1><div class="wiki-article-meta"><span class="wiki-meta-sep">·</span><span class="wiki-meta-item"><svg class="wiki-meta-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5h5.5V7"></path><path d="M14.5 1.5L7.5 8.5"></path><path d="M6.5 3H3a1.5 1.5 0 00-1.5 1.5V13A1.5 1.5 0 003 14.5h8.5A1.5 1.5 0 0013 13V9.5"></path></svg><a class="wiki-meta-source-link" href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/000-prd-architecture.md" target="_blank" rel="noopener noreferrer">原文链接</a></span></div></header><div class="wiki-markdown-body"><hr/>
+<p>id: prd-architecture
+sidebar_position: 0
+title: 产品需求与概要设计（PRD &amp; Architecture）
+last_update:
+author: Aurelius Huang
+created_at: 2025-12-22
+updated_at: 2025-12-23
+version: 1.1
+status: Reviewed
+tags:</p>
+<ul>
+<li>PRD</li>
+<li>Architecture</li>
+</ul>
+<hr/>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p><strong>立意</strong>：Agentic AI 学术研究与工程应用方案定制</p>
+</blockquote>
+<hr/>
+<h2 id="1-产品愿景" class="wiki-anchor-heading"><a href="#1-产品愿景" class="wiki-anchor-link" aria-label="链接到此章节">#</a>1. 产品愿景</h2>
+<h3 id="11-核心定位" class="wiki-anchor-heading"><a href="#11-核心定位" class="wiki-anchor-link" aria-label="链接到此章节">#</a>1.1 核心定位</h3>
+<p><strong>一个专注于 Agentic AI 学术研究与工程应用方案定制的智能平台</strong>，通过 Agents 协作，构建一个 <strong>认知增强的学术研究与解决方案架构助手</strong>，为中文读者提供高质量的内容与资料收集、翻译、理解、语义检索与应用定制服务 [1]。</p>
+<ul>
+<li><strong>内容采集</strong>：自动化收集、解析 Agentic AI 领域前沿学术与理论研究（Papers）、主流技术工程实践（Industrial Products）</li>
+<li><strong>深度翻译</strong>：保持学术术语准确性的高质量中英互译</li>
+<li><strong>语义理解</strong>：基于 GraphRAG 的内容关联分析与知识图谱构建</li>
+<li><strong>智能检索</strong>：混合检索（关键词 + 向量 + 图谱）支持多跳推理</li>
+<li><strong>应用研究</strong>：内容综述与趋势分析、技术选型参考、认知增强与可视化、认知应用方案定制</li>
+</ul>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="12-差异化价值" class="wiki-anchor-heading"><a href="#12-差异化价值" class="wiki-anchor-link" aria-label="链接到此章节">#</a>1.2 差异化价值</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>传统方案</th><th>本平台方案</th></tr></thead><tbody><tr><td>孤立的文档翻译</td><td>跨内容知识图谱关联 [2]</td></tr><tr><td>单一向量检索</td><td>GraphRAG 多跳推理检索 [3]</td></tr><tr><td>人工整理分类</td><td>Agent 自动化处理与元数据抽取</td></tr><tr><td>静态翻译结果</td><td>实时任务监控与增量更新</td></tr><tr><td>无记忆能力</td><td>Cognee 认知记忆层 [4]</td></tr></tbody></table></div>
+<h3 id="13-设计理念" class="wiki-anchor-heading"><a href="#13-设计理念" class="wiki-anchor-link" aria-label="链接到此章节">#</a>1.3 设计理念</h3>
+<p>基于<strong>认知增强</strong>与 <strong>Context Engineering</strong> 理论 [5][15]，本平台采用以下核心设计理念：</p>
+<ol>
+<li><strong>Agentic RAG 架构</strong>：将传统 RAG 被动检索转变为 Agent 驱动的主动推理，实现 Adaptive + Corrective + Self-RAG 组合 [6]</li>
+<li><strong>图谱增强记忆</strong>：利用知识图谱解决 LLM 的&quot;孤立上下文&quot;问题，构建确定性知识结构 [7]</li>
+<li><strong>多 Agent 协作</strong>：借鉴 BettaFish 论坛协作机制，通过&quot;论坛辩论&quot;模式避免单模型思维局限和交流同质化 [8]</li>
+<li><strong>三位一体存储</strong>：基于 OceanBase 实现 TP/AP/Vector 统一存储，消除 ETL 同步延迟 [9]</li>
+<li><strong>分层上下文管理</strong>：采用短期/长期记忆分层架构，系统性管理 Agent 运行上下文 [15]</li>
+</ol>
+<hr/>
+<h2 id="2-用户画像与场景" class="wiki-anchor-heading"><a href="#2-用户画像与场景" class="wiki-anchor-link" aria-label="链接到此章节">#</a>2. 用户画像与场景</h2>
+<h3 id="21-目标用户" class="wiki-anchor-heading"><a href="#21-目标用户" class="wiki-anchor-link" aria-label="链接到此章节">#</a>2.1 目标用户</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="22-用户画像" class="wiki-anchor-heading"><a href="#22-用户画像" class="wiki-anchor-link" aria-label="链接到此章节">#</a>2.2 用户画像</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>角色</th><th>核心需求</th><th>痛点</th><th>期望价值</th></tr></thead><tbody><tr><td><strong>AI 研究者</strong></td><td>跟踪前沿、理解原理、发现关联</td><td>英文阅读门槛、内容孤立</td><td>高质量翻译、知识图谱</td></tr><tr><td><strong>工程实践者</strong></td><td>技术选型、方案设计、落地参考</td><td>理论到实践鸿沟</td><td>工程指引、代码示例</td></tr><tr><td><strong>技术爱好者</strong></td><td>学习入门、理解概念</td><td>内容碎片化</td><td>体系化知识、学习路径</td></tr></tbody></table></div>
+<h3 id="23-核心使用场景" class="wiki-anchor-heading"><a href="#23-核心使用场景" class="wiki-anchor-link" aria-label="链接到此章节">#</a>2.3 核心使用场景</h3>
+<p><strong>场景 1：内容检索与阅读</strong></p>
+<div class="wiki-code-block" style="position:relative"><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code>用户提问：&quot;有哪些论文研究了 Chain-of-Thought 和 ReAct 的结合应用？&quot;
+系统响应：
+  1. 向量检索 → 语义相关论文
+  2. 图谱检索 → 方法论关联论文
+  3. 多跳推理 → 发现间接关联
+  4. 生成回答 → 综述 + 引用链接
+</code></pre></div>
+<p><strong>场景 2：内容翻译与理解</strong></p>
+<div class="wiki-code-block" style="position:relative"><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code>用户上传：新发布的 Agentic AI 相关资料（论文 PDF / 技术博客 URL / GitHub 仓库）
+系统处理：
+  1. Reader Agent → 提取内容与结构
+  2. Translation Agent → 高质量翻译（保留术语）
+  3. Heartfelt Agent → 深度分析与要点提炼
+  4. Cognee → 更新知识图谱，建立关联
+</code></pre></div>
+<p><strong>场景 3：技术方案咨询</strong></p>
+<div class="wiki-code-block" style="position:relative"><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code>用户提问：&quot;我需要为客服系统设计一个多 Agent 架构，有什么参考？&quot;
+系统响应：
+  1. 检索相关内容（论文、文档、代码仓库）
+  2. 图谱查询架构模式关联
+  3. 结合 BettaFish 论坛协作机制
+  4. 参考其他经典 Agents 模式
+  5. 输出可落地的架构方案
+</code></pre></div>
+<hr/>
+<h2 id="3-功能需求" class="wiki-anchor-heading"><a href="#3-功能需求" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3. 功能需求</h2>
+<h3 id="31-功能概览" class="wiki-anchor-heading"><a href="#31-功能概览" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.1 功能概览</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="32-核心功能" class="wiki-anchor-heading"><a href="#32-核心功能" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.2 核心功能</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<hr/>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<hr/>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<hr/>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="33-p0-核心功能" class="wiki-anchor-heading"><a href="#33-p0-核心功能" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.3 P0 核心功能</h3>
+<h4 id="331-内容上传与管理" class="wiki-anchor-heading"><a href="#331-内容上传与管理" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.3.1 内容上传与管理</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>功能点</th><th>描述</th><th>验收标准</th></tr></thead><tbody><tr><td>拖拽上传</td><td>支持 PDF/Markdown/URL 格式</td><td>50MB 限制，实时进度</td></tr><tr><td>批量上传</td><td>多文件同时上传</td><td>队列管理，并发控制</td></tr><tr><td>元数据提取</td><td>自动识别标题、作者、摘要</td><td>准确率 &gt; 90%</td></tr><tr><td>分类管理</td><td>按主题分类（LLM Agents / RAG 等）</td><td>支持自定义标签</td></tr><tr><td>状态追踪</td><td>处理状态可视化</td><td>待处理/处理中/已完成</td></tr></tbody></table></div>
+<h4 id="332-智能翻译" class="wiki-anchor-heading"><a href="#332-智能翻译" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.3.2 智能翻译</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>功能点</th><th>描述</th><th>验收标准</th></tr></thead><tbody><tr><td>学术术语保留</td><td>专业术语中英对照</td><td>关键术语不翻译</td></tr><tr><td>结构保持</td><td>保留原文标题、段落结构</td><td>Markdown 格式输出</td></tr><tr><td>增量翻译</td><td>支持部分翻译、继续翻译</td><td>断点续传</td></tr><tr><td>质量评估</td><td>翻译质量自动评估</td><td>BLEU/人工评分</td></tr></tbody></table></div>
+<h4 id="333-语义搜索" class="wiki-anchor-heading"><a href="#333-语义搜索" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.3.3 语义搜索</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>功能点</th><th>描述</th><th>验收标准</th></tr></thead><tbody><tr><td>全文检索</td><td>标题、摘要、内容搜索</td><td>响应 &lt; 500ms</td></tr><tr><td>向量检索</td><td>语义相似度匹配</td><td>Top-K 召回</td></tr><tr><td>混合检索</td><td>关键词 + 向量融合</td><td>RRF 重排序 [10]</td></tr><tr><td>筛选过滤</td><td>按分类、日期、状态筛选</td><td>组合条件</td></tr></tbody></table></div>
+<h4 id="334-任务监控" class="wiki-anchor-heading"><a href="#334-任务监控" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.3.4 任务监控</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>功能点</th><th>描述</th><th>验收标准</th></tr></thead><tbody><tr><td>实时状态</td><td>WebSocket 推送任务进度</td><td>延迟 &lt; 1s</td></tr><tr><td>任务列表</td><td>查看所有任务状态</td><td>分页、筛选</td></tr><tr><td>取消/重试</td><td>任务控制操作</td><td>即时响应</td></tr><tr><td>日志查看</td><td>详细处理日志</td><td>错误定位</td></tr></tbody></table></div>
+<h3 id="34-p1-增强功能" class="wiki-anchor-heading"><a href="#34-p1-增强功能" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.4 P1 增强功能</h3>
+<h4 id="341-知识图谱可视化" class="wiki-anchor-heading"><a href="#341-知识图谱可视化" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.4.1 知识图谱可视化</h4>
+<p>基于 Neo4j 知识图谱构建内容关联网络 [11]：</p>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h4 id="342-多跳推理问答" class="wiki-anchor-heading"><a href="#342-多跳推理问答" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.4.2 多跳推理问答</h4>
+<p>基于 Agentic RAG 实现复杂问题推理 [6]：</p>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="35-p2-扩展功能" class="wiki-anchor-heading"><a href="#35-p2-扩展功能" class="wiki-anchor-link" aria-label="链接到此章节">#</a>3.5 P2 扩展功能</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>功能</th><th>描述</th><th>优先级理由</th></tr></thead><tbody><tr><td>用户认证</td><td>注册登录、收藏管理</td><td>个性化前提</td></tr><tr><td>个性化推荐</td><td>基于历史行为推荐</td><td>提升粘性</td></tr><tr><td>协作批注</td><td>多人协作翻译、评审</td><td>生态建设</td></tr><tr><td>API 平台</td><td>开放能力给第三方</td><td>生态扩展</td></tr></tbody></table></div>
+<hr/>
+<h2 id="4-agent-体系" class="wiki-anchor-heading"><a href="#4-agent-体系" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4. Agent 体系</h2>
+<h3 id="41-双框架战略" class="wiki-anchor-heading"><a href="#41-双框架战略" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.1 双框架战略</h3>
+<p>基于调研结论 [12]，采用双框架战略平衡开发效率与生产稳定性：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>框架</th><th>适用场景</th><th>核心优势</th></tr></thead><tbody><tr><td><strong>Claude SDK</strong></td><td>原型开发、定制需求</td><td>灵活、Agent Skills 生态</td></tr><tr><td><strong>Google ADK</strong></td><td>生产环境、批量处理</td><td>高性能、Multi-Agent 编排</td></tr></tbody></table></div>
+<h3 id="42-agents-协作架构" class="wiki-anchor-heading"><a href="#42-agents-协作架构" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.2 Agents 协作架构</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<p>基于 <strong>ReAct 框架</strong>（Reasoning + Acting）设计，每个 Agent 交织推理与行动：</p>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="43-agent-职责定义" class="wiki-anchor-heading"><a href="#43-agent-职责定义" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.3 Agent 职责定义</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>Agent</th><th>职责</th><th>核心能力</th><th>设计模式</th></tr></thead><tbody><tr><td><strong>Coordinator Agent</strong></td><td>中央协调与任务编排</td><td>流程控制、状态管理、批量并行处理、队列管理</td><td>Orchestrator [13]</td></tr><tr><td><strong>Reader Agent</strong></td><td>多源多模态内容解析</td><td>PDF/URL/Word/PPT/Excel 解析、图片/音视频处理、元数据提取</td><td>Tool Use</td></tr><tr><td><strong>Translation Agent</strong></td><td>高质量学术翻译</td><td>术语保留、结构保持</td><td>Prompt Chaining</td></tr><tr><td><strong>Heartfelt Agent</strong></td><td>深度分析与洞察生成</td><td>内容综述、要点提炼</td><td>CoT + Reflection</td></tr><tr><td><strong>Solutions Architect</strong></td><td>场景化方案定制与架构设计</td><td>应用方案输出、解决方案设计、技术选型建议、方案质量评估</td><td>Planning + Synthesis</td></tr></tbody></table></div>
+<h3 id="44-reader-agent-多源多模态能力" class="wiki-anchor-heading"><a href="#44-reader-agent-多源多模态能力" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.4 Reader Agent 多源多模态能力</h3>
+<p>Reader Agent 是内容采集的核心组件，支持广泛的数据源和模态：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>类型</th><th>支持格式</th><th>说明</th></tr></thead><tbody><tr><td><strong>文档格式</strong></td><td>PDF, Markdown, Word (.docx), PPT (.pptx), Excel (.xlsx), Text</td><td>结构化内容提取</td></tr><tr><td><strong>网络资源</strong></td><td>URL (Web Page), arXiv, GitHub</td><td>自动抓取与解析</td></tr><tr><td><strong>多模态</strong></td><td>文本, 图片 (PNG/JPG), 音频 (MP3/WAV), 视频 (MP4)</td><td>LLM 多模态理解</td></tr></tbody></table></div>
+<h3 id="45-solutions-architect-场景化方案定制" class="wiki-anchor-heading"><a href="#45-solutions-architect-场景化方案定制" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.5 Solutions Architect 场景化方案定制</h3>
+<p>Solutions Architect 是平台的核心差异化能力，负责将调研分析结果转化为可落地的工程方案：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>能力维度</th><th>说明</th></tr></thead><tbody><tr><td><strong>应用场景理解</strong></td><td>分析用户的业务场景、技术约束、团队能力</td></tr><tr><td><strong>方案设计</strong></td><td>基于调研分析成果，输出架构设计、技术选型、实施路径</td></tr><tr><td><strong>最佳实践整合</strong></td><td>结合 BettaFish、Cognee 等框架，提供经过验证的工程模式 [8]</td></tr><tr><td><strong>定制化输出</strong></td><td>根据用户需求，生成定制的 PRD、技术文档、代码骨架</td></tr><tr><td><strong>方案评估</strong></td><td>评估方案的质量、可行性、成本效益</td></tr></tbody></table></div>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="46-论坛协作机制" class="wiki-anchor-heading"><a href="#46-论坛协作机制" class="wiki-anchor-link" aria-label="链接到此章节">#</a>4.6 论坛协作机制</h3>
+<p>借鉴 BettaFish 创新设计 [8]，引入 Agent 论坛协作机制：</p>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<hr/>
+<h2 id="5-认知增强体系" class="wiki-anchor-heading"><a href="#5-认知增强体系" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5. 认知增强体系</h2>
+<h3 id="51-理论基础" class="wiki-anchor-heading"><a href="#51-理论基础" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5.1 理论基础</h3>
+<p>本平台认知增强体系基于以下核心理论 [5][15]：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>理论</th><th>核心思想</th><th>应用模块</th></tr></thead><tbody><tr><td><strong>GraphRAG</strong></td><td>LLM 构建知识图谱 + 社区检测</td><td>内容关联分析</td></tr><tr><td><strong>Agentic RAG</strong></td><td>Agent 驱动的自适应检索</td><td>智能问答</td></tr><tr><td><strong>Memory Pattern</strong></td><td>短期/长期记忆分层</td><td>Cognee 认知层</td></tr><tr><td><strong>Context Engineering</strong></td><td>系统性上下文管理</td><td>检索与生成</td></tr><tr><td><strong>ReAct Framework</strong></td><td>推理与行动交织</td><td>Agent 决策循环</td></tr><tr><td><strong>Reflection</strong></td><td>自我评估与修正</td><td>生成质量保障</td></tr></tbody></table></div>
+<h3 id="52-cognee-记忆层" class="wiki-anchor-heading"><a href="#52-cognee-记忆层" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5.2 Cognee 记忆层</h3>
+<p>基于 <strong>Cognee</strong> 框架，为 Agent 提供认知记忆层：</p>
+<ul>
+<li><strong>长期记忆</strong>：跨会话持久化，避免上下文遗忘</li>
+<li><strong>语义记忆</strong>：知识图谱存储实体关系</li>
+<li><strong>情景记忆</strong>：保留处理历史和决策轨迹</li>
+</ul>
+<p>基于 Cognee 框架 [4] 构建认知记忆层：</p>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="53-知识图谱设计" class="wiki-anchor-heading"><a href="#53-知识图谱设计" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5.3 知识图谱设计</h3>
+<h4 id="节点类型" class="wiki-anchor-heading"><a href="#节点类型" class="wiki-anchor-link" aria-label="链接到此章节">#</a>节点类型</h4>
+<p>基于 Reader Agent 支持的多源多模态能力 [4]，知识图谱采用分层实体设计：</p>
+<p><strong>内容来源类（Source 基类及其特化）</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>节点</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>Source</code></td><td>id, title, source_type, format, url, created_at</td><td>内容来源基类</td></tr><tr><td><code>Paper</code></td><td>id, title, abstract, year, arxiv_id, venue, doi</td><td>学术论文（特化）</td></tr><tr><td><code>Article</code></td><td>id, title, summary, publish_date, platform</td><td>技术文章（特化）</td></tr><tr><td><code>Document</code></td><td>id, title, doc_type, version, organization</td><td>技术文档（特化）</td></tr><tr><td><code>CodeRepo</code></td><td>id, name, description, language, stars, url</td><td>代码仓库（特化）</td></tr></tbody></table></div>
+<p><strong>知识实体类</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>节点</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>Author</code></td><td>name, affiliation, email</td><td>作者</td></tr><tr><td><code>Concept</code></td><td>name, definition, category</td><td>核心概念</td></tr><tr><td><code>Method</code></td><td>name, description, type</td><td>方法论</td></tr><tr><td><code>Dataset</code></td><td>name, size, domain</td><td>数据集</td></tr><tr><td><code>Framework</code></td><td>name, version, url, license</td><td>技术框架</td></tr><tr><td><code>Tool</code></td><td>name, description, category, url</td><td>工具</td></tr></tbody></table></div>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h4 id="关系类型" class="wiki-anchor-heading"><a href="#关系类型" class="wiki-anchor-link" aria-label="链接到此章节">#</a>关系类型</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>关系</th><th>起点</th><th>终点</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>AUTHORED_BY</code></td><td>Source</td><td>Author</td><td>order</td><td>作者关系</td></tr><tr><td><code>CITES</code></td><td>Paper</td><td>Paper</td><td>context</td><td>论文引用</td></tr><tr><td><code>REFERENCES</code></td><td>Source</td><td>Source</td><td>type</td><td>通用引用关系</td></tr><tr><td><code>USES_METHOD</code></td><td>Source</td><td>Method</td><td>-</td><td>使用方法论</td></tr><tr><td><code>INTRODUCES</code></td><td>Source</td><td>Concept</td><td>-</td><td>引入概念</td></tr><tr><td><code>EXTENDS</code></td><td>Method</td><td>Method</td><td>-</td><td>方法扩展</td></tr><tr><td><code>EVALUATED_ON</code></td><td>Paper</td><td>Dataset</td><td>metrics</td><td>评估数据集</td></tr><tr><td><code>IMPLEMENTS</code></td><td>CodeRepo</td><td>Framework</td><td>-</td><td>实现框架</td></tr><tr><td><code>BASED_ON</code></td><td>Source</td><td>Paper</td><td>-</td><td>基于论文</td></tr><tr><td><code>RELATED_TO</code></td><td>Source</td><td>Source</td><td>score</td><td>相关性关联</td></tr></tbody></table></div>
+<h3 id="54-混合检索策略" class="wiki-anchor-heading"><a href="#54-混合检索策略" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5.4 混合检索策略</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="55-agentic-rag-实现" class="wiki-anchor-heading"><a href="#55-agentic-rag-实现" class="wiki-anchor-link" aria-label="链接到此章节">#</a>5.5 Agentic RAG 实现</h3>
+<p>基于调研结论 [6]，实现 Adaptive + Corrective + Self-RAG 组合，覆盖 RAG 2.0 全部核心能力：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>模式</th><th>核心能力</th><th>实现方式</th></tr></thead><tbody><tr><td><strong>Adaptive RAG</strong></td><td>自适应检索策略</td><td>智能路由器动态选择向量/图谱/Web 检索</td></tr><tr><td><strong>Corrective RAG</strong></td><td>纠错检索</td><td>相关性评估器 + Web 搜索补救</td></tr><tr><td><strong>Self-RAG</strong></td><td>自反思生成</td><td>生成后评估，需修正时回退重生</td></tr><tr><td><strong>Multi-Step</strong></td><td>多步推理</td><td>LangGraph 状态机编排复杂检索任务</td></tr></tbody></table></div>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<hr/>
+<h2 id="6-数据架构" class="wiki-anchor-heading"><a href="#6-数据架构" class="wiki-anchor-link" aria-label="链接到此章节">#</a>6. 数据架构</h2>
+<h3 id="61-存储选型" class="wiki-anchor-heading"><a href="#61-存储选型" class="wiki-anchor-link" aria-label="链接到此章节">#</a>6.1 存储选型</h3>
+<p>基于调研结论 [9][11]，采用以下存储技术：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>存储类型</th><th>技术选型</th><th>用途</th><th>核心优势</th></tr></thead><tbody><tr><td><strong>向量存储</strong></td><td>OceanBase V4.5+</td><td>语义检索</td><td>三位一体、HTAP 能力</td></tr><tr><td><strong>图存储</strong></td><td>Neo4j / Cognee</td><td>知识图谱</td><td>成熟生态、AI 集成</td></tr><tr><td><strong>关系存储</strong></td><td>OceanBase</td><td>元数据、用户数据</td><td>金融级事务</td></tr><tr><td><strong>文件存储</strong></td><td>文件系统</td><td>原始文档、翻译结果</td><td>简化部署</td></tr></tbody></table></div>
+<h3 id="62-oceanbase-数据模型" class="wiki-anchor-heading"><a href="#62-oceanbase-数据模型" class="wiki-anchor-link" aria-label="链接到此章节">#</a>6.2 OceanBase 数据模型</h3>
+<div class="wiki-code-block" style="position:relative"><span class="wiki-code-lang">hljs sql</span><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code class="hljs language-sql"><span class="hljs-comment">-- 内容元数据表 (TP 场景) - 对应知识图谱 Source 基类</span>
+<span class="hljs-keyword">CREATE TABLE</span> sources (
+    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT,
+    source_type ENUM(<span class="hljs-string">&#x27;paper&#x27;</span>, <span class="hljs-string">&#x27;article&#x27;</span>, <span class="hljs-string">&#x27;document&#x27;</span>, <span class="hljs-string">&#x27;code_repo&#x27;</span>) <span class="hljs-keyword">NOT NULL</span>,
+    title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">500</span>) <span class="hljs-keyword">NOT NULL</span>,
+    abstract TEXT,
+    authors JSON,
+    url <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">1000</span>),
+    format <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>),                    <span class="hljs-comment">-- pdf, md, docx, pptx, xlsx, url, etc.</span>
+    publication_date <span class="hljs-type">DATE</span>,
+    category <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>),
+    status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;processing&#x27;</span>, <span class="hljs-string">&#x27;translated&#x27;</span>, <span class="hljs-string">&#x27;analyzed&#x27;</span>),
+    metadata JSON,                         <span class="hljs-comment">-- 特化类型的扩展属性</span>
+    created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+    updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+    INDEX idx_source_type (source_type),
+    INDEX idx_category (category),
+    INDEX idx_status (status)
+);
+
+<span class="hljs-comment">-- 内容向量表 (Vector DB 场景)</span>
+<span class="hljs-keyword">CREATE TABLE</span> source_embeddings (
+    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT,
+    source_id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT NULL</span>,
+    chunk_index <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+    chunk_text TEXT,
+    embedding VECTOR(<span class="hljs-number">1536</span>),
+    <span class="hljs-keyword">FOREIGN KEY</span> (source_id) <span class="hljs-keyword">REFERENCES</span> sources(id)
+);
+
+<span class="hljs-comment">-- 创建 HNSW 向量索引</span>
+<span class="hljs-keyword">CREATE</span> INDEX idx_source_embedding_hnsw
+<span class="hljs-keyword">ON</span> source_embeddings <span class="hljs-keyword">USING</span> HNSW (embedding vector_cosine_ops)
+<span class="hljs-keyword">WITH</span> (m <span class="hljs-operator">=</span> <span class="hljs-number">16</span>, ef_construction <span class="hljs-operator">=</span> <span class="hljs-number">128</span>);
+</code></pre></div>
+<h3 id="63-neo4j-知识图谱-schema" class="wiki-anchor-heading"><a href="#63-neo4j-知识图谱-schema" class="wiki-anchor-link" aria-label="链接到此章节">#</a>6.3 Neo4j 知识图谱 Schema</h3>
+<div class="wiki-code-block" style="position:relative"><span class="wiki-code-lang">hljs cypher</span><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code class="hljs language-cypher">// 创建约束 - Source 基类及特化类型
+CREATE CONSTRAINT source_id_unique FOR (s:Source) REQUIRE s.id IS UNIQUE
+CREATE CONSTRAINT paper_id_unique FOR (p:Paper) REQUIRE p.id IS UNIQUE
+CREATE CONSTRAINT article_id_unique FOR (a:Article) REQUIRE a.id IS UNIQUE
+CREATE CONSTRAINT document_id_unique FOR (d:Document) REQUIRE d.id IS UNIQUE
+CREATE CONSTRAINT code_repo_id_unique FOR (c:CodeRepo) REQUIRE c.id IS UNIQUE
+CREATE CONSTRAINT author_name_unique FOR (a:Author) REQUIRE a.name IS UNIQUE
+
+// 创建向量索引 - Source 级别通用语义检索
+CREATE VECTOR INDEX source_embedding FOR (s:Source) ON (s.embedding)
+OPTIONS {
+  indexConfig: {
+    `vector.dimensions`: 1536,
+    `vector.similarity_function`: &#x27;cosine&#x27;
+  }
+}
+
+// 示例查询 1：查找使用相似方法的论文
+MATCH (p1:Paper)-[:USES_METHOD]-&gt;(m:Method)&lt;-[:USES_METHOD]-(p2:Paper)
+WHERE p1.title = &quot;ReAct&quot;
+RETURN p2.title, m.name
+
+// 示例查询 2：跨内容类型查找相关资源
+MATCH (s1:Source)-[:RELATED_TO]-&gt;(s2:Source)
+WHERE s1.title CONTAINS &quot;Agent&quot;
+RETURN s2.title, labels(s2) AS source_type
+</code></pre></div>
+<hr/>
+<h2 id="7-技术架构" class="wiki-anchor-heading"><a href="#7-技术架构" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7. 技术架构</h2>
+<h3 id="71-设计原则" class="wiki-anchor-heading"><a href="#71-设计原则" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7.1 设计原则</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>原则</th><th>说明</th></tr></thead><tbody><tr><td><strong>异步优先</strong></td><td>全链路异步处理，支持高并发论文处理</td></tr><tr><td><strong>Agent 自治</strong></td><td>每个 Agent 专注单一职责，通过编排层协作</td></tr><tr><td><strong>记忆增强</strong></td><td>Cognee 提供跨会话长期记忆，避免上下文遗忘</td></tr><tr><td><strong>混合检索</strong></td><td>关键词 + 向量 + 图谱三路融合，RRF 重排序</td></tr><tr><td><strong>可观测性</strong></td><td>任务实时监控，WebSocket 推送进度</td></tr><tr><td><strong>渐进增强</strong></td><td>文件系统起步，逐步引入向量库和图数据库</td></tr></tbody></table></div>
+<h3 id="72-整体架构" class="wiki-anchor-heading"><a href="#72-整体架构" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7.2 整体架构</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="721-数据流图" class="wiki-anchor-heading"><a href="#721-数据流图" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7.2.1 数据流图</h3>
+<div class="wiki-mermaid-diagram"><div></div></div>
+<h3 id="73-技术栈" class="wiki-anchor-heading"><a href="#73-技术栈" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7.3 技术栈</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>层级</th><th>技术选型</th><th>版本/说明</th></tr></thead><tbody><tr><td><strong>前端</strong></td><td>Next.js (App Router)</td><td>16.x</td></tr><tr><td></td><td>Zustand + immer</td><td>状态管理</td></tr><tr><td></td><td>TailwindCSS</td><td>样式框架</td></tr><tr><td><strong>后端</strong></td><td>FastAPI + asyncio</td><td>Python 3.14</td></tr><tr><td></td><td>Pydantic</td><td>数据验证</td></tr><tr><td><strong>Agent</strong></td><td>Google ADK</td><td>生产部署</td></tr><tr><td></td><td>Claude Agent SDK</td><td>原型开发</td></tr><tr><td></td><td>Claude Skills (Fallback)</td><td>7 个专用能力</td></tr><tr><td><strong>记忆</strong></td><td>Cognee</td><td>认知记忆层</td></tr><tr><td><strong>存储</strong></td><td>OceanBase V4.5+</td><td>向量+关系</td></tr><tr><td></td><td>Neo4j</td><td>知识图谱</td></tr><tr><td><strong>测试</strong></td><td>Pytest + Vitest + Playwright</td><td>82% 覆盖率</td></tr><tr><td><strong>CI/CD</strong></td><td>GitHub Actions</td><td>自动化</td></tr></tbody></table></div>
+<h3 id="74-目录结构" class="wiki-anchor-heading"><a href="#74-目录结构" class="wiki-anchor-link" aria-label="链接到此章节">#</a>7.4 目录结构</h3>
+<div class="wiki-code-block" style="position:relative"><span class="wiki-code-lang">hljs shell</span><button class="wiki-code-copy" aria-label="复制代码" type="button">复制</button><pre><code class="hljs language-shell">agentic-ai-cognizes/
+├── cognizes/                   # 后端
+│   ├── main.py                 # 应用入口
+│   ├── api/                    # FastAPI 服务
+│   │   ├── routes/             # API 路由
+│   │   └── services/           # 业务服务
+├── ├── agents/                 # Agents 核心
+│   │   ├── adk/                # ADK Agent 实现
+│   │   └── claude/             # Claude Agent 实现
+│   └── core/                   # 核心组件
+│       ├── models/             # Pydantic 模型
+│       ├── config.py           # 配置管理
+│       ├── memory.py           # Cognee 集成
+│       └── exceptions.py       # 异常定义
+├── ui/                         # 前端
+│   └── src/
+│       ├── app/                # App Router 页面
+│       │   ├── papers/         # 论文管理
+│       │   ├── tasks/          # 任务监控
+│       │   └── search/         # 搜索页面
+│       ├── components/         # React 组件
+│       ├── hooks/              # useApi, useWebSocket
+│       ├── store/              # Zustand Stores
+│       └── lib/api.ts          # API 客户端
+├── assets/                     # 资源文件
+│   ├── source/                 # 原始文档
+│   ├── translation/            # 翻译结果
+│   └── heartfelt/              # 深度分析
+├── tests/                      # 测试套件
+├── docs/                       # 文档
+└── .claude/skills/             # 7 个 Claude Skills
+</code></pre></div>
+<hr/>
+<h2 id="8-质量保障" class="wiki-anchor-heading"><a href="#8-质量保障" class="wiki-anchor-link" aria-label="链接到此章节">#</a>8. 质量保障</h2>
+<h3 id="81-评估指标体系" class="wiki-anchor-heading"><a href="#81-评估指标体系" class="wiki-anchor-link" aria-label="链接到此章节">#</a>8.1 评估指标体系</h3>
+<p>基于 RAGAS 框架 [14] 建立检索与生成质量评估体系：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>指标</th><th>说明</th><th>目标值</th></tr></thead><tbody><tr><td><strong>Faithfulness</strong></td><td>生成内容与检索上下文一致性</td><td>&gt; 85%</td></tr><tr><td><strong>Answer Relevancy</strong></td><td>答案与问题相关性</td><td>&gt; 90%</td></tr><tr><td><strong>Context Precision</strong></td><td>检索上下文信噪比</td><td>&gt; 80%</td></tr><tr><td><strong>Context Recall</strong></td><td>相关信息召回率</td><td>&gt; 85%</td></tr></tbody></table></div>
+<h3 id="82-技术指标" class="wiki-anchor-heading"><a href="#82-技术指标" class="wiki-anchor-link" aria-label="链接到此章节">#</a>8.2 技术指标</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>指标</th><th>当前</th><th>目标</th></tr></thead><tbody><tr><td>测试覆盖率</td><td>82%</td><td>&gt; 90%</td></tr><tr><td>API 响应时间</td><td>-</td><td>&lt; 500ms</td></tr><tr><td>向量检索延迟</td><td>-</td><td>&lt; 100ms</td></tr><tr><td>翻译准确率</td><td>-</td><td>&gt; 95%</td></tr></tbody></table></div>
+<hr/>
+<h2 id="9-参考文献" class="wiki-anchor-heading"><a href="#9-参考文献" class="wiki-anchor-link" aria-label="链接到此章节">#</a>9. 参考文献</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="overflow-x:auto;margin:1em 0"><table class="wiki-responsive-table"><thead><tr><th>序号</th><th>参考源</th><th>来源</th><th>核心思想</th><th>本项目应用模块</th></tr></thead><tbody><tr><td>[1]</td><td>项目架构文档</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/001-architecture.md">docs/001-architecture.md</a></td><td>项目整体架构与代码结构</td><td>全局</td></tr><tr><td>[2]</td><td>Microsoft GraphRAG 论文</td><td><a href="https://arxiv.org/abs/2404.16130">From Local to Global</a></td><td>LLM 构建知识图谱 + 图机器学习</td><td>内容关联分析、多跳检索</td></tr><tr><td>[3]</td><td>认知增强调研 - GraphRAG 原理</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/000-cognitive-enhancement.md">docs/research/000-cognitive-enhancement.md</a></td><td>图谱增强检索生成</td><td>智能检索体系</td></tr><tr><td>[4]</td><td>Cognee 深度调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/research/003-cognee.md">docs/research/003-cognee.md</a></td><td>AI 记忆层 + 三存储架构</td><td>认知记忆层</td></tr><tr><td>[5]</td><td>认知增强调研报告</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/000-cognitive-enhancement.md">docs/research/000-cognitive-enhancement.md</a></td><td>理论基础与框架对比</td><td>整体设计参考</td></tr><tr><td>[6]</td><td>Agentic RAG 理论</td><td>认知增强调研 §2.4</td><td>主动推理、自适应检索、多步方案</td><td>智能问答、复杂检索</td></tr><tr><td>[7]</td><td>知识图谱在 AI 中的应用</td><td>认知增强调研 §2.1.4</td><td>减少幻觉 40-60%、可解释决策</td><td>内容关联分析</td></tr><tr><td>[8]</td><td>BettaFish 深度调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/060-bettafish.md">docs/research/060-bettafish.md</a></td><td>论坛协作机制、多 Agent 辩论</td><td>Agent 协作设计</td></tr><tr><td>[9]</td><td>OceanBase 深度调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/033-oceanbase.md">docs/research/033-oceanbase.md</a></td><td>三位一体：TP/AP/Vector</td><td>数据存储架构</td></tr><tr><td>[10]</td><td>RRF 融合算法</td><td>认知增强调研 § 6.4</td><td>检索结果吾合重排序</td><td>混合检索</td></tr><tr><td>[11]</td><td>Neo4j 深度调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/050-neo4j.md">docs/research/050-neo4j.md</a></td><td>原生图存储、O(1) 关系遍历</td><td>知识图谱存储</td></tr><tr><td>[12]</td><td>Agent 框架调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/020-agent-runtime-frameworks.md">docs/research/020-agent-runtime-frameworks.md</a></td><td>ADK/Claude SDK 对比</td><td>双框架战略</td></tr><tr><td>[13]</td><td>Agentic Design Patterns</td><td>认知增强调研 § 5</td><td>Memory、Tool Use、Reflection</td><td>Agent 设计模式</td></tr><tr><td>[14]</td><td>RAGAS 评估框架</td><td><a href="https://docs.ragas.io/">RAGAS Docs</a></td><td>Faithfulness/Relevancy 评估</td><td>质量保障体系</td></tr><tr><td>[15]</td><td>Context Engineering 调研</td><td><a href="https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/010-context-engineering.md">docs/research/010-context-engineering.md</a></td><td>分层记忆、上下文压缩</td><td>记忆管理、状态管理</td></tr><tr><td>[16]</td><td>ReAct</td><td><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting</a></td><td>推理与行动交织，减少幻觉</td><td>Agent 决策循环</td></tr><tr><td>[17]</td><td>CoT</td><td><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting</a></td><td>链式思维促进复杂推理</td><td>Heartfelt Agent</td></tr><tr><td>[18]</td><td>Cognee 官方文档</td><td><a href="https://docs.cognee.ai/">Cognee Docs</a></td><td>核心操作、构建块、存储配置</td><td>Cognee 集成</td></tr><tr><td>[19]</td><td>OceanBase 向量索引</td><td><a href="https://www.oceanbase.com/docs/common-oceanbase-database">OceanBase Vector Search</a></td><td>HNSW/IVF 索引算法</td><td>向量检索</td></tr><tr><td>[20]</td><td>Neo4j GDS 算法</td><td><a href="https://neo4j.com/docs/graph-data-science/">Neo4j GDS Manual</a></td><td>50+ 图算法</td><td>图分析</td></tr></tbody></table></div></div></main><aside class="wiki-toc-aside"><button type="button" class="wiki-toc-rail" aria-label="展开目录（共 49 项）" aria-expanded="false"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="4" x2="13" y2="4"></line><line x1="3" y1="8" x2="13" y2="8"></line><line x1="3" y1="12" x2="13" y2="12"></line></svg><span class="wiki-toc-rail-count">49</span></button></aside></div><footer class="wiki-footer"><div class="wiki-footer-inner"><div class="wiki-footer-col"><h4 class="wiki-footer-col-title">知行</h4><ul class="wiki-footer-col-links"><li><a href="/#shuzhi-tongshi" class="wiki-footer-link">数智通识</a></li><li><a href="/#suanfa-tongjie" class="wiki-footer-link">算法通解</a></li><li><a href="/#jisuan-tongjian" class="wiki-footer-link">计算通践</a></li><li><a href="/#zhijian-tonggan" class="wiki-footer-link">知见通感</a></li></ul></div><div class="wiki-footer-col"><h4 class="wiki-footer-col-title">智践</h4><ul class="wiki-footer-col-links"><li><a href="/#ai-application" class="wiki-footer-link">Agent 工程化</a></li><li><a href="/#ai-infra" class="wiki-footer-link">AI Infra</a></li><li><a href="/#aigc" class="wiki-footer-link">AIGC</a></li></ul></div><div class="wiki-footer-col"><h4 class="wiki-footer-col-title">链接</h4><ul class="wiki-footer-col-links"><li><a href="https://github.com/ThreeFish-AI/negentropy" class="wiki-footer-link">GitHub</a></li><li><a href="/#changelog" class="wiki-footer-link">Changelog</a></li></ul></div><div class="wiki-footer-bottom"><p>© <!-- -->2026<!-- --> Negentropy Wiki. All rights reserved.</p></div></div></footer><!--$--><!--/$--></div><script src="/_next/static/chunks/0cg3jjhrc6gr8.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[796220,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"default\"]\n3:I[898596,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"default\"]\n5:I[525204,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[525204,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"ViewportBoundary\"]\nb:I[525204,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"MetadataBoundary\"]\nd:I[403433,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0vw7m0g~~xfj1.css\",\"style\"]\n:HL[\"/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"negentropy\",\"reference\",\"cognizes\",\"000-prd-architecture\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[[\"pubSlug\",\"negentropy\",\"d\",null],{\"children\":[[\"entrySlug\",\"reference/cognizes/000-prd-architecture\",\"c\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0vw7m0g~~xfj1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0.i745lpij5~d.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/0hqs262h-rs54.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"className\":\"inter_c15e96cb-module__0bjUvq__variable\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n(function(){\\n  try {\\n    var c = localStorage.getItem('wiki:color-scheme');\\n    if (c \u0026\u0026 c !== 'system') document.documentElement.setAttribute('data-color-scheme', c);\\n  } catch(e) {}\\n})();\\n\"}}]}],[\"$\",\"body\",null,{\"className\":\"wiki-body\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#wiki-main\",\"className\":\"skip-link\",\"children\":\"跳到主要内容\"}],[\"$\",\"div\",null,{\"id\":\"wiki-root\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0l-1o40xxlcr..js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/1785tie-8kwbg.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-2\",{\"src\":\"/_next/static/chunks/020j99-ergy27.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-3\",{\"src\":\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-4\",{\"src\":\"/_next/static/chunks/0ley0gi~_93r9.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-5\",{\"src\":\"/_next/static/chunks/0q82xhet41jw9.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-6\",{\"src\":\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-7\",{\"src\":\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-8\",{\"src\":\"/_next/static/chunks/0467rnayogf8d.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-9\",{\"src\":\"/_next/static/chunks/0gicyvtp~f7d..js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0vw7m0g~~xfj1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"wiki-1cc8a89a89a9abe1\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"2\",{\"name\":\"theme-color\",\"content\":\"#ffffff\",\"media\":\"(prefers-color-scheme: light)\"}],[\"$\",\"meta\",\"3\",{\"name\":\"theme-color\",\"content\":\"#0f0f10\",\"media\":\"(prefers-color-scheme: dark)\"}]]\n"])</script><script>self.__next_f.push([1,"f:I[213926,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\"],\"IconMark\"]\n7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"reference/cognizes/000-prd-architecture — negentropy\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Negentropy Wiki 文档页面\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.10ntlo.~a~h93.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"link\",\"3\",{\"rel\":\"apple-touch-icon\",\"href\":\"/logo.png\"}],[\"$\",\"$Lf\",\"4\",{}]]\n"])</script><script>self.__next_f.push([1,"10:I[899952,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiSearchProvider\"]\n11:I[740738,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiLayoutShell\"]\n12:I[775158,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiSearchBox\"]\n13:I[656979,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiNavTree\"]\n"])</script><script>self.__next_f.push([1,"4:[\"$\",\"$L10\",null,{\"pubSlug\":\"negentropy\",\"children\":[\"$\",\"$L11\",null,{\"sidebar\":[[\"$\",\"div\",null,{\"className\":\"wiki-sidebar-search\",\"children\":[\"$\",\"$L12\",null,{}]}],false,false,false,[\"$\",\"nav\",null,{\"children\":[\"$\",\"$L13\",null,{\"items\":[{\"entry_id\":\"e4b04d2c-6e1d-5e2b-965d-f6474b49820d\",\"entry_slug\":\"reference/cognizes\",\"entry_title\":\"cognizes\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"addd78f1-8644-580b-852b-0f2f7754f8c9\",\"entry_slug\":\"reference/cognizes/readme\",\"entry_title\":\"readme\",\"entry_description\":null,\"is_index_page\":true,\"document_id\":\"93c6045c-9a85-5b33-8504-ea99cd7a220a\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"557bfd23-a232-5946-9ef8-5317038452a0\",\"entry_slug\":\"reference/cognizes/000-prd-architecture\",\"entry_title\":\"prd architecture\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"ed9285e4-1be3-5ab3-987b-0d0b0f933f9a\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"387f50ca-5131-51d9-854d-59ba6871c14c\",\"entry_slug\":\"reference/cognizes/001-implementation-plan\",\"entry_title\":\"implementation plan\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"a8b2a3dd-df3f-521a-9e66-74f9f20060af\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"f8f64466-6afe-5680-bdae-fe88bc7714f7\",\"entry_slug\":\"reference/cognizes/002-task-checklist\",\"entry_title\":\"task checklist\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"f779b688-da32-585d-8a0a-2879d9306256\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"fd65cfd1-e497-52a7-a996-4e4ba6f068b4\",\"entry_slug\":\"reference/cognizes/audio\",\"entry_title\":\"audio\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"43daeabc-1d52-5d4a-8f8d-0abc1afaa282\",\"entry_slug\":\"reference/cognizes/audio/context-engineering\",\"entry_title\":\"context engineering\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"036cda97-87f5-53a9-90cf-9c8256db4945\",\"entry_slug\":\"reference/cognizes/audio/context-engineering/context-engineering-agent-pillars-and-reliability\",\"entry_title\":\"Context Engineering Agent Pillars and Reliability\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"fe2d1ec1-b86f-5933-bd3b-a30eec29fcec\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]}]},{\"entry_id\":\"c164b0d7-45cc-579a-9790-4c913e530d5a\",\"entry_slug\":\"reference/cognizes/engine\",\"entry_title\":\"engine\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"e0c50f4f-0c5f-53d5-8e3e-e13b63d8679f\",\"entry_slug\":\"reference/cognizes/engine/readme\",\"entry_title\":\"README\",\"entry_description\":null,\"is_index_page\":true,\"document_id\":\"48d658e4-6838-5159-a52b-629bcc07b004\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"6297090d-94ac-5ff9-93a9-eb814c1d2e08\",\"entry_slug\":\"reference/cognizes/engine/000-roadmap\",\"entry_title\":\"roadmap\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"c5aefe95-6fb6-52c4-8b3f-185c0035889e\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"5acc62fe-434d-56e5-beaa-bb291bba89cd\",\"entry_slug\":\"reference/cognizes/engine/001-task-checklist\",\"entry_title\":\"task checklist\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"4a38a173-1581-5fdb-80db-61340e903aee\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"4efcd35e-e2cf-5bf5-960d-454abcfd3df3\",\"entry_slug\":\"reference/cognizes/engine/010-the-pulse\",\"entry_title\":\"the pulse\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"4a2b7a17-d2ff-517c-95d9-501ae6947179\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"6a92160e-e07f-54a5-8b5f-3b7769d74bed\",\"entry_slug\":\"reference/cognizes/engine/020-the-hippocampus\",\"entry_title\":\"the hippocampus\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"7890bb37-0e34-5caa-8678-d25b04276d13\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"66f25411-a737-5d3c-b83d-e3a83693e3ff\",\"entry_slug\":\"reference/cognizes/engine/030-the-perception\",\"entry_title\":\"the perception\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"fcba288f-a1db-51e8-9e01-26c0c2c152ed\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"480b37fb-722d-5124-b04f-ce721e2a744e\",\"entry_slug\":\"reference/cognizes/engine/040-the-realm-of-mind\",\"entry_title\":\"the realm of mind\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"b6824054-2350-56cb-bad9-3806c130d9b7\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"69a21f85-ce30-5ab4-9a76-4ac57817254c\",\"entry_slug\":\"reference/cognizes/engine/050-integrated-demo\",\"entry_title\":\"integrated demo\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"6c748fd4-ff4b-58e6-8cda-6f3c89303c47\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"ce9ea699-55c6-5e41-98d8-85205b342385\",\"entry_slug\":\"reference/cognizes/engine/060-agentic-ai-engine\",\"entry_title\":\"agentic ai engine\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"81b99be3-e4b4-548d-a497-34afbf168ed5\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"4f50b5c3-eb83-54bd-9f9e-2e1d15718fa2\",\"entry_slug\":\"reference/cognizes/engine/070-development-guide\",\"entry_title\":\"开发与维护手册\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"677726d6-867a-5180-8e21-d65a7a1257fb\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"3a084cc9-fcc0-5dcd-bf4b-b3ab77a0e3ab\",\"entry_slug\":\"reference/cognizes/engine/080-testing-guide\",\"entry_title\":\"测试指南\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"57fc3e81-8463-5ca8-9790-f1e4151780ae\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"9a8331b0-dcb3-540e-a271-6dd9b6f6b90c\",\"entry_slug\":\"reference/cognizes/engine/090-ci-cd-guide\",\"entry_title\":\"GitHub Actions 自动化流程\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"957f7f50-d519-5ed3-ac6c-a614b1120d92\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"fcc1a285-d298-5660-8fb3-9486909d3b2d\",\"entry_slug\":\"reference/cognizes/engine/100-api-contracts\",\"entry_title\":\"API 接口文档\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"3517eb9e-40ed-5d7c-8ff4-067203863c1b\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"fe2c51fd-3cf0-5e3a-abdc-c84c651b1ad5\",\"entry_slug\":\"reference/cognizes/engine/110-oceanbase-practice\",\"entry_title\":\"oceanbase practice\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"17876a62-5913-5331-8ddf-c6f2df29c7d6\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]}]},{\"entry_id\":\"d6a12534-a760-5c6f-8cfb-8f83ee06ea8b\",\"entry_slug\":\"reference/perceives\",\"entry_title\":\"perceives\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"d767c64d-f7f5-5702-96ac-961c958d5e61\",\"entry_slug\":\"reference/perceives/agents\",\"entry_title\":\"agents\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"1c1906a4-225b-5c94-884e-56d6f52d5b28\",\"entry_slug\":\"reference/perceives/agents/apple-silicon-tuning\",\"entry_title\":\"Apple Silicon PDF Pipeline 调优指南\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"d96f76fb-99b1-5eb0-bccb-6c6eb1860b04\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"9952c4b4-57af-5744-bb43-38bf21a4946d\",\"entry_slug\":\"reference/perceives/agents/knowledge-map\",\"entry_title\":\"Knowledge Map（知识索引）\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"6287b45e-ce7f-5b2c-87d0-30853acacaed\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"b74f4a71-8d82-5b21-9dba-7b6731ab2a6c\",\"entry_slug\":\"reference/perceives/agents/pdf-engine-selection\",\"entry_title\":\"PDF 引擎选择决策图\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"0f8f700d-6f37-58d1-b875-b3d938253032\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]},{\"entry_id\":\"e8c02f53-ae34-5243-bd9b-2f3cabe6de20\",\"entry_slug\":\"reference/perceives/development\",\"entry_title\":\"development\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"4a77bc7b-71f3-5869-9ebf-695e76fed1c3\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"03d1cb2d-b8f9-53c8-a878-0c06775c1155\",\"entry_slug\":\"reference/perceives/framework\",\"entry_title\":\"framework\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"207de730-fcf1-56fd-ab99-28a4d64953e4\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"5485e46d-ea16-552b-9810-32df691c7184\",\"entry_slug\":\"reference/perceives/issue\",\"entry_title\":\"Issue 处理档案\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"e1182a83-a74f-5a4c-9bf0-a1cea73f3f91\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"8dfd1f41-e2fa-5257-acf3-36ff15827aa0\",\"entry_slug\":\"reference/perceives/user-guide\",\"entry_title\":\"user guide\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"8dccefc3-13b1-5125-8eec-ccf520202765\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]},{\"entry_id\":\"203eba92-6144-5ece-b9e3-b67c0b5afdf3\",\"entry_slug\":\"reference/wiki\",\"entry_title\":\"wiki\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"9cf3ba10-dd0f-5dd2-8063-ea7adbdf7cfe\",\"entry_slug\":\"reference/wiki/deployment\",\"entry_title\":\"Negentropy Wiki 独立部署与内容同步指引\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"35c81cd1-598e-511e-9d90-08f57b637992\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"b8c85af3-3b98-50a0-8768-482726ba92b3\",\"entry_slug\":\"reference/wiki/design\",\"entry_title\":\"design\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"6d4cf1c7-85c6-534e-bf73-79b9225376da\",\"entry_slug\":\"reference/wiki/design/knowledge-graph\",\"entry_title\":\"Wiki 知识图谱（按 Publication 切片发布）\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"f83d71fc-aaf4-5412-bd0c-0c248674c49f\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]},{\"entry_id\":\"0be4abbc-b52b-52b6-bb31-d2e842479ed0\",\"entry_slug\":\"reference/wiki/ops\",\"entry_title\":\"Negentropy Wiki 运维指引\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"3f52b0d4-1965-5b52-a226-ebf3d07c670e\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]},{\"entry_id\":\"dc47b0e8-17b3-5e95-b903-a22e8ff1cb1b\",\"entry_slug\":\"reference/wiki/reports\",\"entry_title\":\"reports\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"fc0a6333-fccb-5b40-a11e-ec9bf5f20b50\",\"entry_slug\":\"reference/wiki/reports/agents-validation\",\"entry_title\":\"Agents at Wiki —— 浏览器回归验证报告\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"0fe95234-ee8a-54b1-b3d0-5ae9a2c441ab\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]},{\"entry_id\":\"8484faf2-3f33-514e-981f-71771a444884\",\"entry_slug\":\"reference/wiki/user-guide\",\"entry_title\":\"user guide\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":null,\"catalog_node_id\":null,\"entry_kind\":\"CONTAINER\",\"children\":[{\"entry_id\":\"18a2c579-69a5-5b9d-9d1a-b59229e3eb53\",\"entry_slug\":\"reference/wiki/user-guide/publishing\",\"entry_title\":\"Wiki 知识发布\",\"entry_description\":null,\"is_index_page\":false,\"document_id\":\"2033601a-9915-50ab-934d-724fe856a2fd\",\"catalog_node_id\":null,\"entry_kind\":\"DOCUMENT\",\"children\":[]}]}]}],\"pubSlug\":\"negentropy\",\"activeSlug\":\"reference/cognizes/000-prd-architecture\"}]}]],\"hasToc\":true,\"header\":\"$L14\",\"toc\":\"$L15\",\"footer\":\"$L16\",\"children\":\"$L17\"}]}]\n"])</script><script>self.__next_f.push([1,"18:I[563803,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"\"]\n19:I[225063,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiHeaderActions\"]\n1a:I[834814,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"ThemePreference\"]\n1b:I[950552,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"WikiToc\"]\n1c:I[976600,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"MermaidDiagram\"]\n:HL[\"/logo.png\",\"image\"]\n"])</script><script>self.__next_f.push([1,"14:[\"$\",\"header\",null,{\"className\":\"wiki-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"wiki-header-inner\",\"children\":[[\"$\",\"$L18\",null,{\"href\":\"/\",\"className\":\"wiki-header-brand\",\"aria-label\":\"返回 Wiki 首页\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/logo.png\",\"alt\":\"Negentropy\",\"className\":\"wiki-header-logo\",\"width\":28,\"height\":28}],[\"$\",\"span\",null,{\"className\":\"wiki-header-name\",\"children\":\"Negentropy Wiki\"}]]}],[\"$\",\"nav\",null,{\"className\":\"wiki-header-tabs wiki-header-tabs--left\",\"aria-label\":\"特色导航\",\"children\":[[\"$\",\"div\",null,{\"className\":\"wiki-header-dropdown active\",\"children\":[[\"$\",\"$L18\",null,{\"href\":\"/negentropy/readme\",\"className\":\"wiki-header-dropdown-trigger\",\"aria-current\":\"page\",\"children\":[\"Negentropy\",[\"$\",\"span\",null,{\"className\":\"wiki-header-dropdown-arrow\",\"children\":\"▼\"}]]}],[\"$\",\"div\",null,{\"className\":\"wiki-header-dropdown-panel\",\"children\":[[\"$\",\"$L18\",\"c3b6f484-a42e-5217-a96e-9c2236b0b865:readme\",{\"href\":\"/negentropy/readme\",\"className\":\"wiki-header-dropdown-item\",\"aria-current\":\"$undefined\",\"children\":\"Negentropy 用户手册\"}],[\"$\",\"$L18\",\"27749e29-5b64-5ae6-9927-e3db9b1e7d2e:concepts\",{\"href\":\"/negentropy/concepts/0001-conversation-architecture-refactor\",\"className\":\"wiki-header-dropdown-item\",\"aria-current\":\"$undefined\",\"children\":\"concepts\"}],[\"$\",\"$L18\",\"7a6de17c-137a-5102-a602-01265320bb66:reference\",{\"href\":\"/negentropy/reference/cognizes/readme\",\"className\":\"wiki-header-dropdown-item active\",\"aria-current\":\"page\",\"children\":\"reference\"}],[\"$\",\"$L18\",\"cc23b2c6-7a1a-5b5f-8749-0aa884d00589:research\",{\"href\":\"/negentropy/research/000-cognitive-enhancement\",\"className\":\"wiki-header-dropdown-item\",\"aria-current\":\"$undefined\",\"children\":\"research\"}]]}]]}],false]}],\"$undefined\",[\"$\",\"div\",null,{\"className\":\"wiki-header-slot\",\"children\":[\"$undefined\",[\"$\",\"$L19\",null,{}],[\"$\",\"$L1a\",null,{}],\"$undefined\"]}]]}]}]\n"])</script><script>self.__next_f.push([1,"15:[\"$\",\"$L1b\",null,{\"headings\":[{\"depth\":2,\"slug\":\"1-产品愿景\",\"text\":\"1. 产品愿景\"},{\"depth\":3,\"slug\":\"11-核心定位\",\"text\":\"1.1 核心定位\"},{\"depth\":3,\"slug\":\"12-差异化价值\",\"text\":\"1.2 差异化价值\"},{\"depth\":3,\"slug\":\"13-设计理念\",\"text\":\"1.3 设计理念\"},{\"depth\":2,\"slug\":\"2-用户画像与场景\",\"text\":\"2. 用户画像与场景\"},{\"depth\":3,\"slug\":\"21-目标用户\",\"text\":\"2.1 目标用户\"},{\"depth\":3,\"slug\":\"22-用户画像\",\"text\":\"2.2 用户画像\"},{\"depth\":3,\"slug\":\"23-核心使用场景\",\"text\":\"2.3 核心使用场景\"},{\"depth\":2,\"slug\":\"3-功能需求\",\"text\":\"3. 功能需求\"},{\"depth\":3,\"slug\":\"31-功能概览\",\"text\":\"3.1 功能概览\"},{\"depth\":3,\"slug\":\"32-核心功能\",\"text\":\"3.2 核心功能\"},{\"depth\":3,\"slug\":\"33-p0-核心功能\",\"text\":\"3.3 P0 核心功能\"},{\"depth\":4,\"slug\":\"331-内容上传与管理\",\"text\":\"3.3.1 内容上传与管理\"},{\"depth\":4,\"slug\":\"332-智能翻译\",\"text\":\"3.3.2 智能翻译\"},{\"depth\":4,\"slug\":\"333-语义搜索\",\"text\":\"3.3.3 语义搜索\"},{\"depth\":4,\"slug\":\"334-任务监控\",\"text\":\"3.3.4 任务监控\"},{\"depth\":3,\"slug\":\"34-p1-增强功能\",\"text\":\"3.4 P1 增强功能\"},{\"depth\":4,\"slug\":\"341-知识图谱可视化\",\"text\":\"3.4.1 知识图谱可视化\"},{\"depth\":4,\"slug\":\"342-多跳推理问答\",\"text\":\"3.4.2 多跳推理问答\"},{\"depth\":3,\"slug\":\"35-p2-扩展功能\",\"text\":\"3.5 P2 扩展功能\"},{\"depth\":2,\"slug\":\"4-agent-体系\",\"text\":\"4. Agent 体系\"},{\"depth\":3,\"slug\":\"41-双框架战略\",\"text\":\"4.1 双框架战略\"},{\"depth\":3,\"slug\":\"42-agents-协作架构\",\"text\":\"4.2 Agents 协作架构\"},{\"depth\":3,\"slug\":\"43-agent-职责定义\",\"text\":\"4.3 Agent 职责定义\"},{\"depth\":3,\"slug\":\"44-reader-agent-多源多模态能力\",\"text\":\"4.4 Reader Agent 多源多模态能力\"},{\"depth\":3,\"slug\":\"45-solutions-architect-场景化方案定制\",\"text\":\"4.5 Solutions Architect 场景化方案定制\"},{\"depth\":3,\"slug\":\"46-论坛协作机制\",\"text\":\"4.6 论坛协作机制\"},{\"depth\":2,\"slug\":\"5-认知增强体系\",\"text\":\"5. 认知增强体系\"},{\"depth\":3,\"slug\":\"51-理论基础\",\"text\":\"5.1 理论基础\"},{\"depth\":3,\"slug\":\"52-cognee-记忆层\",\"text\":\"5.2 Cognee 记忆层\"},{\"depth\":3,\"slug\":\"53-知识图谱设计\",\"text\":\"5.3 知识图谱设计\"},{\"depth\":4,\"slug\":\"节点类型\",\"text\":\"节点类型\"},{\"depth\":4,\"slug\":\"关系类型\",\"text\":\"关系类型\"},{\"depth\":3,\"slug\":\"54-混合检索策略\",\"text\":\"5.4 混合检索策略\"},{\"depth\":3,\"slug\":\"55-agentic-rag-实现\",\"text\":\"5.5 Agentic RAG 实现\"},{\"depth\":2,\"slug\":\"6-数据架构\",\"text\":\"6. 数据架构\"},{\"depth\":3,\"slug\":\"61-存储选型\",\"text\":\"6.1 存储选型\"},{\"depth\":3,\"slug\":\"62-oceanbase-数据模型\",\"text\":\"6.2 OceanBase 数据模型\"},{\"depth\":3,\"slug\":\"63-neo4j-知识图谱-schema\",\"text\":\"6.3 Neo4j 知识图谱 Schema\"},{\"depth\":2,\"slug\":\"7-技术架构\",\"text\":\"7. 技术架构\"},{\"depth\":3,\"slug\":\"71-设计原则\",\"text\":\"7.1 设计原则\"},{\"depth\":3,\"slug\":\"72-整体架构\",\"text\":\"7.2 整体架构\"},{\"depth\":3,\"slug\":\"721-数据流图\",\"text\":\"7.2.1 数据流图\"},{\"depth\":3,\"slug\":\"73-技术栈\",\"text\":\"7.3 技术栈\"},{\"depth\":3,\"slug\":\"74-目录结构\",\"text\":\"7.4 目录结构\"},{\"depth\":2,\"slug\":\"8-质量保障\",\"text\":\"8. 质量保障\"},{\"depth\":3,\"slug\":\"81-评估指标体系\",\"text\":\"8.1 评估指标体系\"},{\"depth\":3,\"slug\":\"82-技术指标\",\"text\":\"8.2 技术指标\"},{\"depth\":2,\"slug\":\"9-参考文献\",\"text\":\"9. 参考文献\"}]}]\n"])</script><script>self.__next_f.push([1,"16:[\"$\",\"footer\",null,{\"className\":\"wiki-footer\",\"children\":[\"$\",\"div\",null,{\"className\":\"wiki-footer-inner\",\"children\":[[[\"$\",\"div\",\"知行\",{\"className\":\"wiki-footer-col\",\"children\":[[\"$\",\"h4\",null,{\"className\":\"wiki-footer-col-title\",\"children\":\"知行\"}],[\"$\",\"ul\",null,{\"className\":\"wiki-footer-col-links\",\"children\":[[\"$\",\"li\",\"数智通识\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#shuzhi-tongshi\",\"className\":\"wiki-footer-link\",\"children\":\"数智通识\"}]}],[\"$\",\"li\",\"算法通解\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#suanfa-tongjie\",\"className\":\"wiki-footer-link\",\"children\":\"算法通解\"}]}],[\"$\",\"li\",\"计算通践\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#jisuan-tongjian\",\"className\":\"wiki-footer-link\",\"children\":\"计算通践\"}]}],[\"$\",\"li\",\"知见通感\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#zhijian-tonggan\",\"className\":\"wiki-footer-link\",\"children\":\"知见通感\"}]}]]}]]}],[\"$\",\"div\",\"智践\",{\"className\":\"wiki-footer-col\",\"children\":[[\"$\",\"h4\",null,{\"className\":\"wiki-footer-col-title\",\"children\":\"智践\"}],[\"$\",\"ul\",null,{\"className\":\"wiki-footer-col-links\",\"children\":[[\"$\",\"li\",\"Agent 工程化\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#ai-application\",\"className\":\"wiki-footer-link\",\"children\":\"Agent 工程化\"}]}],[\"$\",\"li\",\"AI Infra\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#ai-infra\",\"className\":\"wiki-footer-link\",\"children\":\"AI Infra\"}]}],[\"$\",\"li\",\"AIGC\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#aigc\",\"className\":\"wiki-footer-link\",\"children\":\"AIGC\"}]}]]}]]}],[\"$\",\"div\",\"链接\",{\"className\":\"wiki-footer-col\",\"children\":[[\"$\",\"h4\",null,{\"className\":\"wiki-footer-col-title\",\"children\":\"链接\"}],[\"$\",\"ul\",null,{\"className\":\"wiki-footer-col-links\",\"children\":[[\"$\",\"li\",\"GitHub\",{\"children\":[\"$\",\"a\",null,{\"href\":\"https://github.com/ThreeFish-AI/negentropy\",\"className\":\"wiki-footer-link\",\"children\":\"GitHub\"}]}],[\"$\",\"li\",\"Changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/#changelog\",\"className\":\"wiki-footer-link\",\"children\":\"Changelog\"}]}]]}]]}]],[\"$\",\"div\",null,{\"className\":\"wiki-footer-bottom\",\"children\":[\"$\",\"p\",null,{\"children\":[\"© \",2026,\" Negentropy Wiki. All rights reserved.\"]}]}]]}]}]\n"])</script><script>self.__next_f.push([1,"17:[[\"$\",\"nav\",null,{\"className\":\"wiki-doc-breadcrumb\",\"aria-label\":\"面包屑\",\"children\":[[\"$\",\"span\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"wiki-doc-breadcrumb-text\",\"children\":\"reference\"}]]}],[\"$\",\"span\",\"1\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"wiki-doc-breadcrumb-sep\",\"children\":\"›\"}],[\"$\",\"span\",null,{\"className\":\"wiki-doc-breadcrumb-text\",\"children\":\"cognizes\"}]]}],[\"$\",\"span\",\"2\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"wiki-doc-breadcrumb-sep\",\"children\":\"›\"}],[\"$\",\"a\",null,{\"href\":\"/negentropy/reference/cognizes/000-prd-architecture\",\"className\":\"wiki-doc-breadcrumb-link\",\"children\":\"prd architecture\"}]]}]]}],[\"$\",\"header\",null,{\"className\":\"wiki-doc-header\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"wiki-doc-title\",\"children\":\"prd architecture\"}],[\"$\",\"div\",null,{\"className\":\"wiki-article-meta\",\"children\":[null,null,null,[[\"$\",\"span\",null,{\"className\":\"wiki-meta-sep\",\"children\":\"·\"}],[\"$\",\"span\",null,{\"className\":\"wiki-meta-item\",\"children\":[[\"$\",\"svg\",null,{\"className\":\"wiki-meta-icon\",\"viewBox\":\"0 0 16 16\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":\"1.5\",\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"children\":[[\"$\",\"path\",null,{\"d\":\"M9 1.5h5.5V7\"}],[\"$\",\"path\",null,{\"d\":\"M14.5 1.5L7.5 8.5\"}],[\"$\",\"path\",null,{\"d\":\"M6.5 3H3a1.5 1.5 0 00-1.5 1.5V13A1.5 1.5 0 003 14.5h8.5A1.5 1.5 0 0013 13V9.5\"}]]}],[\"$\",\"a\",null,{\"className\":\"wiki-meta-source-link\",\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/000-prd-architecture.md\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":\"原文链接\"}]]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"wiki-markdown-body\",\"children\":[[\"$\",\"hr\",\"hr-0\",{}],\"\\n\",[\"$\",\"p\",\"p-0\",{\"children\":\"id: prd-architecture\\nsidebar_position: 0\\ntitle: 产品需求与概要设计（PRD \u0026 Architecture）\\nlast_update:\\nauthor: Aurelius Huang\\ncreated_at: 2025-12-22\\nupdated_at: 2025-12-23\\nversion: 1.1\\nstatus: Reviewed\\ntags:\"}],\"\\n\",[\"$\",\"ul\",\"ul-0\",{\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":\"PRD\"}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":\"Architecture\"}],\"\\n\"]}],\"\\n\",[\"$\",\"hr\",\"hr-1\",{}],\"\\n\",[\"$\",\"blockquote\",\"blockquote-0\",{\"children\":[\"\\n\",[\"$\",\"p\",\"p-0\",{\"children\":\"[!IMPORTANT]\"}],\"\\n\",[\"$\",\"p\",\"p-1\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"立意\"}],\"：Agentic AI 学术研究与工程应用方案定制\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"hr\",\"hr-2\",{}],\"\\n\",[\"$\",\"h2\",\"h2-0\",{\"id\":\"1-产品愿景\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#1-产品愿景\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"1. 产品愿景\"]}],\"\\n\",[\"$\",\"h3\",\"h3-0\",{\"id\":\"11-核心定位\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#11-核心定位\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"1.1 核心定位\"]}],\"\\n\",[\"$\",\"p\",\"p-1\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"一个专注于 Agentic AI 学术研究与工程应用方案定制的智能平台\"}],\"，通过 Agents 协作，构建一个 \",[\"$\",\"strong\",\"strong-1\",{\"children\":\"认知增强的学术研究与解决方案架构助手\"}],\"，为中文读者提供高质量的内容与资料收集、翻译、理解、语义检索与应用定制服务 [1]。\"]}],\"\\n\",[\"$\",\"ul\",\"ul-1\",{\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"内容采集\"}],\"：自动化收集、解析 Agentic AI 领域前沿学术与理论研究（Papers）、主流技术工程实践（Industrial Products）\"]}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"深度翻译\"}],\"：保持学术术语准确性的高质量中英互译\"]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"语义理解\"}],\"：基于 GraphRAG 的内容关联分析与知识图谱构建\"]}],\"\\n\",[\"$\",\"li\",\"li-3\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"智能检索\"}],\"：混合检索（关键词 + 向量 + 图谱）支持多跳推理\"]}],\"\\n\",[\"$\",\"li\",\"li-4\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"应用研究\"}],\"：内容综述与趋势分析、技术选型参考、认知增强与可视化、认知应用方案定制\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"$L1c\",\"pre-0\",{\"code\":\"graph TB\\n    subgraph \\\"产品核心价值\\\"\\n        A[📄 内容采集] --\u003e B[🌐 深度翻译]\\n        B --\u003e C[🧠 语义理解]\\n        C --\u003e D[🔍 智能检索]\\n        D --\u003e E[📊 应用定制]\\n    end\\n\\n    style A fill:#4285f4,color:#fff\\n    style B fill:#34a853,color:#fff\\n    style C fill:#fbbc04,color:#000\\n    style D fill:#ea4335,color:#fff\\n    style E fill:#9c27b0,color:#fff\\n\"}],\"\\n\",[\"$\",\"h3\",\"h3-1\",{\"id\":\"12-差异化价值\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#12-差异化价值\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"1.2 差异化价值\"]}],\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",[\"$\",\"div\",\"table-0\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":\"$L1d\"}],\"$L1e\"]}]}],\"\\n\",\"$L1f\",\"\\n\",\"$L20\",\"\\n\",\"$L21\",\"\\n\",\"$L22\",\"\\n\",\"$L23\",\"\\n\",\"$L24\",\"\\n\",\"$L25\",\"\\n\",\"$L26\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L27\",\"\\n\",\"$L28\",\"\\n\",\"$L29\",\"\\n\",\"$L2a\",\"\\n\",\"$L2b\",\"\\n\",\"$L2c\",\"\\n\",\"$L2d\",\"\\n\",\"$L2e\",\"\\n\",\"$L2f\",\"\\n\",\"$L30\",\"\\n\",\"$L31\",\"\\n\",\"$L32\",\"\\n\",\"$L33\",\"\\n\",\"$L34\",\"\\n\",\"$L35\",\"\\n\",\"$L36\",\"\\n\",\"$L37\",\"\\n\",\"$L38\",\"\\n\",\"$L39\",\"\\n\",\"$L3a\",\"\\n\",\"$L3b\",\"\\n\",\"$L3c\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L3d\",\"\\n\",\"$L3e\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L3f\",\"\\n\",\"$L40\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L41\",\"\\n\",\"$L42\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L43\",\"\\n\",\"$L44\",\"\\n\",\"$L45\",\"\\n\",\"$L46\",\"\\n\",\"$L47\",\"\\n\",\"$L48\",\"\\n\",\"$L49\",\"\\n\",\"$L4a\",\"\\n\",\"$L4b\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L4c\",\"\\n\",\"$L4d\",\"\\n\",\"$L4e\",\"\\n\",\"$L4f\",\"\\n\",\"$L50\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L51\",\"\\n\",\"$L52\",\"\\n\",\"$L53\",\"\\n\",\"$L54\",\"\\n\",\"$L55\",\"\\n\",\"$L56\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L57\",\"\\n\",\"$L58\",\"\\n\",\"$L59\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L5a\",\"\\n\",\"$L5b\",\"\\n\",\"$L5c\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L5d\",\"\\n\",\"$L5e\",\"\\n\",\"$L5f\",\"\\n\",\"$L60\",\"\\n\",\"$L61\",\"\\n\",\"$L62\",\"\\n\",\"$L63\",\"\\n\",\"$L64\",\"\\n\",\"$L65\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L66\",\"\\n\",\"$L67\",\"\\n\",\"$L68\",\"\\n\",\"$L69\",\"\\n\",\"$L6a\",\"\\n\",\"$L6b\",\"\\n\",\"$L6c\",\"\\n\",\"$L6d\",\"\\n\",\"$L6e\",\"\\n\",\"$L6f\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L70\",\"\\n\",\"$L71\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L72\",\"\\n\",\"$L73\",\"\\n\",\"$L74\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L75\",\"\\n\",\"$L76\",\"\\n\",\"$L77\",\"\\n\",\"$L78\",\"\\n\",\"$L79\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L7a\",\"\\n\",\"$L7b\",\"\\n\",\"$L7c\",\"\\n\",\"$L7d\",\"\\n\",\"$L7e\",\"\\n\",\"$L7f\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L80\",\"\\n\",\"$L81\",\"\\n\",\"$L82\",\"\\n\",\"$L83\",\"\\n\",\"$L84\",\"\\n\",\"$L85\",\"\\n\",\"$L86\",\"\\n\",\"$L87\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L88\",\"\\n\",\"$L89\",\"\\n\",\"$L8a\",\"\\n\",\"$L8b\",\"\\n\",\"$L8c\",\"\\n\",\"$L8d\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L8e\",\"\\n\",\"$L8f\",\"\\n\",\"$L90\",\"\\n\",\"$L91\",\"\\n\",\"$L92\",\"\\n\",\"$L93\",\"\\n\",\"$L94\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L95\",\"\\n\",\"$L96\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L97\",\"\\n\",\"$L98\",\"\\n\",\"$L99\",\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"$L9a\"]}]]\n"])</script><script>self.__next_f.push([1,"9b:I[730130,[\"/_next/static/chunks/0.i745lpij5~d.js\",\"/_next/static/chunks/0hqs262h-rs54.js\",\"/_next/static/chunks/0l-1o40xxlcr..js\",\"/_next/static/chunks/1785tie-8kwbg.js\",\"/_next/static/chunks/020j99-ergy27.js\",\"/_next/static/chunks/0l4qtf8hgz.11.js\",\"/_next/static/chunks/0ley0gi~_93r9.js\",\"/_next/static/chunks/0q82xhet41jw9.js\",\"/_next/static/chunks/0~ikzdp3hga8n.js\",\"/_next/static/chunks/0q_xpywc4mr6r.js\",\"/_next/static/chunks/0467rnayogf8d.js\",\"/_next/static/chunks/0gicyvtp~f7d..js\"],\"CodeBlock\"]\n1d:[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"传统方案\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"本平台方案\"}]]}]\n1e:[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"孤立的文档翻译\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"跨内容知识图谱关联 [2]\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"单一向量检索\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"GraphRAG 多跳推理检索 [3]\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"人工整理分类\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Agent 自动化处理与元数据抽取\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"静态翻译结果\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"实时任务监控与增量更新\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"无记忆能力\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Cognee 认知记忆层 [4]\"}]]}]]}]\n1f:[\"$\",\"h3\",\"h3-2\",{\"id\":\"13-设计理念\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#13-设计理念\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"1.3 设计理念\"]}]\n20:[\"$\",\"p\",\"p-2\",{\"children\":[\"基于\",[\"$\",\"strong\",\"strong-0\",{\"children\":\"认知增强\"}],\"与 \",[\"$\",\"strong\",\"strong-1\",{\"children\":\"Context Engineering\"}],\" 理论 [5][15]，本平台采用以下核心设计理念：\"]}]\n21:[\"$\",\"ol\",\"ol-0\",{\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Agentic RAG 架构\"}],\"：将传统 RAG 被动检索转变为 Agent 驱动的主动推理，实现 Adaptive + Corrective + Self-RAG 组合 [6]\"]}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"图谱增强记忆\"}],\"：利用知识图谱解决 LLM 的\\\"孤立上下文\\\"问题，构建确定性知识结构 [7]\"]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"多 Agent 协作\"}],\"：借鉴 BettaFish 论坛协作机制，通过\\\"论坛辩论\\\"模式避免单模型思维局限和交流同质化 [8]\"]}],\"\\n\",[\"$\",\"li\",\"li-3\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"三位一体存储\"}],\"：基于 OceanBase 实现 TP/AP/Vector 统一存储，消除 ETL 同步延迟 [9]\"]}],\"\\n\",[\"$\",\"li\",\"li-4\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"分层上下文管理\"}],\"：采用短期/长期记忆分层架构，系统性管理 Agent 运行上下文 [15]\"]}],\"\\n\"]}]\n22:[\"$\",\"hr\",\"hr-3\",{}]\n23:[\"$\",\"h2\",\"h2-1\",{\"id\":\"2-用户画像与场景\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#2-用户画像与场景\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"2. 用户画像与场景\"]}]\n24:[\"$\",\"h3\",\"h3-3\",{\"id\":\"21-目标用户\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#21-目标用户\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"2.1 目标用户\"]}]\n25:[\"$\",\"$L1c\",\"pre-1\",{\"code\":\"mindmap\\n  root((目标用户))\\n    AI 研究者\\n      硕博研究生\\n      高校研究员\\n      企业研发人员\\n    工程实践者\\n      AI 工程师\\n      技术架构师\\n      产品经理\\n    技术爱好者\\n      独立开发者\\n      技术博主\\n      学习者\\n\"}]\n26:[\"$\",\"h3\",\"h3-4\",{\"id\":\"22-用户画像\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#22-用户画像\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"2.2 用户画像\"]}]\n27:[\"$\",\"div\",\"table-1\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"chil"])</script><script>self.__next_f.push([1,"dren\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"角色\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"核心需求\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"痛点\"}],[\"$\",\"th\",\"th-3\",{\"children\":\"期望价值\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"AI 研究者\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"跟踪前沿、理解原理、发现关联\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"英文阅读门槛、内容孤立\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"高质量翻译、知识图谱\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"工程实践者\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"技术选型、方案设计、落地参考\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"理论到实践鸿沟\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"工程指引、代码示例\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"技术爱好者\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"学习入门、理解概念\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"内容碎片化\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"体系化知识、学习路径\"}]]}]]}]]}]}]\n28:[\"$\",\"h3\",\"h3-5\",{\"id\":\"23-核心使用场景\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#23-核心使用场景\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"2.3 核心使用场景\"]}]\n29:[\"$\",\"p\",\"p-3\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"场景 1：内容检索与阅读\"}]}]\n2a:[\"$\",\"$L9b\",\"pre-2\",{\"className\":\"$undefined\",\"codeText\":\"用户提问：\\\"有哪些论文研究了 Chain-of-Thought 和 ReAct 的结合应用？\\\"\\n系统响应：\\n  1. 向量检索 → 语义相关论文\\n  2. 图谱检索 → 方法论关联论文\\n  3. 多跳推理 → 发现间接关联\\n  4. 生成回答 → 综述 + 引用链接\\n\",\"children\":\"用户提问：\\\"有哪些论文研究了 Chain-of-Thought 和 ReAct 的结合应用？\\\"\\n系统响应：\\n  1. 向量检索 → 语义相关论文\\n  2. 图谱检索 → 方法论关联论文\\n  3. 多跳推理 → 发现间接关联\\n  4. 生成回答 → 综述 + 引用链接\\n\"}]\n2b:[\"$\",\"p\",\"p-4\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"场景 2：内容翻译与理解\"}]}]\n2c:[\"$\",\"$L9b\",\"pre-3\",{\"className\":\"$undefined\",\"codeText\":\"用户上传：新发布的 Agentic AI 相关资料（论文 PDF / 技术博客 URL / GitHub 仓库）\\n系统处理：\\n  1. Reader Agent → 提取内容与结构\\n  2. Translation Agent → 高质量翻译（保留术语）\\n  3. Heartfelt Agent → 深度分析与要点提炼\\n  4. Cognee → 更新知识图谱，建立关联\\n\",\"children\":\"用户上传：新发布的 Agentic AI 相关资料（论文 PDF / 技术博客 URL / GitHub 仓库）\\n系统处理：\\n  1. Reader Agent → 提取内容与结构\\n  2. Translation Agent → 高质量翻译（保留术语）\\n  3. Heartfelt Agent → 深度分析与要点提炼\\n  4. Cognee → 更新知识图谱，建立关联\\n\"}]\n2d:[\"$\",\"p\",\"p-5\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"场景 3：技术方案咨询\"}]}]\n2e:[\"$\",\"$L9b\",\"pre-4\",{\"className\":\"$undefined\",\"codeText\":\"用户提问：\\\"我需要为客服系统设计一个多 Agent 架构，有什么参考？\\\"\\n系统响应：\\n  1. 检索相关内容（论文、文档、代码仓库）\\n  2. 图谱查询架构模式关联\\n  3. 结合 BettaFish 论坛协作机制\\n  4. 参考其他经典 Agents 模式\\n  5. 输出可落地的架构方案\\n\",\"children\":\"用户提问：\\\"我需要为客服系统设计一个多 Agent 架构，有什么参考？\\\"\\n系统响应：\\n  1. 检索相关内容（论文、文档、代码仓库）\\n  2. 图谱查询架构模式关联\\n  3. 结合 BettaFish 论坛协作机制\\n  4. 参考其他经典 Agents 模式\\n  5. 输出可落地的架构方案\\n\"}]\n2f:[\"$\",\"hr\",\"hr-4\",{}]\n30:[\"$\",\"h2\",\"h2-2\",{\"id\":\"3-功能需求\",\"className\":\"wiki-anchor-heading\",\"children\":[[\""])</script><script>self.__next_f.push([1,"$\",\"a\",null,{\"href\":\"#3-功能需求\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3. 功能需求\"]}]\n31:[\"$\",\"h3\",\"h3-6\",{\"id\":\"31-功能概览\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#31-功能概览\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.1 功能概览\"]}]\n32:[\"$\",\"$L1c\",\"pre-5\",{\"code\":\"graph TB\\n    subgraph \\\"P0 - 核心功能\\\"\\n        A1[内容上传与管理]\\n        A2[智能翻译]\\n        A3[语义搜索]\\n        A4[任务监控]\\n    end\\n\\n    subgraph \\\"P1 - 增强功能\\\"\\n        B1[知识图谱可视化]\\n        B2[多跳推理问答]\\n        B3[内容关联分析]\\n        B4[深度解读生成]\\n    end\\n\\n    subgraph \\\"P2 - 扩展功能\\\"\\n        C1[用户认证系统]\\n        C2[个性化推荐]\\n        C3[协作批注]\\n        C4[API 开放平台]\\n    end\\n\\n    style A1 fill:#e53935,color:#fff\\n    style A2 fill:#e53935,color:#fff\\n    style B1 fill:#fb8c00,color:#fff\\n    style C1 fill:#43a047,color:#fff\\n\"}]\n33:[\"$\",\"h3\",\"h3-7\",{\"id\":\"32-核心功能\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#32-核心功能\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.2 核心功能\"]}]\n34:[\"$\",\"$L1c\",\"pre-6\",{\"code\":\"mindmap\\n  root((📄 论文管理))\\n    上传界面\\n      拖拽上传\\n      50MB 限制\\n      实时进度\\n      批量上传\\n    列表视图\\n      表格展示\\n      排序（标题、日期、状态）\\n      筛选（分类、状态、日期）\\n      分页加载\\n    详情视图\\n      Tab 切换：原文/翻译/分析\\n      Markdown 渲染\\n      PDF 嵌入查看\\n      导出（PDF/Markdown）\\n    批量操作\\n      多选处理\\n      批量翻译/分析\\n      批量下载/删除\\n\"}]\n35:[\"$\",\"hr\",\"hr-5\",{}]\n36:[\"$\",\"$L1c\",\"pre-7\",{\"code\":\"mindmap\\n  root((🔍 搜索发现))\\n    高级搜索\\n      全文检索（标题、作者、摘要、关键词）\\n      模糊匹配\\n      搜索建议\\n      搜索历史\\n    智能筛选\\n      按分类（LLM Agents、Context Engineering 等）\\n      按状态（已翻译、处理中、待处理）\\n      按日期范围\\n      保存筛选条件\\n    结果展示\\n      关键词高亮\\n      摘要预览\\n      相关度排序\\n      结果导出\\n\"}]\n37:[\"$\",\"hr\",\"hr-6\",{}]\n38:[\"$\",\"$L1c\",\"pre-8\",{\"code\":\"mindmap\\n  root((⚡ 任务监控))\\n    实时状态\\n      WebSocket 连接管理\\n      任务状态管理\\n      进度展示\\n      自动重连\\n    任务管理\\n      列表查看\\n      取消/重试\\n      日志详情\\n      错误信息\\n    批量任务\\n      并发队列\\n      整体进度\\n      优先级管理\\n      资源监控\\n\"}]\n39:[\"$\",\"hr\",\"hr-7\",{}]\n3a:[\"$\",\"$L1c\",\"pre-9\",{\"code\":\"mindmap\\n  root((📊 仪表板))\\n    数据统计\\n      论文总数/分类分布\\n      翻译进度\\n      任务状态\\n      性能指标\\n    最近活动\\n      最新上传\\n      处理中任务\\n      系统通知\\n      操作历史\\n    快速操作\\n      快速上传\\n      常用快捷键\\n      批量操作\\n      系统设置\\n\"}]\n3b:[\"$\",\"h3\",\"h3-8\",{\"id\":\"33-p0-核心功能\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#33-p0-核心功能\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.3 P0 核心功能\"]}]\n3c:[\"$\",\"h4\",\"h4-0\",{\"id\":\"331-内容上传与管理\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#331-内容上传与管理\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.3.1 内容上传与管理\"]}]\n3d:[\"$\",\"div\",\"table-2\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"功能点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"描述\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"验收标准\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[["])</script><script>self.__next_f.push([1,"\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"拖拽上传\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"支持 PDF/Markdown/URL 格式\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"50MB 限制，实时进度\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"批量上传\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"多文件同时上传\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"队列管理，并发控制\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"元数据提取\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"自动识别标题、作者、摘要\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"准确率 \u003e 90%\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"分类管理\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"按主题分类（LLM Agents / RAG 等）\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"支持自定义标签\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"状态追踪\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"处理状态可视化\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"待处理/处理中/已完成\"}]]}]]}]]}]}]\n3e:[\"$\",\"h4\",\"h4-1\",{\"id\":\"332-智能翻译\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#332-智能翻译\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.3.2 智能翻译\"]}]\n3f:[\"$\",\"div\",\"table-3\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"功能点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"描述\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"验收标准\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"学术术语保留\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"专业术语中英对照\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"关键术语不翻译\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"结构保持\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"保留原文标题、段落结构\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Markdown 格式输出\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"增量翻译\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"支持部分翻译、继续翻译\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"断点续传\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"质量评估\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"翻译质量自动评估\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"BLEU/人工评分\"}]]}]]}]]}]}]\n40:[\"$\",\"h4\",\"h4-2\",{\"id\":\"333-语义搜索\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#333-语义搜索\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.3.3 语义搜索\"]}]\n41:[\"$\",\"div\",\"table-4\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"功能点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"描述\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"验收标准\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"全文检索\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"标题、摘要、内容搜索\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"响应 \u003c 500ms\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"向量检索\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"语义相似度匹配\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Top-K 召回\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"混合检索\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"关键词 + 向量融合\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"RRF 重排序 [10]\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"筛选过滤\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"按分类、日期、状态筛选\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"组合条件\"}]]}]]}]]}]}]\n42:[\"$\",\"h4\",\"h4-3\",{\"id\":\"334-任务监控\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#334-任务监控\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.3.4 任务监控\"]}]\n43:[\"$\",\"div\",\"table-5\",{\"style\":{\"overflowX\":\"auto\""])</script><script>self.__next_f.push([1,",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"功能点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"描述\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"验收标准\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"实时状态\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"WebSocket 推送任务进度\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"延迟 \u003c 1s\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"任务列表\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"查看所有任务状态\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"分页、筛选\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"取消/重试\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"任务控制操作\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"即时响应\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"日志查看\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"详细处理日志\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"错误定位\"}]]}]]}]]}]}]\n44:[\"$\",\"h3\",\"h3-9\",{\"id\":\"34-p1-增强功能\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#34-p1-增强功能\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.4 P1 增强功能\"]}]\n45:[\"$\",\"h4\",\"h4-4\",{\"id\":\"341-知识图谱可视化\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#341-知识图谱可视化\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.4.1 知识图谱可视化\"]}]\n46:[\"$\",\"p\",\"p-6\",{\"children\":\"基于 Neo4j 知识图谱构建内容关联网络 [11]：\"}]\n47:[\"$\",\"$L1c\",\"pre-10\",{\"code\":\"graph LR\\n    P1[Paper: ReAct] --\u003e |USES_METHOD| M1[Method: CoT]\\n    P2[Paper: Reflexion] --\u003e |USES_METHOD| M1\\n    P1 --\u003e |CITES| P3[Paper: CoT]\\n    P2 --\u003e |EXTENDS| P1\\n    P1 --\u003e |AUTHORED_BY| A1[Author: Yao]\\n\\n    style P1 fill:#4285f4,color:#fff\\n    style P2 fill:#4285f4,color:#fff\\n    style M1 fill:#34a853,color:#fff\\n    style A1 fill:#fbbc04,color:#000\\n\"}]\n48:[\"$\",\"h4\",\"h4-5\",{\"id\":\"342-多跳推理问答\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#342-多跳推理问答\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.4.2 多跳推理问答\"]}]\n49:[\"$\",\"p\",\"p-7\",{\"children\":\"基于 Agentic RAG 实现复杂问题推理 [6]：\"}]\n4a:[\"$\",\"$L1c\",\"pre-11\",{\"code\":\"flowchart LR\\n    Q[用户问题] --\u003e C{查询分类}\\n    C --\u003e |事实查询| V[向量检索]\\n    C --\u003e |关系查询| G[图谱检索]\\n    C --\u003e |复杂推理| M[多步规划]\\n    V \u0026 G \u0026 M --\u003e F[结果融合]\\n    F --\u003e R[LLM 生成回答]\\n\"}]\n4b:[\"$\",\"h3\",\"h3-10\",{\"id\":\"35-p2-扩展功能\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#35-p2-扩展功能\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"3.5 P2 扩展功能\"]}]\n4c:[\"$\",\"div\",\"table-6\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"功能\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"描述\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"优先级理由\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"用户认证\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"注册登录、收藏管理\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"个性化前提\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"个性化推荐\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"基于历史行为推荐\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"提升粘性\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"协作批注\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"多人协作翻译、评审\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"生态建设\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"API 平台\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"开放能力给第三方\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"生态扩展\"}]]}]]}]]}]}]\n4d:[\"$\",\"hr\",\"hr"])</script><script>self.__next_f.push([1,"-8\",{}]\n4e:[\"$\",\"h2\",\"h2-3\",{\"id\":\"4-agent-体系\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#4-agent-体系\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4. Agent 体系\"]}]\n4f:[\"$\",\"h3\",\"h3-11\",{\"id\":\"41-双框架战略\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#41-双框架战略\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4.1 双框架战略\"]}]\n50:[\"$\",\"p\",\"p-8\",{\"children\":\"基于调研结论 [12]，采用双框架战略平衡开发效率与生产稳定性：\"}]\n51:[\"$\",\"div\",\"table-7\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"框架\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"适用场景\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"核心优势\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Claude SDK\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"原型开发、定制需求\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"灵活、Agent Skills 生态\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Google ADK\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"生产环境、批量处理\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"高性能、Multi-Agent 编排\"}]]}]]}]]}]}]\n52:[\"$\",\"h3\",\"h3-12\",{\"id\":\"42-agents-协作架构\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#42-agents-协作架构\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4.2 Agents 协作架构\"]}]\n53:[\"$\",\"$L1c\",\"pre-12\",{\"code\":\"flowchart TB\\n    subgraph \\\"中央协调层\\\"\\n        CA[Coordinator Agent\u003cbr/\u003e任务编排与批量调度]\\n    end\\n\\n    subgraph \\\"执行层\\\"\\n        RA[Reader Agent\u003cbr/\u003e多源多模态解析]\\n        TA[Translation Agent\u003cbr/\u003e智能翻译]\\n        HA[Heartfelt Agent\u003cbr/\u003e深度分析]\\n    end\\n\\n    subgraph \\\"方案层\\\"\\n        SA[Solutions Architect\u003cbr/\u003e场景化方案定制]\\n    end\\n\\n    subgraph \\\"能力层\\\"\\n        Skills[Claude Skills × 7]\\n        LLM[LLM Provider]\\n    end\\n\\n    subgraph \\\"记忆层\\\"\\n        Cognee[Cognee Engine]\\n    end\\n\\n    CA --\u003e RA \u0026 TA \u0026 HA\\n    RA \u0026 TA \u0026 HA --\u003e SA\\n    RA \u0026 TA \u0026 HA \u0026 SA --\u003e Skills\\n    Skills --\u003e LLM\\n    RA \u0026 TA \u0026 HA \u0026 SA --\u003e Cognee\\n\\n    style CA fill:#9c27b0,color:#fff\\n    style SA fill:#2196f3,color:#fff\\n    style Cognee fill:#ff9800,color:#fff\\n\"}]\n54:[\"$\",\"p\",\"p-9\",{\"children\":[\"基于 \",[\"$\",\"strong\",\"strong-0\",{\"children\":\"ReAct 框架\"}],\"（Reasoning + Acting）设计，每个 Agent 交织推理与行动：\"]}]\n9c:T422,classDiagram\n    class BaseAgent {\n        \u003c\u003cabstract\u003e\u003e\n        +name: str\n        +process(input) dict\n        +call_skill(name, params) dict\n        +reason(context) str\n        +act(action) dict\n    }\n\n    class WorkflowAgent {\n        +full_workflow()\n        +translate_workflow()\n        +heartfelt_workflow()\n        +orchestrate(agents)\n    }\n\n    class PDFAgent {\n        +extract_content()\n        +extract_images()\n        +extract_metadata()\n    }\n\n    class TranslationAgent {\n        +translate(content, lang)\n        +preserve_terminology()\n    }\n\n    class HeartfeltAgent {\n        +analyze_paper()\n        +generate_insights()\n        +build_summary()\n    }\n\n    class BatchAgent {\n        +parallel_process()\n        +queue_management()\n    }\n\n    BaseAgent \u003c|-- WorkflowAgent\n    BaseAgent \u003c|-- PDFAgent\n    BaseAgent \u003c|-- TranslationAgent\n    BaseAgent \u003c|-- HeartfeltAgent\n    BaseAgent \u003c|-- BatchAgent\n\n    WorkflowAgent --\u003e PDFAgent : 调度\n    WorkflowAgent --\u003e TranslationAgent : 调度\n    WorkflowAgent --\u003e HeartfeltAgent : 调度\n55:[\"$\",\"$L1c\",\"pre-13\",{\"code\":\"$9c\"}]\n56:[\"$\",\"h3\",\"h3-13\",{\"id\":\"43-agent-职责定义\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#43-agent-职责定义\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\","])</script><script>self.__next_f.push([1,"\"children\":\"#\"}],\"4.3 Agent 职责定义\"]}]\n"])</script><script>self.__next_f.push([1,"57:[\"$\",\"div\",\"table-8\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"Agent\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"职责\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"核心能力\"}],[\"$\",\"th\",\"th-3\",{\"children\":\"设计模式\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Coordinator Agent\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"中央协调与任务编排\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"流程控制、状态管理、批量并行处理、队列管理\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"Orchestrator [13]\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Reader Agent\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"多源多模态内容解析\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"PDF/URL/Word/PPT/Excel 解析、图片/音视频处理、元数据提取\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"Tool Use\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Translation Agent\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"高质量学术翻译\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"术语保留、结构保持\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"Prompt Chaining\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Heartfelt Agent\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"深度分析与洞察生成\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"内容综述、要点提炼\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"CoT + Reflection\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Solutions Architect\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"场景化方案定制与架构设计\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"应用方案输出、解决方案设计、技术选型建议、方案质量评估\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"Planning + Synthesis\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"58:[\"$\",\"h3\",\"h3-14\",{\"id\":\"44-reader-agent-多源多模态能力\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#44-reader-agent-多源多模态能力\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4.4 Reader Agent 多源多模态能力\"]}]\n59:[\"$\",\"p\",\"p-10\",{\"children\":\"Reader Agent 是内容采集的核心组件，支持广泛的数据源和模态：\"}]\n5a:[\"$\",\"div\",\"table-9\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"类型\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"支持格式\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"文档格式\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"PDF, Markdown, Word (.docx), PPT (.pptx), Excel (.xlsx), Text\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"结构化内容提取\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"网络资源\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"URL (Web Page), arXiv, GitHub\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"自动抓取与解析\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"多模态\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"文本, 图片 (PNG/JPG), 音频 (MP3/WAV), 视频 (MP4)\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"LLM 多模态理解\"}]]}]]}]]}]}]\n5b:[\"$\",\"h3\",\"h3-15\",{\"id\":\"45-solutions-architect-场景化方案定制\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#45-solutions-architect-场景化方案定制\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4.5 Solutions Architect 场景化方案定制\"]}]\n5c:[\"$\",\"p\",\"p-11\",{\"children\":\"Solutions Architect 是平台的核心差异化能力，负责将调研分析结果转化为可落地的工程方案：\"}]\n5d:[\"$\",\"div\",\"table-10\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"能力维度\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"应用场景理解\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"分析用户的业务场景、技术约束、团队能力\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"方案设计\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"基于调研分析成果，输出架构设计、技术选型、实施路径\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"最佳实践整合\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"结合 BettaFish、Cognee 等框架，提供经过验证的工程模式 [8]\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"定制化输出\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"根据用户需求，生成定制的 PRD、技术文档、代码骨架\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"方案评估\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"评估方案的质量、可行性、成本效益\"}]]}]]}]]}]}]\n5e:[\"$\",\"$L1c\",\"pre-14\",{\"code\":\"flowchart LR\\n    subgraph \\\"输入\\\"\\n        R[研究结果]\\n        U[用户需求]\\n        C[约束条件]\\n    end\\n\\n    subgraph \\\"Solutions Architect\\\"\\n        A[场景分析] --\u003e B[方案设计]\\n        B --\u003e D[架构输出]\\n    end\\n\\n    subgraph \\\"输出\\\"\\n        P[架构方案]\\n        T[技术选型]\\n        I[实施路径]\\n    end\\n\\n    R \u0026 U \u0026 C --\u003e A\\n    D --\u003e P \u0026 T \u0026 I\\n\\n    style B fill:#2196f3,color:#fff\\n\"}]\n5f:[\"$\",\"h3\",\"h3-16\",{\"id\":\"46-论坛协作机制\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\""])</script><script>self.__next_f.push([1,":\"#46-论坛协作机制\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"4.6 论坛协作机制\"]}]\n60:[\"$\",\"p\",\"p-12\",{\"children\":\"借鉴 BettaFish 创新设计 [8]，引入 Agent 论坛协作机制：\"}]\n61:[\"$\",\"$L1c\",\"pre-15\",{\"code\":\"sequenceDiagram\\n    participant U as 用户\\n    participant CA as Coordinator Agent\\n    participant RA as Reader Agent\\n    participant TA as Translation Agent\\n    participant HA as Heartfelt Agent\\n    participant SA as Solutions Architect\\n    participant FE as ForumEngine\\n\\n    U-\u003e\u003eCA: 提交内容处理请求\\n\\n    par 并行启动\\n        CA-\u003e\u003eRA: 启动解析\\n        CA-\u003e\u003eTA: 准备翻译\\n        CA-\u003e\u003eHA: 准备分析\\n    end\\n\\n    loop 论坛协作\\n        RA-\u003e\u003eFE: 发言：文档结构已提取\\n        TA-\u003e\u003eFE: 发言：检测到专业术语\\n        HA-\u003e\u003eFE: 发言：需要方法论关联\\n        FE-\u003e\u003eFE: 主持人整合引导\\n        FE--\u003e\u003eRA: 引导：关注引用关系\\n        FE--\u003e\u003eTA: 引导：术语表建议\\n        FE--\u003e\u003eHA: 引导：关联内容推荐\\n    end\\n\\n    FE-\u003e\u003eSA: 协作完成，请求方案设计\\n    SA-\u003e\u003eSA: 场景化方案定制\\n    SA-\u003e\u003eCA: 返回解决方案\\n    CA--\u003e\u003eU: 返回处理结果与方案\\n\"}]\n62:[\"$\",\"hr\",\"hr-9\",{}]\n63:[\"$\",\"h2\",\"h2-4\",{\"id\":\"5-认知增强体系\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#5-认知增强体系\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5. 认知增强体系\"]}]\n64:[\"$\",\"h3\",\"h3-17\",{\"id\":\"51-理论基础\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#51-理论基础\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5.1 理论基础\"]}]\n65:[\"$\",\"p\",\"p-13\",{\"children\":\"本平台认知增强体系基于以下核心理论 [5][15]：\"}]\n"])</script><script>self.__next_f.push([1,"66:[\"$\",\"div\",\"table-11\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"理论\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"核心思想\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"应用模块\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"GraphRAG\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"LLM 构建知识图谱 + 社区检测\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"内容关联分析\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Agentic RAG\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Agent 驱动的自适应检索\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"智能问答\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Memory Pattern\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"短期/长期记忆分层\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Cognee 认知层\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Context Engineering\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"系统性上下文管理\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"检索与生成\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"ReAct Framework\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"推理与行动交织\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Agent 决策循环\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Reflection\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"自我评估与修正\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"生成质量保障\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"67:[\"$\",\"h3\",\"h3-18\",{\"id\":\"52-cognee-记忆层\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#52-cognee-记忆层\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5.2 Cognee 记忆层\"]}]\n68:[\"$\",\"p\",\"p-14\",{\"children\":[\"基于 \",[\"$\",\"strong\",\"strong-0\",{\"children\":\"Cognee\"}],\" 框架，为 Agent 提供认知记忆层：\"]}]\n69:[\"$\",\"ul\",\"ul-2\",{\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"长期记忆\"}],\"：跨会话持久化，避免上下文遗忘\"]}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"语义记忆\"}],\"：知识图谱存储实体关系\"]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"情景记忆\"}],\"：保留处理历史和决策轨迹\"]}],\"\\n\"]}]\n6a:[\"$\",\"p\",\"p-15\",{\"children\":\"基于 Cognee 框架 [4] 构建认知记忆层：\"}]\n6b:[\"$\",\"$L1c\",\"pre-16\",{\"code\":\"flowchart TB\\n    subgraph \\\"Cognee 三存储架构\\\"\\n        R[(Relational Store\u003cbr/\u003e元数据与溯源)]\\n        V[(Vector Store\u003cbr/\u003e语义嵌入)]\\n        G[(Graph Store\u003cbr/\u003e知识图谱)]\\n    end\\n\\n    subgraph \\\"核心操作\\\"\\n        Add[cognee.add\u003cbr/\u003e数据摄入]\\n        Cognify[cognee.cognify\u003cbr/\u003e知识构建]\\n        Search[cognee.search\u003cbr/\u003e混合检索]\\n    end\\n\\n    Input[内容数据] --\u003e Add\\n    Add --\u003e R\\n    R --\u003e Cognify\\n    Cognify --\u003e V \u0026 G\\n    Query[用户查询] --\u003e Search\\n    V \u0026 G --\u003e Search\\n    Search --\u003e Result[检索结果]\\n\\n    style V fill:#2196f3,color:#fff\\n    style G fill:#ff9800,color:#fff\\n\"}]\n6c:[\"$\",\"h3\",\"h3-19\",{\"id\":\"53-知识图谱设计\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#53-知识图谱设计\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5.3 知识图谱设计\"]}]\n6d:[\"$\",\"h4\",\"h4-6\",{\"id\":\"节点类型\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#节点类型\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"节点类型\"]}]\n6e:[\"$\",\"p\",\"p-16\",{\"children\":\"基于 Reader Agent 支持的多源多模态能力 [4]，知识图谱采用分层实体设计：\"}]\n6f:[\"$\",\"p\",\"p-17\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"内容来源类（Source 基类及其特化）\"}],\"：\"]}]\n"])</script><script>self.__next_f.push([1,"70:[\"$\",\"div\",\"table-12\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"节点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"属性\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Source\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"id, title, source_type, format, url, created_at\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"内容来源基类\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Paper\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"id, title, abstract, year, arxiv_id, venue, doi\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"学术论文（特化）\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Article\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"id, title, summary, publish_date, platform\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"技术文章（特化）\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Document\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"id, title, doc_type, version, organization\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"技术文档（特化）\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"CodeRepo\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"id, name, description, language, stars, url\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"代码仓库（特化）\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"71:[\"$\",\"p\",\"p-18\",{\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"知识实体类\"}],\"：\"]}]\n"])</script><script>self.__next_f.push([1,"72:[\"$\",\"div\",\"table-13\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"节点\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"属性\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Author\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, affiliation, email\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"作者\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Concept\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, definition, category\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"核心概念\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Method\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, description, type\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"方法论\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Dataset\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, size, domain\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"数据集\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Framework\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, version, url, license\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"技术框架\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"Tool\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"name, description, category, url\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"工具\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"73:[\"$\",\"$L1c\",\"pre-17\",{\"code\":\"graph TB\\n    subgraph \\\"内容来源层\\\"\\n        Source[Source\u003cbr/\u003e内容来源基类]\\n        Source --\u003e Paper[Paper\u003cbr/\u003e学术论文]\\n        Source --\u003e Article[Article\u003cbr/\u003e技术文章]\\n        Source --\u003e Document[Document\u003cbr/\u003e技术文档]\\n        Source --\u003e CodeRepo[CodeRepo\u003cbr/\u003e代码仓库]\\n    end\\n\\n    subgraph \\\"知识实体层\\\"\\n        Author[Author]\\n        Concept[Concept]\\n        Method[Method]\\n        Framework[Framework]\\n    end\\n\\n    Paper \u0026 Article \u0026 Document --\u003e Author\\n    Paper \u0026 Article --\u003e Concept \u0026 Method\\n    CodeRepo --\u003e Framework\\n\\n    style Source fill:#9c27b0,color:#fff\\n    style Paper fill:#4285f4,color:#fff\\n    style Article fill:#34a853,color:#fff\\n    style Document fill:#fbbc04,color:#000\\n    style CodeRepo fill:#ea4335,color:#fff\\n\"}]\n74:[\"$\",\"h4\",\"h4-7\",{\"id\":\"关系类型\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#关系类型\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"关系类型\"]}]\n"])</script><script>self.__next_f.push([1,"75:[\"$\",\"div\",\"table-14\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"关系\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"起点\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"终点\"}],[\"$\",\"th\",\"th-3\",{\"children\":\"属性\"}],[\"$\",\"th\",\"th-4\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"AUTHORED_BY\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Author\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"order\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"作者关系\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"CITES\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Paper\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Paper\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"context\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"论文引用\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"REFERENCES\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"type\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"通用引用关系\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"USES_METHOD\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Method\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"使用方法论\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"INTRODUCES\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Concept\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"引入概念\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"EXTENDS\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Method\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Method\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"方法扩展\"}]]}],[\"$\",\"tr\",\"tr-6\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"EVALUATED_ON\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Paper\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Dataset\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"metrics\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"评估数据集\"}]]}],[\"$\",\"tr\",\"tr-7\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"IMPLEMENTS\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"CodeRepo\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Framework\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"实现框架\"}]]}],[\"$\",\"tr\",\"tr-8\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"BASED_ON\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Paper\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"基于论文\"}]]}],[\"$\",\"tr\",\"tr-9\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"code\",\"code-0\",{\"children\":\"RELATED_TO\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Source\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"score\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"相关性关联\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"76:[\"$\",\"h3\",\"h3-20\",{\"id\":\"54-混合检索策略\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#54-混合检索策略\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5.4 混合检索策略\"]}]\n77:[\"$\",\"$L1c\",\"pre-18\",{\"code\":\"flowchart LR\\n    Query[用户查询] --\u003e Parse[查询解析]\\n\\n    Parse --\u003e KW[关键词检索\u003cbr/\u003e全文索引]\\n    Parse --\u003e Vec[向量检索\u003cbr/\u003e语义相似度\u003cbr/\u003eOceanBase]\\n    Parse --\u003e Graph[图谱检索\u003cbr/\u003e多跳推理\u003cbr/\u003eNeo4j/Cognee]\\n\\n    KW \u0026 Vec \u0026 Graph --\u003e Fusion[结果融合\u003cbr/\u003eRRF 重排序]\\n    Fusion --\u003e Rerank[LLM 重排序]\\n    Rerank --\u003e Result[检索结果]\\n\\n    style Query fill:#4285f4,color:#fff\\n    style Fusion fill:#9c27b0,color:#fff\\n    style Result fill:#34a853,color:#fff\\n\"}]\n78:[\"$\",\"h3\",\"h3-21\",{\"id\":\"55-agentic-rag-实现\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#55-agentic-rag-实现\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"5.5 Agentic RAG 实现\"]}]\n79:[\"$\",\"p\",\"p-19\",{\"children\":\"基于调研结论 [6]，实现 Adaptive + Corrective + Self-RAG 组合，覆盖 RAG 2.0 全部核心能力：\"}]\n7a:[\"$\",\"div\",\"table-15\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"模式\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"核心能力\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"实现方式\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Adaptive RAG\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"自适应检索策略\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"智能路由器动态选择向量/图谱/Web 检索\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Corrective RAG\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"纠错检索\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"相关性评估器 + Web 搜索补救\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Self-RAG\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"自反思生成\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"生成后评估，需修正时回退重生\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Multi-Step\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"多步推理\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"LangGraph 状态机编排复杂检索任务\"}]]}]]}]]}]}]\n7b:[\"$\",\"$L1c\",\"pre-19\",{\"code\":\"flowchart TB\\n    Q[用户查询] --\u003e Router{智能路由}\\n\\n    Router --\u003e |内容检索| OB[(OceanBase 向量)]\\n    Router --\u003e |关系探索| Neo[(Neo4j/Cognee 图谱)]\\n    Router --\u003e |最新信息| Web[Web 搜索]\\n\\n    OB \u0026 Neo \u0026 Web --\u003e Grader[相关性评估]\\n    Grader --\u003e |低质量| Router\\n    Grader --\u003e |高质量| Generator[LLM 生成]\\n\\n    Generator --\u003e Reflector[自我反思]\\n    Reflector --\u003e |需修正| Generator\\n    Reflector --\u003e |通过| Response[最终回答]\\n\\n    style Router fill:#fbbc04,color:#000\\n    style Grader fill:#ea4335,color:#fff\\n    style Reflector fill:#9c27b0,color:#fff\\n\"}]\n7c:[\"$\",\"hr\",\"hr-10\",{}]\n7d:[\"$\",\"h2\",\"h2-5\",{\"id\":\"6-数据架构\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#6-数据架构\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"6. 数据架构\"]}]\n7e:[\"$\",\"h3\",\"h3-22\",{\"id\":\"61-存储选型\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#61-存储选型\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"6.1 存储选型\"]}]\n7f:[\"$\",\"p\",\"p-20\",{\"children\":\"基于调研结论 [9][11]，采用以下存储技术：\"}]\n80:[\"$\",\"div\",\"table-16\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"存储类型\"}],[\"$\",\"t"])</script><script>self.__next_f.push([1,"h\",\"th-1\",{\"children\":\"技术选型\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"用途\"}],[\"$\",\"th\",\"th-3\",{\"children\":\"核心优势\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"向量存储\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"OceanBase V4.5+\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"语义检索\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"三位一体、HTAP 能力\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"图存储\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Neo4j / Cognee\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"知识图谱\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"成熟生态、AI 集成\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"关系存储\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"OceanBase\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"元数据、用户数据\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"金融级事务\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"文件存储\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"文件系统\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"原始文档、翻译结果\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"简化部署\"}]]}]]}]]}]}]\n81:[\"$\",\"h3\",\"h3-23\",{\"id\":\"62-oceanbase-数据模型\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#62-oceanbase-数据模型\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"6.2 OceanBase 数据模型\"]}]\n9d:T4f6,-- 内容元数据表 (TP 场景) - 对应知识图谱 Source 基类\nCREATE TABLE sources (\n    id BIGINT PRIMARY KEY AUTO_INCREMENT,\n    source_type ENUM('paper', 'article', 'document', 'code_repo') NOT NULL,\n    title VARCHAR(500) NOT NULL,\n    abstract TEXT,\n    authors JSON,\n    url VARCHAR(1000),\n    format VARCHAR(50),                    -- pdf, md, docx, pptx, xlsx, url, etc.\n    publication_date DATE,\n    category VARCHAR(100),\n    status ENUM('pending', 'processing', 'translated', 'analyzed'),\n    metadata JSON,                         -- 特化类型的扩展属性\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n    INDEX idx_source_type (source_type),\n    INDEX idx_category (category),\n    INDEX idx_status (status)\n);\n\n-- 内容向量表 (Vector DB 场景)\nCREATE TABLE source_embeddings (\n    id BIGINT PRIMARY KEY AUTO_INCREMENT,\n    source_id BIGINT NOT NULL,\n    chunk_index INT DEFAULT 0,\n    chunk_text TEXT,\n    embedding VECTOR(1536),\n    FOREIGN KEY (source_id) REFERENCES sources(id)\n);\n\n-- 创建 HNSW 向量索引\nCREATE INDEX idx_source_embedding_hnsw\nON source_embeddings USING HNSW (embedding vector_cosine_ops)\nWITH (m = 16, ef_construction = 128);\n"])</script><script>self.__next_f.push([1,"82:[\"$\",\"$L9b\",\"pre-20\",{\"className\":\"hljs language-sql\",\"codeText\":\"$9d\",\"children\":[[\"$\",\"span\",\"span-0\",{\"className\":\"hljs-comment\",\"children\":\"-- 内容元数据表 (TP 场景) - 对应知识图谱 Source 基类\"}],\"\\n\",[\"$\",\"span\",\"span-1\",{\"className\":\"hljs-keyword\",\"children\":\"CREATE TABLE\"}],\" sources (\\n    id \",[\"$\",\"span\",\"span-2\",{\"className\":\"hljs-type\",\"children\":\"BIGINT\"}],\" \",[\"$\",\"span\",\"span-3\",{\"className\":\"hljs-keyword\",\"children\":\"PRIMARY KEY\"}],\" AUTO_INCREMENT,\\n    source_type ENUM(\",[\"$\",\"span\",\"span-4\",{\"className\":\"hljs-string\",\"children\":\"'paper'\"}],\", \",[\"$\",\"span\",\"span-5\",{\"className\":\"hljs-string\",\"children\":\"'article'\"}],\", \",[\"$\",\"span\",\"span-6\",{\"className\":\"hljs-string\",\"children\":\"'document'\"}],\", \",[\"$\",\"span\",\"span-7\",{\"className\":\"hljs-string\",\"children\":\"'code_repo'\"}],\") \",[\"$\",\"span\",\"span-8\",{\"className\":\"hljs-keyword\",\"children\":\"NOT NULL\"}],\",\\n    title \",[\"$\",\"span\",\"span-9\",{\"className\":\"hljs-type\",\"children\":\"VARCHAR\"}],\"(\",[\"$\",\"span\",\"span-10\",{\"className\":\"hljs-number\",\"children\":\"500\"}],\") \",[\"$\",\"span\",\"span-11\",{\"className\":\"hljs-keyword\",\"children\":\"NOT NULL\"}],\",\\n    abstract TEXT,\\n    authors JSON,\\n    url \",[\"$\",\"span\",\"span-12\",{\"className\":\"hljs-type\",\"children\":\"VARCHAR\"}],\"(\",[\"$\",\"span\",\"span-13\",{\"className\":\"hljs-number\",\"children\":\"1000\"}],\"),\\n    format \",[\"$\",\"span\",\"span-14\",{\"className\":\"hljs-type\",\"children\":\"VARCHAR\"}],\"(\",[\"$\",\"span\",\"span-15\",{\"className\":\"hljs-number\",\"children\":\"50\"}],\"),                    \",[\"$\",\"span\",\"span-16\",{\"className\":\"hljs-comment\",\"children\":\"-- pdf, md, docx, pptx, xlsx, url, etc.\"}],\"\\n    publication_date \",[\"$\",\"span\",\"span-17\",{\"className\":\"hljs-type\",\"children\":\"DATE\"}],\",\\n    category \",[\"$\",\"span\",\"span-18\",{\"className\":\"hljs-type\",\"children\":\"VARCHAR\"}],\"(\",[\"$\",\"span\",\"span-19\",{\"className\":\"hljs-number\",\"children\":\"100\"}],\"),\\n    status ENUM(\",[\"$\",\"span\",\"span-20\",{\"className\":\"hljs-string\",\"children\":\"'pending'\"}],\", \",[\"$\",\"span\",\"span-21\",{\"className\":\"hljs-string\",\"children\":\"'processing'\"}],\", \",[\"$\",\"span\",\"span-22\",{\"className\":\"hljs-string\",\"children\":\"'translated'\"}],\", \",[\"$\",\"span\",\"span-23\",{\"className\":\"hljs-string\",\"children\":\"'analyzed'\"}],\"),\\n    metadata JSON,                         \",[\"$\",\"span\",\"span-24\",{\"className\":\"hljs-comment\",\"children\":\"-- 特化类型的扩展属性\"}],\"\\n    created_at \",[\"$\",\"span\",\"span-25\",{\"className\":\"hljs-type\",\"children\":\"TIMESTAMP\"}],\" \",[\"$\",\"span\",\"span-26\",{\"className\":\"hljs-keyword\",\"children\":\"DEFAULT\"}],\" \",[\"$\",\"span\",\"span-27\",{\"className\":\"hljs-built_in\",\"children\":\"CURRENT_TIMESTAMP\"}],\",\\n    updated_at \",[\"$\",\"span\",\"span-28\",{\"className\":\"hljs-type\",\"children\":\"TIMESTAMP\"}],\" \",[\"$\",\"span\",\"span-29\",{\"className\":\"hljs-keyword\",\"children\":\"DEFAULT\"}],\" \",\"$L9e\",\" \",\"$L9f\",\" \",\"$La0\",\" \",\"$La1\",\",\\n    INDEX idx_source_type (source_type),\\n    INDEX idx_category (category),\\n    INDEX idx_status (status)\\n);\\n\\n\",\"$La2\",\"\\n\",\"$La3\",\" source_embeddings (\\n    id \",\"$La4\",\" \",\"$La5\",\" AUTO_INCREMENT,\\n    source_id \",\"$La6\",\" \",\"$La7\",\",\\n    chunk_index \",\"$La8\",\" \",\"$La9\",\" \",\"$Laa\",\",\\n    chunk_text TEXT,\\n    embedding VECTOR(\",\"$Lab\",\"),\\n    \",\"$Lac\",\" (source_id) \",\"$Lad\",\" sources(id)\\n);\\n\\n\",\"$Lae\",\"\\n\",\"$Laf\",\" INDEX idx_source_embedding_hnsw\\n\",\"$Lb0\",\" source_embeddings \",\"$Lb1\",\" HNSW (embedding vector_cosine_ops)\\n\",\"$Lb2\",\" (m \",\"$Lb3\",\" \",\"$Lb4\",\", ef_construction \",\"$Lb5\",\" \",\"$Lb6\",\");\\n\"]}]\n"])</script><script>self.__next_f.push([1,"83:[\"$\",\"h3\",\"h3-24\",{\"id\":\"63-neo4j-知识图谱-schema\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#63-neo4j-知识图谱-schema\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"6.3 Neo4j 知识图谱 Schema\"]}]\n"])</script><script>self.__next_f.push([1,"84:[\"$\",\"$L9b\",\"pre-21\",{\"className\":\"hljs language-cypher\",\"codeText\":\"// 创建约束 - Source 基类及特化类型\\nCREATE CONSTRAINT source_id_unique FOR (s:Source) REQUIRE s.id IS UNIQUE\\nCREATE CONSTRAINT paper_id_unique FOR (p:Paper) REQUIRE p.id IS UNIQUE\\nCREATE CONSTRAINT article_id_unique FOR (a:Article) REQUIRE a.id IS UNIQUE\\nCREATE CONSTRAINT document_id_unique FOR (d:Document) REQUIRE d.id IS UNIQUE\\nCREATE CONSTRAINT code_repo_id_unique FOR (c:CodeRepo) REQUIRE c.id IS UNIQUE\\nCREATE CONSTRAINT author_name_unique FOR (a:Author) REQUIRE a.name IS UNIQUE\\n\\n// 创建向量索引 - Source 级别通用语义检索\\nCREATE VECTOR INDEX source_embedding FOR (s:Source) ON (s.embedding)\\nOPTIONS {\\n  indexConfig: {\\n    `vector.dimensions`: 1536,\\n    `vector.similarity_function`: 'cosine'\\n  }\\n}\\n\\n// 示例查询 1：查找使用相似方法的论文\\nMATCH (p1:Paper)-[:USES_METHOD]-\u003e(m:Method)\u003c-[:USES_METHOD]-(p2:Paper)\\nWHERE p1.title = \\\"ReAct\\\"\\nRETURN p2.title, m.name\\n\\n// 示例查询 2：跨内容类型查找相关资源\\nMATCH (s1:Source)-[:RELATED_TO]-\u003e(s2:Source)\\nWHERE s1.title CONTAINS \\\"Agent\\\"\\nRETURN s2.title, labels(s2) AS source_type\\n\",\"children\":\"// 创建约束 - Source 基类及特化类型\\nCREATE CONSTRAINT source_id_unique FOR (s:Source) REQUIRE s.id IS UNIQUE\\nCREATE CONSTRAINT paper_id_unique FOR (p:Paper) REQUIRE p.id IS UNIQUE\\nCREATE CONSTRAINT article_id_unique FOR (a:Article) REQUIRE a.id IS UNIQUE\\nCREATE CONSTRAINT document_id_unique FOR (d:Document) REQUIRE d.id IS UNIQUE\\nCREATE CONSTRAINT code_repo_id_unique FOR (c:CodeRepo) REQUIRE c.id IS UNIQUE\\nCREATE CONSTRAINT author_name_unique FOR (a:Author) REQUIRE a.name IS UNIQUE\\n\\n// 创建向量索引 - Source 级别通用语义检索\\nCREATE VECTOR INDEX source_embedding FOR (s:Source) ON (s.embedding)\\nOPTIONS {\\n  indexConfig: {\\n    `vector.dimensions`: 1536,\\n    `vector.similarity_function`: 'cosine'\\n  }\\n}\\n\\n// 示例查询 1：查找使用相似方法的论文\\nMATCH (p1:Paper)-[:USES_METHOD]-\u003e(m:Method)\u003c-[:USES_METHOD]-(p2:Paper)\\nWHERE p1.title = \\\"ReAct\\\"\\nRETURN p2.title, m.name\\n\\n// 示例查询 2：跨内容类型查找相关资源\\nMATCH (s1:Source)-[:RELATED_TO]-\u003e(s2:Source)\\nWHERE s1.title CONTAINS \\\"Agent\\\"\\nRETURN s2.title, labels(s2) AS source_type\\n\"}]\n"])</script><script>self.__next_f.push([1,"85:[\"$\",\"hr\",\"hr-11\",{}]\n86:[\"$\",\"h2\",\"h2-6\",{\"id\":\"7-技术架构\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#7-技术架构\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7. 技术架构\"]}]\n87:[\"$\",\"h3\",\"h3-25\",{\"id\":\"71-设计原则\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#71-设计原则\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7.1 设计原则\"]}]\n88:[\"$\",\"div\",\"table-17\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"原则\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"异步优先\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"全链路异步处理，支持高并发论文处理\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Agent 自治\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"每个 Agent 专注单一职责，通过编排层协作\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"记忆增强\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Cognee 提供跨会话长期记忆，避免上下文遗忘\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"混合检索\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"关键词 + 向量 + 图谱三路融合，RRF 重排序\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"可观测性\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"任务实时监控，WebSocket 推送进度\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"渐进增强\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"文件系统起步，逐步引入向量库和图数据库\"}]]}]]}]]}]}]\n89:[\"$\",\"h3\",\"h3-26\",{\"id\":\"72-整体架构\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#72-整体架构\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7.2 整体架构\"]}]\nb7:T45d,flowchart TD\n    subgraph \"接入层\"\n        WebUI[Web UI\u003cbr/\u003eNext.js]\n        API_Client[REST Client]\n    end\n\n    subgraph \"网关层\"\n        FastAPI[FastAPI Service]\n        WS[WebSocket]\n    end\n\n    subgraph \"Agent 层\"\n        CA[Coordinator Agent]\n        RA[Reader Agent]\n        TA[Translation Agent]\n        HA[Heartfelt Agent]\n        SA[Solutions Architect]\n    end\n\n    subgraph \"能力层\"\n        Skills[Claude Skills]\n        LLM[LLM Provider]\n    end\n\n    subgraph \"记忆层\"\n        Cognee[Cognee Engine]\n    end\n\n    subgraph \"存储层\"\n        OB[(OceanBase\u003cbr/\u003e向量+关系)]\n        Neo[(Neo4j\u003cbr/\u003e知识图谱)]\n        FS[(File System)]\n    end\n\n    WebUI \u0026 API_Client --\u003e FastAPI\n    FastAPI \u003c--\u003e WS\n    FastAPI --\u003e CA\n    CA --\u003e RA \u0026 TA \u0026 HA\n    RA \u0026 TA \u0026 HA --\u003e SA\n    RA \u0026 TA \u0026 HA \u0026 SA --\u003e Skills\n    Skills --\u003e LLM\n    RA \u0026 TA \u0026 HA \u0026 SA --\u003e Cognee\n    Cognee \u003c--\u003e OB \u0026 Neo\n    RA \u0026 TA --\u003e FS\n\n    style CA fill:#9c27b0,color:#fff\n    style SA fill:#2196f3,color:#fff\n    style Cognee fill:#ff9800,color:#fff\n    style OB fill:#2196f3,color:#fff\n    style Neo fill:#4caf50,color:#fff\n8a:[\"$\",\"$L1c\",\"pre-22\",{\"code\":\"$b7\"}]\n8b:[\"$\",\"h3\",\"h3-27\",{\"id\":\"721-数据流图\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#721-数据流图\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7.2.1 数据流图\"]}]\n8c:[\"$\",\"$L1c\",\"pre-23\",{\"code\":\"flowchart LR\\n    subgraph \\\"输入层\\\"\\n        U[用户/API] --\u003e |上传| P[PDF/URL/文档]\\n        U --\u003e |提问| Q[查询请求]\\n    end\\n\\n    subgraph \\\"处理层\\\"\\n        P --\u003e RA[Reader Agent\u003cbr/\u003e解析]\\n        RA --\u003e TA[Translation Agent\u003cbr/\u003e翻译]\\n        TA --\u003e HA[Heartfelt Agent\u003cbr/\u003e分析]\\n        HA --\u003e KG[知识图谱构建]\\n "])</script><script>self.__next_f.push([1,"   end\\n\\n    subgraph \\\"存储层\\\"\\n        KG --\u003e OB[(OceanBase\u003cbr/\u003e向量+关系)]\\n        KG --\u003e Neo[(Neo4j\u003cbr/\u003e图谱)]\\n        HA --\u003e FS[(文件系统\u003cbr/\u003e原始文档)]\\n    end\\n\\n    subgraph \\\"检索层\\\"\\n        Q --\u003e Router{智能路由}\\n        Router --\u003e |语义检索| OB\\n        Router --\u003e |图谱检索| Neo\\n        OB --\u003e Fusion[RRF 融合]\\n        Neo --\u003e Fusion\\n        Fusion --\u003e LLM[LLM 生成]\\n        LLM --\u003e R[检索结果]\\n    end\\n\\n    style Router fill:#fbbc04,color:#000\\n    style LLM fill:#9c27b0,color:#fff\\n\"}]\n8d:[\"$\",\"h3\",\"h3-28\",{\"id\":\"73-技术栈\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#73-技术栈\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7.3 技术栈\"]}]\n"])</script><script>self.__next_f.push([1,"8e:[\"$\",\"div\",\"table-18\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"层级\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"技术选型\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"版本/说明\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"前端\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Next.js (App Router)\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"16.x\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"Zustand + immer\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"状态管理\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"TailwindCSS\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"样式框架\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"后端\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"FastAPI + asyncio\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"Python 3.14\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"Pydantic\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"数据验证\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Agent\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Google ADK\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"生产部署\"}]]}],[\"$\",\"tr\",\"tr-6\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"Claude Agent SDK\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"原型开发\"}]]}],[\"$\",\"tr\",\"tr-7\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"Claude Skills (Fallback)\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"7 个专用能力\"}]]}],[\"$\",\"tr\",\"tr-8\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"记忆\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Cognee\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"认知记忆层\"}]]}],[\"$\",\"tr\",\"tr-9\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"存储\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"OceanBase V4.5+\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"向量+关系\"}]]}],[\"$\",\"tr\",\"tr-10\",{\"children\":[[\"$\",\"td\",\"td-0\",{}],[\"$\",\"td\",\"td-1\",{\"children\":\"Neo4j\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"知识图谱\"}]]}],[\"$\",\"tr\",\"tr-11\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"测试\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"Pytest + Vitest + Playwright\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"82% 覆盖率\"}]]}],[\"$\",\"tr\",\"tr-12\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"CI/CD\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"GitHub Actions\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"自动化\"}]]}]]}]]}]}]\n"])</script><script>self.__next_f.push([1,"8f:[\"$\",\"h3\",\"h3-29\",{\"id\":\"74-目录结构\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#74-目录结构\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"7.4 目录结构\"]}]\nb8:T680,agentic-ai-cognizes/\n├── cognizes/                   # 后端\n│   ├── main.py                 # 应用入口\n│   ├── api/                    # FastAPI 服务\n│   │   ├── routes/             # API 路由\n│   │   └── services/           # 业务服务\n├── ├── agents/                 # Agents 核心\n│   │   ├── adk/                # ADK Agent 实现\n│   │   └── claude/             # Claude Agent 实现\n│   └── core/                   # 核心组件\n│       ├── models/             # Pydantic 模型\n│       ├── config.py           # 配置管理\n│       ├── memory.py           # Cognee 集成\n│       └── exceptions.py       # 异常定义\n├── ui/                         # 前端\n│   └── src/\n│       ├── app/                # App Router 页面\n│       │   ├── papers/         # 论文管理\n│       │   ├── tasks/          # 任务监控\n│       │   └── search/         # 搜索页面\n│       ├── components/         # React 组件\n│       ├── hooks/              # useApi, useWebSocket\n│       ├── store/              # Zustand Stores\n│       └── lib/api.ts          # API 客户端\n├── assets/                     # 资源文件\n│   ├── source/                 # 原始文档\n│   ├── translation/            # 翻译结果\n│   └── heartfelt/              # 深度分析\n├── tests/                      # 测试套件\n├── docs/                       # 文档\n└── .claude/skills/             # 7 个 Claude Skills\nb9:T680,agentic-ai-cognizes/\n├── cognizes/                   # 后端\n│   ├── main.py                 # 应用入口\n│   ├── api/                    # FastAPI 服务\n│   │   ├── routes/             # API 路由\n│   │   └── services/           # 业务服务\n├── ├── agents/                 # Agents 核心\n│   │   ├── adk/                # ADK Agent 实现\n│   │   └── claude/             # Claude Agent 实现\n│   └── core/                   # 核心组件\n│       ├── models/             # Pydantic 模型\n│       ├── config.py           # 配置管理\n│       ├── memory.py           # Cognee 集成\n│       └── exceptions.py       # 异常定义\n├── ui/                         # 前端\n│   └── src/\n│       ├── app/                # App Router 页面\n│       │   ├── papers/         # 论文管理\n│       │   ├── tasks/          # 任务监控\n│       │   └── search/         # 搜索页面\n│       ├── components/         # React 组件\n│       ├── hooks/              # useApi, useWebSocket\n│       ├── store/              # Zustand Stores\n│       └── lib/api.ts          # API 客户端\n├── assets/                     # 资源文件\n│   ├── source/                 # 原始文档\n│   ├── translation/            # 翻译结果\n│   └── heartfelt/              # 深度分析\n├── tests/                      # 测试套件\n├── docs/                       # 文档\n└── .claude/skills/             # 7 个 Claude Skills\n90:[\"$\",\"$L9b\",\"pre-24\",{\"className\":\"hljs language-shell\",\"codeText\":\"$b8\",\"children\":\"$b9\"}]\n91:[\"$\",\"hr\",\"hr-12\",{}]\n92:[\"$\",\"h2\",\"h2-7\",{\"id\":\"8-质量保障\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#8-质量保障\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"8. 质量保障\"]}]\n93:[\"$\",\"h3\",\"h3-30\",{\"id\":\"81-评估指标体系\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#81-评估指标体系\",\"className\":\"wiki-an"])</script><script>self.__next_f.push([1,"chor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"8.1 评估指标体系\"]}]\n94:[\"$\",\"p\",\"p-21\",{\"children\":\"基于 RAGAS 框架 [14] 建立检索与生成质量评估体系：\"}]\n95:[\"$\",\"div\",\"table-19\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"指标\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"说明\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"目标值\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Faithfulness\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"生成内容与检索上下文一致性\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 85%\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Answer Relevancy\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"答案与问题相关性\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 90%\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Context Precision\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"检索上下文信噪比\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 80%\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Context Recall\"}]}],[\"$\",\"td\",\"td-1\",{\"children\":\"相关信息召回率\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 85%\"}]]}]]}]]}]}]\n96:[\"$\",\"h3\",\"h3-31\",{\"id\":\"82-技术指标\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#82-技术指标\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"8.2 技术指标\"]}]\n97:[\"$\",\"div\",\"table-20\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"指标\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"当前\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"目标\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"测试覆盖率\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"82%\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 90%\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"API 响应时间\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003c 500ms\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"向量检索延迟\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003c 100ms\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"翻译准确率\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"-\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"\u003e 95%\"}]]}]]}]]}]}]\n98:[\"$\",\"hr\",\"hr-13\",{}]\n99:[\"$\",\"h2\",\"h2-8\",{\"id\":\"9-参考文献\",\"className\":\"wiki-anchor-heading\",\"children\":[[\"$\",\"a\",null,{\"href\":\"#9-参考文献\",\"className\":\"wiki-anchor-link\",\"aria-label\":\"链接到此章节\",\"children\":\"#\"}],\"9. 参考文献\"]}]\n"])</script><script>self.__next_f.push([1,"9a:[\"$\",\"div\",\"table-21\",{\"style\":{\"overflowX\":\"auto\",\"margin\":\"1em 0\"},\"children\":[\"$\",\"table\",null,{\"className\":\"wiki-responsive-table\",\"children\":[[\"$\",\"thead\",\"thead-0\",{\"children\":[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"th\",\"th-0\",{\"children\":\"序号\"}],[\"$\",\"th\",\"th-1\",{\"children\":\"参考源\"}],[\"$\",\"th\",\"th-2\",{\"children\":\"来源\"}],[\"$\",\"th\",\"th-3\",{\"children\":\"核心思想\"}],[\"$\",\"th\",\"th-4\",{\"children\":\"本项目应用模块\"}]]}]}],[\"$\",\"tbody\",\"tbody-0\",{\"children\":[[\"$\",\"tr\",\"tr-0\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[1]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"项目架构文档\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/001-architecture.md\",\"children\":\"docs/001-architecture.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"项目整体架构与代码结构\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"全局\"}]]}],[\"$\",\"tr\",\"tr-1\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[2]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Microsoft GraphRAG 论文\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://arxiv.org/abs/2404.16130\",\"children\":\"From Local to Global\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"LLM 构建知识图谱 + 图机器学习\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"内容关联分析、多跳检索\"}]]}],[\"$\",\"tr\",\"tr-2\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[3]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"认知增强调研 - GraphRAG 原理\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/000-cognitive-enhancement.md\",\"children\":\"docs/research/000-cognitive-enhancement.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"图谱增强检索生成\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"智能检索体系\"}]]}],[\"$\",\"tr\",\"tr-3\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[4]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Cognee 深度调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/cognizes/research/003-cognee.md\",\"children\":\"docs/research/003-cognee.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"AI 记忆层 + 三存储架构\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"认知记忆层\"}]]}],[\"$\",\"tr\",\"tr-4\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[5]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"认知增强调研报告\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/000-cognitive-enhancement.md\",\"children\":\"docs/research/000-cognitive-enhancement.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"理论基础与框架对比\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"整体设计参考\"}]]}],[\"$\",\"tr\",\"tr-5\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[6]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Agentic RAG 理论\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"认知增强调研 §2.4\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"主动推理、自适应检索、多步方案\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"智能问答、复杂检索\"}]]}],[\"$\",\"tr\",\"tr-6\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[7]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"知识图谱在 AI 中的应用\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"认知增强调研 §2.1.4\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"减少幻觉 40-60%、可解释决策\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"内容关联分析\"}]]}],[\"$\",\"tr\",\"tr-7\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[8]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"BettaFish 深度调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/060-bettafish.md\",\"children\":\"docs/research/060-bettafish.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"论坛协作机制、多 Agent 辩论\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"Agent 协作设计\"}]]}],[\"$\",\"tr\",\"tr-8\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[9]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"OceanBase 深度调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/033-oceanbase.md\",\"children\":\"docs/research/033-oceanbase.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"三位一体：TP/AP/Vector\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"数据存储架构\"}]]}],[\"$\",\"tr\",\"tr-9\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[10]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"RRF 融合算法\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"认知增强调研 § 6.4\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"检索结果吾合重排序\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"混合检索\"}]]}],[\"$\",\"tr\",\"tr-10\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[11]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Neo4j 深度调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/050-neo4j.md\",\"children\":\"docs/research/050-neo4j.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"原生图存储、O(1) 关系遍历\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"知识图谱存储\"}]]}],[\"$\",\"tr\",\"tr-11\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[12]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Agent 框架调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/020-agent-runtime-frameworks.md\",\"children\":\"docs/research/020-agent-runtime-frameworks.md\"}]}],\"$Lba\",\"$Lbb\"]}],\"$Lbc\",\"$Lbd\",\"$Lbe\",\"$Lbf\",\"$Lc0\",\"$Lc1\",\"$Lc2\",\"$Lc3\"]}]]}]}]\n"])</script><script>self.__next_f.push([1,"9e:[\"$\",\"span\",\"span-30\",{\"className\":\"hljs-built_in\",\"children\":\"CURRENT_TIMESTAMP\"}]\n9f:[\"$\",\"span\",\"span-31\",{\"className\":\"hljs-keyword\",\"children\":\"ON\"}]\na0:[\"$\",\"span\",\"span-32\",{\"className\":\"hljs-keyword\",\"children\":\"UPDATE\"}]\na1:[\"$\",\"span\",\"span-33\",{\"className\":\"hljs-built_in\",\"children\":\"CURRENT_TIMESTAMP\"}]\na2:[\"$\",\"span\",\"span-34\",{\"className\":\"hljs-comment\",\"children\":\"-- 内容向量表 (Vector DB 场景)\"}]\na3:[\"$\",\"span\",\"span-35\",{\"className\":\"hljs-keyword\",\"children\":\"CREATE TABLE\"}]\na4:[\"$\",\"span\",\"span-36\",{\"className\":\"hljs-type\",\"children\":\"BIGINT\"}]\na5:[\"$\",\"span\",\"span-37\",{\"className\":\"hljs-keyword\",\"children\":\"PRIMARY KEY\"}]\na6:[\"$\",\"span\",\"span-38\",{\"className\":\"hljs-type\",\"children\":\"BIGINT\"}]\na7:[\"$\",\"span\",\"span-39\",{\"className\":\"hljs-keyword\",\"children\":\"NOT NULL\"}]\na8:[\"$\",\"span\",\"span-40\",{\"className\":\"hljs-type\",\"children\":\"INT\"}]\na9:[\"$\",\"span\",\"span-41\",{\"className\":\"hljs-keyword\",\"children\":\"DEFAULT\"}]\naa:[\"$\",\"span\",\"span-42\",{\"className\":\"hljs-number\",\"children\":\"0\"}]\nab:[\"$\",\"span\",\"span-43\",{\"className\":\"hljs-number\",\"children\":\"1536\"}]\nac:[\"$\",\"span\",\"span-44\",{\"className\":\"hljs-keyword\",\"children\":\"FOREIGN KEY\"}]\nad:[\"$\",\"span\",\"span-45\",{\"className\":\"hljs-keyword\",\"children\":\"REFERENCES\"}]\nae:[\"$\",\"span\",\"span-46\",{\"className\":\"hljs-comment\",\"children\":\"-- 创建 HNSW 向量索引\"}]\naf:[\"$\",\"span\",\"span-47\",{\"className\":\"hljs-keyword\",\"children\":\"CREATE\"}]\nb0:[\"$\",\"span\",\"span-48\",{\"className\":\"hljs-keyword\",\"children\":\"ON\"}]\nb1:[\"$\",\"span\",\"span-49\",{\"className\":\"hljs-keyword\",\"children\":\"USING\"}]\nb2:[\"$\",\"span\",\"span-50\",{\"className\":\"hljs-keyword\",\"children\":\"WITH\"}]\nb3:[\"$\",\"span\",\"span-51\",{\"className\":\"hljs-operator\",\"children\":\"=\"}]\nb4:[\"$\",\"span\",\"span-52\",{\"className\":\"hljs-number\",\"children\":\"16\"}]\nb5:[\"$\",\"span\",\"span-53\",{\"className\":\"hljs-operator\",\"children\":\"=\"}]\nb6:[\"$\",\"span\",\"span-54\",{\"className\":\"hljs-number\",\"children\":\"128\"}]\nba:[\"$\",\"td\",\"td-3\",{\"children\":\"ADK/Claude SDK 对比\"}]\nbb:[\"$\",\"td\",\"td-4\",{\"children\":\"双框架战略\"}]\nbc:[\"$\",\"tr\",\"tr-12\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[13]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Agentic Design Patterns\"}],[\"$\",\"td\",\"td-2\",{\"children\":\"认知增强调研 § 5\"}],[\"$\",\"td\",\"td-3\",{\"children\":\"Memory、Tool Use、Reflection\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"Agent 设计模式\"}]]}]\nbd:[\"$\",\"tr\",\"tr-13\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[14]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"RAGAS 评估框架\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://docs.ragas.io/\",\"children\":\"RAGAS Docs\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"Faithfulness/Relevancy 评估\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"质量保障体系\"}]]}]\nbe:[\"$\",\"tr\",\"tr-14\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[15]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Context Engineering 调研\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://github.com/ThreeFish-AI/negentropy/blob/main/docs/reference/research/010-context-engineering.md\",\"children\":\"docs/research/010-context-engineering.md\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"分层记忆、上下文压缩\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"记忆管理、状态管理\"}]]}]\nbf:[\"$\",\"tr\",\"tr-15\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[16]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"ReAct\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://arxiv.org/abs/2210.03629\",\"children\":\"ReAct: Synergizing Reasoning and Acting\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"推理与行动交织，减少幻觉\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"Agent 决策循环\"}]]}]\nc0:[\"$\",\"tr\",\"tr-16\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[17]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"CoT\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://arxiv.org/abs/2201.11903\",\"children\":\"Chain-of-Thought Prompting\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"链式思维促进复杂推理\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"Heartfelt Agent\"}]]}]\nc1:[\"$\",\"tr\",\"tr-17\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[18]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Cognee 官方文档\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://docs.cognee"])</script><script>self.__next_f.push([1,".ai/\",\"children\":\"Cognee Docs\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"核心操作、构建块、存储配置\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"Cognee 集成\"}]]}]\nc2:[\"$\",\"tr\",\"tr-18\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[19]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"OceanBase 向量索引\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://www.oceanbase.com/docs/common-oceanbase-database\",\"children\":\"OceanBase Vector Search\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"HNSW/IVF 索引算法\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"向量检索\"}]]}]\nc3:[\"$\",\"tr\",\"tr-19\",{\"children\":[[\"$\",\"td\",\"td-0\",{\"children\":\"[20]\"}],[\"$\",\"td\",\"td-1\",{\"children\":\"Neo4j GDS 算法\"}],[\"$\",\"td\",\"td-2\",{\"children\":[\"$\",\"a\",\"a-0\",{\"href\":\"https://neo4j.com/docs/graph-data-science/\",\"children\":\"Neo4j GDS Manual\"}]}],[\"$\",\"td\",\"td-3\",{\"children\":\"50+ 图算法\"}],[\"$\",\"td\",\"td-4\",{\"children\":\"图分析\"}]]}]\n"])</script></body></html>
