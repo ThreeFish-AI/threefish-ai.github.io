@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0vw7m0g~~xfj1.css","style"]
+:HL["/_next/static/chunks/0rt96ryf46vk..css","style"]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/logo.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"pubSlug","param":{"type":"d","key":"negentropy","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"entrySlug","param":{"type":"c","key":"research/030-vector-search-algorithm","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wiki-1cc8a89a89a9abe1"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"pubSlug","param":{"type":"d","key":"negentropy","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"entrySlug","param":{"type":"c","key":"research/030-vector-search-algorithm","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wiki-88c77ac46388adfa"}
